@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwowlsb=self.webpackChunkwowlsb||[]).push([[301],{1301:(s,e,l)=>{l.r(e),l.d(e,{default:()=>w});var a=l(3439),c=l(4414);const w=()=>(0,c.jsx)("div",{className:"mt-20",children:(0,c.jsx)(a.A,{})})}}]);
