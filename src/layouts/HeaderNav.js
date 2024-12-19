@@ -6,7 +6,7 @@ const HeaderNav = ({ spec, dungeonId }) => {
     const navigate = useNavigate();
 
     const handleDungeonClick = (d) => {
-        if(dungeonId != d){
+        if (dungeonId !== String(d)) {
             navigate(`/mplus/${d}/${spec}`);
         }
     }
@@ -23,9 +23,12 @@ const HeaderNav = ({ spec, dungeonId }) => {
                     <img
                         key={d}
                         src={`${process.env.PUBLIC_URL}/images/mplus/dungeon/${d}.jpg`}
-                        className={`w-[50px] h-[50px] opacity-50 cursor-pointer
-                            hover:brightness-125 hover:opacity-100 hover:border-2 hover:border-black
-                            ${d == dungeonId ? 'border-2 border-black opacity-100' : ''}`} 
+                        className={`hover:brightness-125 hover:opacity-100 hover:border-2 hover:border-black
+                            w-[50px] h-[50px] opacity-50 cursor-pointer`}
+                        style={{
+                            border: String(d) === dungeonId ? '2px solid black' : 'none',
+                            opacity: String(d) === dungeonId ? 1 : 0.5
+                        }}
                         alt={d}
                         title={d}
                         onClick={() => handleDungeonClick(d)}
