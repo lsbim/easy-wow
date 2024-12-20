@@ -3,13 +3,14 @@ import { Layer, Stage } from 'react-konva';
 import { convertToMMSS, convertToTimeline } from '../../global/function';
 import { bannedBossSkills } from '../../global/variable/mplusVariable';
 import { PL_WIDTH, TL_DURATION_RECT_HEIGHT, TL_Y_PER_LIST } from '../../global/variable/timelineConstants';
+import { REFERENCE_WIDTH } from '../../global/variable/variable';
 import BossCastCanvas from './canvas/BossCastCanvas';
 import PlayerCastCanvas from './canvas/PlayerCastCanvas';
 import TimelineBaseCanvas from './canvas/TimelineBaseCanvas';
 import MplusMRTModalComponent from './common/MplusMRTModalComponent';
 import MplusPlayerComponent from './MplusPlayerComponent';
 
-const MplusDefComponent = ({className, specName, dungeonId}) => {
+const MplusDefComponent = ({ className, specName, dungeonId }) => {
 
     const stageRef = useRef();
     const layerRef = useRef();
@@ -32,18 +33,36 @@ const MplusDefComponent = ({className, specName, dungeonId}) => {
         setIsDragging(true);
         setStartX(e.evt.clientX); // 마우스 시작 좌표
     };
-    // 드래그 이동
-    const handleMouseMove = (e) => {
-        if (isDragging) {
-            const deltaX = e.evt.clientX - startX; // 드래그 거리
-            setOffsetX(prevOffsetX => Math.min(prevOffsetX + deltaX, 0)); // X가 0 왼쪽으로 이동할 수 없도록 제한
-            setStartX(e.evt.clientX); // 현재 좌표를 새로운 시작점으로 업데이트
-        }
-    };
-    // 드래그 종료
-    const handleMouseUp = () => {
-        setIsDragging(false);
-    };
+
+    useEffect(() => {
+        // 드래그 이동
+        const handleGlobalMouseMove = (e) => {
+            if (isDragging) {
+                const deltaX = e.clientX - startX; // e.evt 대신 e 사용 (window 이벤트이므로)
+                const scaleFactor = window.innerWidth / REFERENCE_WIDTH; // 기준 너비를 잡고 현재 너비에 나눠서 비율만큼 속도 조정
+                // console.log(scaleFactor)
+                setOffsetX(prevOffsetX => Math.min(prevOffsetX + deltaX * scaleFactor * 0.7, 0)); // 0.7는 추가 속도 보정
+                setStartX(e.clientX);
+            }
+        };
+
+        // 전역 드래그 해제 이벤트
+        const handleGlobalMouseUp = () => {
+            if (isDragging) {
+                setIsDragging(false);
+            }
+        };
+
+        // 이벤트 리스너 추가
+        window.addEventListener('mousemove', handleGlobalMouseMove);
+        window.addEventListener('mouseup', handleGlobalMouseUp);
+
+        // 클린업 함수 -> 컴포넌트 언마운트시 이벤트리스너를 제거하여 메모리 누수 방지
+        return () => {
+            window.removeEventListener('mousemove', handleGlobalMouseMove);
+            window.removeEventListener('mouseup', handleGlobalMouseUp);
+        };
+    }, [isDragging, startX]); // isDragging 상태가 변경될 때만 실행
 
     // 툴팁
     const handleMouseEnter = (e, abilityGameID, timestamp) => {
@@ -94,7 +113,7 @@ const MplusDefComponent = ({className, specName, dungeonId}) => {
                 const importMyData = async (dungeonId, c, s) => {
                     // console.log('데이터를 가져오기: ', dungeonId, c, s)
                     const myData = await import(`../../objects/${dungeonId}/${c}/${s}.json`)
-                    console.log('myData: ', myData)
+                    // console.log('myData: ', myData)
                     return myData
                 }
 
@@ -293,8 +312,8 @@ const MplusDefComponent = ({className, specName, dungeonId}) => {
                         width={stageWidth}
                         height={stageHeight}
                         onMouseDown={handleMouseDown}
-                        onMouseMove={handleMouseMove}
-                        onMouseUp={handleMouseUp}
+                    // onMouseMove={handleMouseMove}
+                    // onMouseUp={handleMouseUp}
                     >
                         <Layer
                             ref={layerRef}

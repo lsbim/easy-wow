@@ -2,8 +2,12 @@ import { TL_SPELL_WIDTH_PER_SEC } from "./variable/timelineConstants";
 
 export function convertToTimeline(casts) {
 
+    if(!casts){
+        return [];
+    }
+
     // 콜백 함수의 3가지 인자 -> 현재 요소, 인덱스, 전체 원본 배열
-    const filteredCasts = casts.filter((cast, index, array) => {
+    const filteredCasts = casts?.filter((cast, index, array) => {
         if (!cast?.type) return false;
 
         const timestamp = cast.timestamp;

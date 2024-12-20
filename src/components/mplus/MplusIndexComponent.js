@@ -1,9 +1,7 @@
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { mplusDungeonList } from "../../global/variable/mplusVariable";
 import { wowClassList } from "../../global/variable/wowVariable";
-import { useEffect, useState } from "react";
-import axios from "axios";
-import { FOOTER_HEIGHT } from "../../global/variable/variable";
 
 const MplusIndexComponent = () => {
 
