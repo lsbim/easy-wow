@@ -25,8 +25,8 @@ const MplusPlayerComponent = ({ code, fightID, name, myClass, spec, hardModeLeve
                 href={`https://www.warcraftlogs.com/reports/${code}#fight=${fightID}&type=damage-done`}
                 target="_blank"
                 rel="noopener noreferrer"
-            // 새로 열린 페이지가 부모 페이지의 컨텍스트를 제어할 수 없도록 보안을 강화 (noopener)
-            // 현재 페이지의 URL 정보를 새 페이지에 전달하지 않아 프라이버시 보호 (noreferrer)
+            // 새로 열린 페이지가 부모 페이지의 컨텍스트를 제어할 수 없도록 보안을 강화 (no opener)
+            // 현재 페이지의 URL 정보를 새 페이지에 전달하지 않아 프라이버시 보호 (no referrer)
             >
                 <div className="flex-shrink-0 text-[14px] relative">
                     <img

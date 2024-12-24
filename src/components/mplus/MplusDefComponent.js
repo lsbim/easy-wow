@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Layer, Stage } from 'react-konva';
-import { convertToMMSS, convertToTimeline } from '../../global/function';
+import { convertToMMSS, convertToSrc, convertToTimeline } from '../../global/function';
 import { bannedBossSkills } from '../../global/variable/mplusVariable';
 import { PL_WIDTH, TL_DURATION_RECT_HEIGHT, TL_Y_PER_LIST } from '../../global/variable/timelineConstants';
 import { REFERENCE_WIDTH } from '../../global/variable/variable';
@@ -9,6 +9,7 @@ import PlayerCastCanvas from './canvas/PlayerCastCanvas';
 import TimelineBaseCanvas from './canvas/TimelineBaseCanvas';
 import MplusMRTModalComponent from './common/MplusMRTModalComponent';
 import MplusPlayerComponent from './MplusPlayerComponent';
+import MplusSkillCheckComponent from './MplusSkillCheckComponent';
 
 const MplusDefComponent = ({ className, specName, dungeonId }) => {
 
@@ -34,14 +35,14 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
         setStartX(e.evt.clientX); // 마우스 시작 좌표
     };
 
+    // 드래그 이동
     useEffect(() => {
-        // 드래그 이동
         const handleGlobalMouseMove = (e) => {
             if (isDragging) {
                 const deltaX = e.clientX - startX; // e.evt 대신 e 사용 (window 이벤트이므로)
-                const scaleFactor = window.innerWidth / REFERENCE_WIDTH; // 기준 너비를 잡고 현재 너비에 나눠서 비율만큼 속도 조정
+                const scaleFactor = window.innerWidth / REFERENCE_WIDTH * 0.7; // 기준 너비를 잡고 현재 너비에 나눠서 비율만큼 속도 조정
                 // console.log(scaleFactor)
-                setOffsetX(prevOffsetX => Math.min(prevOffsetX + deltaX * scaleFactor * 0.7, 0)); // 0.7는 추가 속도 보정
+                setOffsetX(prevOffsetX => Math.min(prevOffsetX + deltaX * scaleFactor, 0)); // 0.7는 추가 속도 보정
                 setStartX(e.clientX);
             }
         };
@@ -113,26 +114,42 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
                 const importMyData = async (dungeonId, c, s) => {
                     // console.log('데이터를 가져오기: ', dungeonId, c, s)
                     const myData = await import(`../../objects/${dungeonId}/${c}/${s}.json`)
-                    // console.log('myData: ', myData)
+                    console.log('myData: ', myData)
                     return myData
                 }
 
+                // 종합데이터
                 const loadedData = await importMyData(dungeonId, className, specName);
                 setData(loadedData);
 
+                // 보스 이름 목록
                 const bossNames = loadedData?.rankings[0]?.fights?.pulls?.map(pull => pull?.name) || [];
                 setBossList(bossNames);
 
+                // on/off 직업스킬/받은외생기
                 const initSelectedSkills = new Set([ // 대괄호로 감싸고 두 map()을 스프레드연산자로 결합해야 두 배열을 한 Set에 넣기가능
                     ...(loadedData?.playerSkillInfo?.map(skill => skill.abilityGameID) || []), // 사용한 스킬
                     ...(loadedData?.takenBuffInfo?.map(skill => skill) || []) // 받은 외생기
                 ]);
                 setSelectedSkill(initSelectedSkills);
 
+                // on/off 보스스킬. 위와 합쳐도 되지 않나?
                 const initBossSkills = new Set(
                     loadedData?.bossSkillInfo?.filter(s => !bannedBossSkills.includes(s))?.map(skill => skill)
                 );
                 setSelectedBossSkill(initBossSkills);
+
+                // 이미지 프리로드 -> 네트워크 요청 감소
+                const preloadImage = (abil, type) => {
+                    const img = new Image();
+                    img.src = type ? convertToSrc(abil, type) : abil;
+                }
+                initSelectedSkills?.forEach(a => preloadImage(a, className));
+                initBossSkills?.forEach(a => preloadImage(a, 'mplus'));
+                bossNames?.forEach(b => preloadImage(`${process.env.PUBLIC_URL}/images/mplus/boss/face/${b}.png`))
+
+                // 보스정보 0번 인덱스로 초기화
+                setSelected(0);
 
             } catch (e) {
                 console.error('에러: ', e);
@@ -141,9 +158,8 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
             }
         }
 
-        loadData()
-
-    }, [className, dungeonId])
+        loadData();
+    }, [className, dungeonId]);
 
     // 화면 사이즈 바뀌면 리렌더링
     useEffect(() => {
@@ -209,73 +225,17 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
                     />
                 ))}
             </div>
-            <div className='mb-4 md:flex'>
-                {/* 보스 스킬 표기 on/off */}
-                <div className='flex items-center md:mr-3'>
-                    <div className='w-[40px] h-[40px] mr-1 border-2 border-black'>
-                        <img className='w-[40px] h-[40px]'
-                            src={`${process.env.PUBLIC_URL}/images/common/mark/tyrannical.jpg`}
-                        />
-                    </div>
-                    {data?.bossSkillInfo
-                        ?.filter(s => !bannedBossSkills.includes(s))
-                        ?.filter(s => firstBossIDs?.includes(s))?.map((skill, i) => (
-                            <a
-                                href="#" data-wowhead={`spell=${skill}&domain=ko`}
-                                key={'bossSkillInfo' + skill}
-                                className={`w-[30px] h-[30px] hover:bg-slate-200 cursor-pointer
-                                ${selectedBossSkill.has(skill) ? 'border-[1px] border-gray-900 rounded-sm' : 'opacity-40'}`}
-                                onClick={() => handleSelectSkill(skill, 'boss')}
-                            >
-                                <img
-                                    src={`${process.env.PUBLIC_URL}/images/mplus/boss/spell/${skill}.jpg`}
-                                />
-                            </a>
-                        ))}
-                </div>
-                {/* 플레이어 스킬 표기 on/off */}
-                <div className='flex items-center md:mr-3'>
-                    <div className='w-[40px] h-[40px] mr-1 border-2 border-black'>
-                        <img
-                            src={`${process.env.PUBLIC_URL}/images/player/spec/${className}.jpg`}
-                        />
-                    </div>
-                    {data?.playerSkillInfo?.map((skill, i) => (
-                        <a
-                            href="#" data-wowhead={`spell=${skill?.abilityGameID}&domain=ko`}
-                            key={skill.skillName}
-                            className={`w-[30px] h-[30px] hover:bg-slate-200 cursor-pointer
-                                ${selectedSkill.has(skill.abilityGameID) ? 'border-[1px] border-gray-900 rounded-sm' : 'opacity-40'}`}
-                            onClick={() => handleSelectSkill(skill.abilityGameID, 'player')}
-                        >
-                            <img
-                                src={`${process.env.PUBLIC_URL}/images/player/spell/${skill.abilityGameID}.jpg`}
-                            />
-                        </a>
-                    ))}
-                </div>
-                {/* 외생기 스킬 표기 on/off */}
-                <div className='flex items-center'>
-                    <div className='w-[40px] h-[40px] mr-1 border-2 border-black'>
-                        <img
-                            src={`${process.env.PUBLIC_URL}/images/player/spell/10060.jpg`}
-                        />
-                    </div>
-                    {data?.takenBuffInfo?.map((skill, i) => (
-                        <a
-                            href="#" data-wowhead={`spell=${skill}&domain=ko`}
-                            key={skill + 'takenBuff'}
-                            className={`w-[30px] h-[30px] hover:bg-slate-200 cursor-pointer
-                                ${selectedSkill.has(skill) ? 'border-[1px] border-gray-900 rounded-sm' : 'opacity-40'}`}
-                            onClick={() => handleSelectSkill(skill, 'player')}
-                        >
-                            <img
-                                src={`${process.env.PUBLIC_URL}/images/player/spell/${skill}.jpg`}
-                            />
-                        </a>
-                    ))}
-                </div>
-            </div>
+            {/* 스킬 표기 on/off */}
+            <MplusSkillCheckComponent
+                className={className}
+                bossSkillInfo={data?.bossSkillInfo}
+                playerSkillInfo={data?.playerSkillInfo}
+                takenBuffInfo={data?.takenBuffInfo}
+                firstBossIDs={firstBossIDs}
+                selectedBossSkill={selectedBossSkill}
+                handleSelectSkill={handleSelectSkill}
+                selectedSkill={selectedSkill}
+            />
             <div className='flex relative'>
                 <div style={{ marginTop: `${TL_Y_PER_LIST}px` }} >
                     {/* 보스 이름 */}
@@ -284,7 +244,7 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
                         style={{ width: `${PL_WIDTH + 30}px`, height: `${TL_DURATION_RECT_HEIGHT}px` }}
                     >
                         <div className="text-[14px] flex justify-center items-center h-full text-ellipsis overflow-hidden whitespace-nowrap">
-                            {firstBoss.name}
+                            {firstBoss?.name}
                         </div>
                     </div>
                     {/* 좌측 플레이어 리스트 */}

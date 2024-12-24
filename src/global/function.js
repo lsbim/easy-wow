@@ -1,5 +1,6 @@
 import { TL_SPELL_WIDTH_PER_SEC } from "./variable/timelineConstants";
 
+// 캐스트 타임테이블 duration으로 가공
 export function convertToTimeline(casts) {
 
     if(!casts){
@@ -107,14 +108,20 @@ export function convertToTimeline(casts) {
     return arr;
 }
 
-
+// 밀리초 -> mm:ss
 export const convertToMMSS = (ms) => {
     const minutes = Math.floor(ms / 60000);
     const seconds = Math.floor((ms % 60000) / 1000);
-    const milliseconds = ms % 1000;
+    // const milliseconds = ms % 1000;
     return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
 }
 
 export const timestampToPosition = (timestamp) => {
     return timestamp / 1000 * TL_SPELL_WIDTH_PER_SEC;
 };
+
+export const convertToSrc = (abil, type) => {
+    return type === 'mplus'
+    ? `${process.env.PUBLIC_URL}/images/mplus/boss/spell/${abil}.jpg`
+    : `${process.env.PUBLIC_URL}/images/player/spell/${abil}.jpg`;
+}
