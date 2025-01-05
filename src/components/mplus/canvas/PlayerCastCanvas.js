@@ -5,7 +5,7 @@ import { TL_DURATION_RECT_HEIGHT, TL_SPELL_WIDTH_PER_SEC, TL_Y_PER_LIST, TL_Y_PL
 import ImageCanvas from "./ImageCanvas";
 import RectColorCanvas from "./RectColorCanvas";
 
-const PlayerCastCanvas = ({ rankingData, handleMouseEnter, handleMouseLeave, selected, selectedSkill, className }) => {
+const PlayerCastCanvas = ({ rankingData, handleMouseEnter, handleMouseLeave, selected, selectedSkill, className, skillList }) => {
 
     return (
         <>
@@ -83,17 +83,20 @@ const PlayerCastCanvas = ({ rankingData, handleMouseEnter, handleMouseLeave, sel
                         <Group
                             clipWidth={pull?.combatTime / 1000 * TL_SPELL_WIDTH_PER_SEC}
                             clipHeight={1000}>
-                            {mergedEvents?.filter(c => selectedSkill?.has(c?.abilityGameID))?.map((cast, playerCastIndex) => (
-                                <ImageCanvas
+                            {mergedEvents?.filter(c => selectedSkill?.has(c?.abilityGameID))?.map((cast, playerCastIndex) => {
+
+                                const matchSpellName = skillList?.find(skill => skill?.spellId === cast?.abilityGameID)?.spellName;
+
+                                return (<ImageCanvas
                                     key={playerCastIndex + 'player-cast' + player?.name}
                                     abilityGameID={cast?.abilityGameID}
                                     type={className}
                                     timestamp={cast?.timestamp}
                                     startTime={pull?.startTime}
-                                    onMouseEnter={(e) => handleMouseEnter(e, cast?.skillName, convertToMMSS(cast?.timestamp - pull?.startTime))}
+                                    onMouseEnter={(e) => handleMouseEnter(e, matchSpellName, convertToMMSS(cast?.timestamp - pull?.startTime))}
                                     onMouseLeave={handleMouseLeave}
-                                />
-                            ))}
+                                />)
+                            })}
                         </Group>
                     </Group>)
             })}

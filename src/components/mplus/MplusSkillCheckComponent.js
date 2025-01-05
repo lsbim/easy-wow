@@ -4,7 +4,6 @@ const MplusSkillCheckComponent = ({
     className, bossSkillInfo, playerSkillInfo, takenBuffInfo
     , firstBossIDs, selectedBossSkill, handleSelectSkill, selectedSkill
 }) => {
-
     
     return (
         <div className='mb-4 md:flex'>
@@ -16,7 +15,7 @@ const MplusSkillCheckComponent = ({
                     />
                 </div>
                 {bossSkillInfo
-                    ?.filter(s => !bannedBossSkills.includes(s))
+                    ?.filter(s => !bannedBossSkills?.includes(s))
                     ?.filter(s => firstBossIDs?.includes(s))?.map((skill, i) => (
                         <a
                             href="#" data-wowhead={`spell=${skill}&domain=ko`}
@@ -40,14 +39,14 @@ const MplusSkillCheckComponent = ({
                 </div>
                 {playerSkillInfo?.map((skill, i) => (
                     <a
-                        href="#" data-wowhead={`spell=${skill?.abilityGameID}&domain=ko`}
-                        key={skill.skillName}
+                        href="#" data-wowhead={`spell=${skill?.spellId}&domain=ko`}
+                        key={skill?.skillName}
                         className={`w-[30px] h-[30px] hover:bg-slate-200 cursor-pointer
-                                        ${selectedSkill.has(skill.abilityGameID) ? 'border-[1px] border-gray-900 rounded-sm' : 'opacity-40'}`}
-                        onClick={() => handleSelectSkill(skill.abilityGameID, 'player')}
+                                        ${selectedSkill?.has(skill?.spellId) ? 'border-[1px] border-gray-900 rounded-sm' : 'opacity-40'}`}
+                        onClick={() => handleSelectSkill(skill?.spellId, 'player')}
                     >
                         <img
-                            src={`${process.env.PUBLIC_URL}/images/player/spell/${skill.abilityGameID}.jpg`}
+                            src={`${process.env.PUBLIC_URL}/images/player/spell/${skill?.spellId}.jpg`}
                         />
                     </a>
                 ))}
@@ -61,14 +60,14 @@ const MplusSkillCheckComponent = ({
                 </div>
                 {takenBuffInfo?.map((skill, i) => (
                     <a
-                        href="#" data-wowhead={`spell=${skill}&domain=ko`}
-                        key={skill + 'takenBuff'}
+                        href="#" data-wowhead={`spell=${skill?.spellId}&domain=ko`}
+                        key={skill?.spellId + 'takenBuff'}
                         className={`w-[30px] h-[30px] hover:bg-slate-200 cursor-pointer
-                                        ${selectedSkill.has(skill) ? 'border-[1px] border-gray-900 rounded-sm' : 'opacity-40'}`}
-                        onClick={() => handleSelectSkill(skill, 'player')}
+                                        ${selectedSkill?.has(skill?.spellId) ? 'border-[1px] border-gray-900 rounded-sm' : 'opacity-40'}`}
+                        onClick={() => handleSelectSkill(skill?.spellId, 'player')}
                     >
                         <img
-                            src={`${process.env.PUBLIC_URL}/images/player/spell/${skill}.jpg`}
+                            src={`${process.env.PUBLIC_URL}/images/player/spell/${skill?.spellId}.jpg`}
                         />
                     </a>
                 ))}

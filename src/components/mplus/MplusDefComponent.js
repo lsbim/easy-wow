@@ -114,7 +114,7 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
                 const importMyData = async (dungeonId, c, s) => {
                     // console.log('데이터를 가져오기: ', dungeonId, c, s)
                     const myData = await import(`../../objects/${dungeonId}/${c}/${s}.json`)
-                    console.log('myData: ', myData)
+                    // console.log('myData: ', myData)
                     return myData
                 }
 
@@ -128,8 +128,8 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
 
                 // on/off 직업스킬/받은외생기
                 const initSelectedSkills = new Set([ // 대괄호로 감싸고 두 map()을 스프레드연산자로 결합해야 두 배열을 한 Set에 넣기가능
-                    ...(loadedData?.playerSkillInfo?.map(skill => skill.abilityGameID) || []), // 사용한 스킬
-                    ...(loadedData?.takenBuffInfo?.map(skill => skill) || []) // 받은 외생기
+                    ...(loadedData?.playerSkillInfo?.map(skill => skill?.spellId) || []), // 사용한 스킬
+                    ...(loadedData?.takenBuffInfo?.map(skill => skill?.spellId) || []) // 받은 외생기
                 ]);
                 setSelectedSkill(initSelectedSkills);
 
@@ -146,13 +146,13 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
                 }
                 initSelectedSkills?.forEach(a => preloadImage(a, className));
                 initBossSkills?.forEach(a => preloadImage(a, 'mplus'));
-                bossNames?.forEach(b => preloadImage(`${process.env.PUBLIC_URL}/images/mplus/boss/face/${b}.png`))
+                bossNames?.forEach(b => preloadImage(`${process.env.PUBLIC_URL}/images/mplus/boss/face/${b}.png`));
 
                 // 보스정보 0번 인덱스로 초기화
                 setSelected(0);
 
             } catch (e) {
-                console.error('에러: ', e);
+                // console.error('에러: ', e);
             } finally { // 성공 혹은 실패 이후
                 setIsLoading(false) // 로딩 종료
             }
@@ -175,6 +175,7 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
         };
     }, []);
 
+    // 로딩?
     if (isLoading) {
         return <div></div>;
     }
@@ -292,13 +293,19 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
                             />
 
                             <PlayerCastCanvas
+
                                 rankingData={data?.rankings}
                                 handleMouseEnter={handleMouseEnter}
                                 handleMouseLeave={handleMouseLeave}
                                 selected={selected}
                                 selectedSkill={selectedSkill}
                                 className={className}
-                                skillList={data?.playerSkillInfo}
+                                skillList={
+                                    new Array(
+                                        ...(data?.playerSkillInfo),
+                                        ...(data?.takenBuffInfo)
+                                    )
+                                }
                             />
                         </Layer>
                     </Stage>
