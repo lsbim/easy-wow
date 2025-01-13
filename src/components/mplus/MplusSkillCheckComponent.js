@@ -4,7 +4,7 @@ const MplusSkillCheckComponent = ({
     className, bossSkillInfo, playerSkillInfo, takenBuffInfo
     , firstBossIDs, selectedBossSkill, handleSelectSkill, selectedSkill
 }) => {
-    
+
     return (
         <div className='mb-4 md:flex'>
             {/* 보스 스킬 표기 on/off */}
@@ -19,7 +19,7 @@ const MplusSkillCheckComponent = ({
                     ?.filter(s => firstBossIDs?.includes(s))?.map((skill, i) => (
                         <a
                             href="#" data-wowhead={`spell=${skill}&domain=ko`}
-                            key={'bossSkillInfo' + skill}
+                            key={skill + 'bossSkillCheck'}
                             className={`w-[30px] h-[30px] hover:bg-slate-200 cursor-pointer
                                         ${selectedBossSkill.has(skill) ? 'border-[1px] border-gray-900 rounded-sm' : 'opacity-40'}`}
                             onClick={() => handleSelectSkill(skill, 'boss')}
@@ -40,7 +40,7 @@ const MplusSkillCheckComponent = ({
                 {playerSkillInfo?.map((skill, i) => (
                     <a
                         href="#" data-wowhead={`spell=${skill?.spellId}&domain=ko`}
-                        key={skill?.skillName}
+                        key={skill?.spellId + 'playerSkillCheck'}
                         className={`w-[30px] h-[30px] hover:bg-slate-200 cursor-pointer
                                         ${selectedSkill?.has(skill?.spellId) ? 'border-[1px] border-gray-900 rounded-sm' : 'opacity-40'}`}
                         onClick={() => handleSelectSkill(skill?.spellId, 'player')}
@@ -61,7 +61,7 @@ const MplusSkillCheckComponent = ({
                 {takenBuffInfo?.map((skill, i) => (
                     <a
                         href="#" data-wowhead={`spell=${skill?.spellId}&domain=ko`}
-                        key={skill?.spellId + 'takenBuff'}
+                        key={skill?.spellId + 'takenBuffCheck'}
                         className={`w-[30px] h-[30px] hover:bg-slate-200 cursor-pointer
                                         ${selectedSkill?.has(skill?.spellId) ? 'border-[1px] border-gray-900 rounded-sm' : 'opacity-40'}`}
                         onClick={() => handleSelectSkill(skill?.spellId, 'player')}

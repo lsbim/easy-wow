@@ -10,6 +10,7 @@ import TimelineBaseCanvas from './canvas/TimelineBaseCanvas';
 import MplusMRTModalComponent from './common/MplusMRTModalComponent';
 import MplusPlayerComponent from './MplusPlayerComponent';
 import MplusSkillCheckComponent from './MplusSkillCheckComponent';
+import { getMplusTimeline } from '../../api/mplusTimelineAPI';
 
 const MplusDefComponent = ({ className, specName, dungeonId }) => {
 
@@ -110,17 +111,11 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
             // import할 폴더나 파일이 없으면 catch 에러 발생
             try {
                 setIsLoading(true) // 로딩 시작
-
-                const importMyData = async (dungeonId, c, s) => {
-                    // console.log('데이터를 가져오기: ', dungeonId, c, s)
-                    const myData = await import(`../../objects/${dungeonId}/${c}/${s}.json`)
-                    // console.log('myData: ', myData)
-                    return myData
-                }
-
-                // 종합데이터
-                const loadedData = await importMyData(dungeonId, className, specName);
+    
+                // API 호출
+                const loadedData = await getMplusTimeline({dungeonId, className, specName});
                 setData(loadedData);
+                // console.log(data)
 
                 // 보스 이름 목록
                 const bossNames = loadedData?.rankings[0]?.fights?.pulls?.map(pull => pull?.name) || [];
@@ -152,7 +147,7 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
                 setSelected(0);
 
             } catch (e) {
-                // console.error('에러: ', e);
+                console.error('에러: ', e);
             } finally { // 성공 혹은 실패 이후
                 setIsLoading(false) // 로딩 종료
             }
