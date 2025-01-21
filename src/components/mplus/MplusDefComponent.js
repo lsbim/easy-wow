@@ -114,8 +114,12 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
     
                 // API 호출
                 const loadedData = await getMplusTimeline({dungeonId, className, specName});
+                console.log('API Response', loadedData)
+                if(!loadedData){
+                    console.log('No data loaded')
+                    return;
+                }
                 setData(loadedData);
-                // console.log(data)
 
                 // 보스 이름 목록
                 const bossNames = loadedData?.rankings[0]?.fights?.pulls?.map(pull => pull?.name) || [];
@@ -154,7 +158,7 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
         }
 
         loadData();
-    }, [className, dungeonId]);
+    }, [className, dungeonId, specName]);
 
     // 화면 사이즈 바뀌면 리렌더링
     useEffect(() => {
@@ -173,6 +177,10 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
     // 로딩?
     if (isLoading) {
         return <div></div>;
+    }
+
+    if(!data){
+        return <div></div>
     }
 
     // MRT 모달용

@@ -12,6 +12,11 @@ const router = createBrowserRouter([
     {
         path: "",
         element: <Suspense><MplusIndex /></Suspense>
+        
+    },
+    {
+        path: "*",
+        element: <Suspense><MplusIndex /></Suspense>
     },
     {
         path: "mplus/:dungeonId/:spec",

@@ -38,7 +38,7 @@ const MplusIndexComponent = () => {
                         key={d}
                         src={`${process.env.PUBLIC_URL}/images/mplus/dungeon/${d}.jpg`}
                         className={`w-[50px] h-[50px] hover:brightness-125 cursor-pointer ml-2
-                            ${selected?.dungeon !== 0 && selected?.dungeon === d
+                            ${selected?.dungeonId !== 0 && selected?.dungeonId === d
                                 ? 'border-2 border-black' : 'opacity-50'}`}
                         alt={d}
                         title={d}
