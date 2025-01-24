@@ -8,6 +8,7 @@ import BossCastCanvas from './canvas/BossCastCanvas';
 import PlayerCastCanvas from './canvas/PlayerCastCanvas';
 import TimelineBaseCanvas from './canvas/TimelineBaseCanvas';
 import MplusMRTModalComponent from './common/MplusMRTModalComponent';
+import UpdatingApiStatus from '../common/UpdatingApiStatus';
 import MplusPlayerComponent from './MplusPlayerComponent';
 import MplusSkillCheckComponent from './MplusSkillCheckComponent';
 import { getMplusTimeline } from '../../api/mplusTimelineAPI';
@@ -29,6 +30,7 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
     const [stageWidth, setStageWidth] = useState(window.innerWidth);
     const [stageHeight, setStageHeight] = useState(13 * TL_Y_PER_LIST + 9.5);
     const [isModalOpen, setIsModalOpen] = useState(-1);
+    const isUpdatingRef = useRef(false);
 
     // 드래그 시작
     const handleMouseDown = (e) => {
@@ -110,14 +112,20 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
         const loadData = async () => {
             // import할 폴더나 파일이 없으면 catch 에러 발생
             try {
-                setIsLoading(true) // 로딩 시작
-    
+                if (!isLoading) { // 업데이팅 상태에 쓸데없는 리렌더링 방지
+                    setIsLoading(true) // 로딩 시작
+                }
+
                 // API 호출
-                const loadedData = await getMplusTimeline({dungeonId, className, specName});
-                console.log('API Response', loadedData)
-                if(!loadedData){
-                    console.log('No data loaded')
-                    return;
+                const response = await getMplusTimeline({ dungeonId, className, specName });
+                const loadedData = JSON.parse(response?.data)
+                console.log('API Response', response)
+                if (response.status === "UPDATING") {
+                    if (!data === "UPDATING") { // 업데이팅 상태에 쓸데없는 리렌더링 방지
+                        setData("UPDATING");
+                    }
+                    setTimeout(loadData, 3000)
+                    return
                 }
                 setData(loadedData);
 
@@ -174,13 +182,27 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
         };
     }, []);
 
+
+
     // 로딩?
     if (isLoading) {
         return <div></div>;
     }
 
-    if(!data){
-        return <div></div>
+    if (!data) {
+        return <UpdatingApiStatus
+            className={className}
+            specName={specName}
+            dungeonId={dungeonId}
+        />;
+    }
+
+    if (data === "UPDATING") {
+        return <UpdatingApiStatus
+            className={className}
+            specName={specName}
+            dungeonId={dungeonId}
+        />;
     }
 
     // MRT 모달용

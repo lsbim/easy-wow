@@ -23,5 +23,5 @@ export const getMplusTimeline = async (params) => {
         console.log(res)
     }
 
-    return res.data;
+    return res?.data;
 }
