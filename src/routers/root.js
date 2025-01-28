@@ -10,18 +10,18 @@ const MplusIndex = lazy(() => import("../pages/mplus/MplusIndexPage"));
 // suspense => 컴포넌트 로딩 전까지(비동기) 보여줄 화면(fallback).
 const router = createBrowserRouter([
     {
-        path: "",
+        path: "/",
         element: <Suspense><MplusIndex /></Suspense>
         
     },
     {
-        path: "*",
-        element: <Suspense><MplusIndex /></Suspense>
-    },
-    {
         path: "mplus/:dungeonId/:spec",
         element: <Suspense><MplusDefPage /></Suspense>
+    },
+    {
+        path: "*",
+        element: <Suspense><MplusIndex /></Suspense>
     }
-], { basename: "/easy-wow" })
+], { basename: process.env.PUBLIC_URL })
 
 export default router;

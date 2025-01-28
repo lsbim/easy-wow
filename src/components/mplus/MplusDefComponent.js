@@ -121,7 +121,7 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
                 const loadedData = JSON.parse(response?.data)
                 console.log('API Response', response)
                 if (response.status === "UPDATING") {
-                    if (!data === "UPDATING") { // 업데이팅 상태에 쓸데없는 리렌더링 방지
+                    if (data === "UPDATING") { // 업데이팅 상태에 쓸데없는 리렌더링 방지
                         setData("UPDATING");
                     }
                     setTimeout(loadData, 3000)
@@ -189,7 +189,7 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
         return <div></div>;
     }
 
-    if (!data) {
+    if (data === "UPDATING") {
         return <UpdatingApiStatus
             className={className}
             specName={specName}
@@ -197,12 +197,8 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
         />;
     }
 
-    if (data === "UPDATING") {
-        return <UpdatingApiStatus
-            className={className}
-            specName={specName}
-            dungeonId={dungeonId}
-        />;
+    if (!data) {
+        return <div></div>;
     }
 
     // MRT 모달용
@@ -318,7 +314,6 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
                             />
 
                             <PlayerCastCanvas
-
                                 rankingData={data?.rankings}
                                 handleMouseEnter={handleMouseEnter}
                                 handleMouseLeave={handleMouseLeave}

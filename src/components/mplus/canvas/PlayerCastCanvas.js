@@ -18,6 +18,7 @@ const PlayerCastCanvas = ({ rankingData, handleMouseEnter, handleMouseLeave, sel
                     return [...acc, ...timeline];
                 }, []) ?? []; // , []는 acc의 최초 선언 타입 빈 배열
 
+
                 // 받은 외생기
                 const mergedPlayerTakenBuffs = pull?.events?.playerTakenDef?.reduce((acc, buffs) => {
                     const timeline = convertToTimeline(buffs);
@@ -29,6 +30,22 @@ const PlayerCastCanvas = ({ rankingData, handleMouseEnter, handleMouseLeave, sel
                     ...mergedPlayerCasts,
                     ...mergedPlayerTakenBuffs
                 ].sort((a, b) => a?.timestamp - b?.timestamp);
+
+                if (!player?.fights) {
+                    return (
+                        <Group key={player?.name + playerIndex}
+                            y={(playerIndex + 1) * TL_DURATION_RECT_HEIGHT}
+                        >
+                            <Text
+                                x={10}
+                                y={TL_Y_PLAYER_TEXT}
+                                text={"WCL 오류로 데이터를 불러오지 못했습니다."}
+                                fontSize={14}
+                                fill="black"
+                            />
+                        </Group>
+                    )
+                }
 
                 return (
                     <Group key={player?.name + playerIndex}
