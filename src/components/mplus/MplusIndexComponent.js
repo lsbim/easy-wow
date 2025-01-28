@@ -36,7 +36,7 @@ const MplusIndexComponent = () => {
                 {mplusDungeonList.map(d => (
                     <img
                         key={d}
-                        src={`${process.env.PUBLIC_URL}/images/mplus/dungeon/${d}.jpg`}
+                        src={`${process.env.REACT_APP_IMAGES_IP}/images/mplus/dungeon/${d}.jpg`}
                         className={`w-[50px] h-[50px] hover:brightness-125 cursor-pointer ml-2
                             ${selected?.dungeonId !== 0 && selected?.dungeonId === d
                                 ? 'border-2 border-black' : 'opacity-50'}`}
@@ -50,33 +50,34 @@ const MplusIndexComponent = () => {
                 {wowClassList.map(c => (
                     <div className="flex flex-col items-center ml-2 mb-2" key={c?.name}>
                         <img
-                            src={`${process.env.PUBLIC_URL}/images/player/spec/${c?.name}.jpg`}
+                            src={`${process.env.REACT_APP_IMAGES_IP}/images/player/spec/${c?.name}.jpg`}
                             className={`w-[50px] h-[50px] opacity-70`}
                             alt={c?.name}
                             title={c?.name}
                         />
                         <div className="">
                             {c?.specs?.
-                            // filter(s => s.has)?.
-                            map(s => (
-                                <img
-                                    key={s?.name}
-                                    src={`${process.env.PUBLIC_URL}/images/player/spec/${c?.name}${s?.name}.jpg`}
-                                    className={`w-[30px] h-[30px] mt-2 transition-none
-                                        ${ s ?
-                                            // s?.has ? 
-                                            // 커서-포인터를 기본에 두니 !has도 계속 포인터로 나옴
-                                            selected?.spec !== '' && selected?.spec === c?.name + '-' + s?.name
-                                                ? 'border-2 border-black hover:brightness-125 cursor-pointer'
-                                                : 'opacity-70 hover:brightness-125 cursor-pointer'
-                                            : 'grayscale opacity-50'}`}
-                                    alt={s?.name}
-                                    title={s?.name}
-                                    onClick={() => { 
-                                        // s?.has && 
-                                        handleSpecClick(c?.name + '-' + s?.name) }}
-                                />
-                            ))}
+                                // filter(s => s.has)?.
+                                map(s => (
+                                    <img
+                                        key={s?.name}
+                                        src={`${process.env.REACT_APP_IMAGES_IP}/images/player/spec/${c?.name}${s?.name}.jpg`}
+                                        className={`w-[30px] h-[30px] mt-2 transition-none
+                                        ${s ?
+                                                // s?.has ? 
+                                                // 커서-포인터를 기본에 두니 !has도 계속 포인터로 나옴
+                                                selected?.spec !== '' && selected?.spec === c?.name + '-' + s?.name
+                                                    ? 'border-2 border-black hover:brightness-125 cursor-pointer'
+                                                    : 'opacity-70 hover:brightness-125 cursor-pointer'
+                                                : 'grayscale opacity-50'}`}
+                                        alt={s?.name}
+                                        title={s?.name}
+                                        onClick={() => {
+                                            // s?.has && 
+                                            handleSpecClick(c?.name + '-' + s?.name)
+                                        }}
+                                    />
+                                ))}
                         </div>
                     </div>
                 ))}

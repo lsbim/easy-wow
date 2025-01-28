@@ -22,6 +22,8 @@ const router = createBrowserRouter([
         path: "*",
         element: <Suspense><MplusIndex /></Suspense>
     }
-], { basename: process.env.PUBLIC_URL })
+]
+// , { basename: "/" } github pages에 사용되었음
+)
 
 export default router;

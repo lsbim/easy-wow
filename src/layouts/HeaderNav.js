@@ -22,7 +22,7 @@ const HeaderNav = ({ spec, dungeonId }) => {
                 {mplusDungeonList.map(d => (
                     <img
                         key={d}
-                        src={`${process.env.PUBLIC_URL}/images/mplus/dungeon/${d}.jpg`}
+                        src={`${process.env.REACT_APP_IMAGES_IP}/images/mplus/dungeon/${d}.jpg`}
                         className={`hover:brightness-150 hover:opacity-100
                             w-[50px] h-[50px] opacity-50 cursor-pointer`}
                         style={{

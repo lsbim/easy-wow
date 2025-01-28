@@ -30,7 +30,7 @@ const MplusPlayerComponent = ({ code, fightID, name, myClass, spec, hardModeLeve
             >
                 <div className="flex-shrink-0 text-[14px] relative">
                     <img
-                        src={`${process.env.PUBLIC_URL}/images/player/spec/${myClass}${spec}.jpg`}
+                        src={`${process.env.REACT_APP_IMAGES_IP}/images/player/spec/${myClass}${spec}.jpg`}
                         className={`shadow-[1px_0_0_black,0_1px_0_black,1px_1px_0_black,1px_0_0_black_inset,0_1px_0_black_inset] top-[1px] absolute`}
                         style={{ height: `${height - 1}px` }}
                         alt={spec}

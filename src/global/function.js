@@ -122,6 +122,6 @@ export const timestampToPosition = (timestamp) => {
 
 export const convertToSrc = (abil, type) => {
     return type === 'mplus'
-    ? `${process.env.PUBLIC_URL}/images/mplus/boss/spell/${abil}.jpg`
-    : `${process.env.PUBLIC_URL}/images/player/spell/${abil}.jpg`;
+    ? `${process.env.REACT_APP_IMAGES_IP}/images/mplus/boss/spell/${abil}.jpg`
+    : `${process.env.REACT_APP_IMAGES_IP}/images/player/spell/${abil}.jpg`;
 }

@@ -118,8 +118,7 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
 
                 // API 호출
                 const response = await getMplusTimeline({ dungeonId, className, specName });
-                const loadedData = JSON.parse(response?.data)
-                console.log('API Response', response)
+                // console.log('API Response', response)
                 if (response.status === "UPDATING") {
                     if (data === "UPDATING") { // 업데이팅 상태에 쓸데없는 리렌더링 방지
                         setData("UPDATING");
@@ -127,6 +126,7 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
                     setTimeout(loadData, 3000)
                     return
                 }
+                const loadedData = JSON.parse(response?.data);
                 setData(loadedData);
 
                 // 보스 이름 목록
@@ -238,7 +238,7 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
                 {bossList?.map((boss, i) => (
                     <img
                         key={boss}
-                        src={`${process.env.PUBLIC_URL}/images/mplus/boss/face/${boss}.png`}
+                        src={`${process.env.REACT_APP_IMAGES_IP}/images/mplus/boss/face/${boss}.png`}
                         className={`w-[100px] h-[50px] hover:bg-slate-300 cursor-pointer
                             ${selected === i ? 'bg-slate-300' : ''}`}
                         alt={boss}

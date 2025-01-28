@@ -21,14 +21,14 @@ const UpdatingApiStatus = ({ className, specName, dungeonId }) => {
             <div>
                 <div className="flex mb-4">
                     <img
-                        src={`${process.env.PUBLIC_URL}/images/player/spec/${className}${specName}.jpg`}
+                        src={`${process.env.REACT_APP_IMAGES_IP}/images/player/spec/${className}${specName}.jpg`}
                         className={`hover:brightness-125 cursor-pointer animate-pulse`}
                         style={{ height: 50 }}
                         alt={specName}
                         title={specName}
                     />
                     <img
-                        src={`${process.env.PUBLIC_URL}/images/mplus/dungeon/${dungeonId}.jpg`}
+                        src={`${process.env.REACT_APP_IMAGES_IP}/images/mplus/dungeon/${dungeonId}.jpg`}
                         className={`w-[50px] h-[50px] hover:brightness-125 cursor-pointer ml-2 animate-pulse`}
                         alt={dungeonId}
                         title={dungeonId}
