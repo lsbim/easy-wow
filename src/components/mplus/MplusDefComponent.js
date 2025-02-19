@@ -30,7 +30,6 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
     const [stageWidth, setStageWidth] = useState(window.innerWidth);
     const [stageHeight, setStageHeight] = useState(13 * TL_Y_PER_LIST + 9.5);
     const [isModalOpen, setIsModalOpen] = useState(-1);
-    const isUpdatingRef = useRef(false);
 
     // 드래그 시작
     const handleMouseDown = (e) => {
@@ -42,10 +41,8 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
     useEffect(() => {
         const handleGlobalMouseMove = (e) => {
             if (isDragging) {
-                const deltaX = e.clientX - startX; // e.evt 대신 e 사용 (window 이벤트이므로)
-                const scaleFactor = window.innerWidth / REFERENCE_WIDTH * 0.7; // 기준 너비를 잡고 현재 너비에 나눠서 비율만큼 속도 조정
-                // console.log(scaleFactor)
-                setOffsetX(prevOffsetX => Math.min(prevOffsetX + deltaX * scaleFactor, 0)); // 0.7는 추가 속도 보정
+                const deltaX = e.movementX; // e.movementX는 마지막 이벤트 이후 마우스 이동값(픽셀 단위)
+                setOffsetX(prevOffsetX => Math.min(prevOffsetX + deltaX * 0.7, 0)); // 0.7는 추가 속도 보정
                 setStartX(e.clientX);
             }
         };
@@ -126,8 +123,9 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
                     setTimeout(loadData, 3000)
                     return
                 }
-                const loadedData = JSON.parse(response?.data);
+                const loadedData = response?.data;
                 setData(loadedData);
+                // console.log("My DATA: ", loadedData)
 
                 // 보스 이름 목록
                 const bossNames = loadedData?.rankings[0]?.fights?.pulls?.map(pull => pull?.name) || [];
@@ -153,13 +151,13 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
                 }
                 initSelectedSkills?.forEach(a => preloadImage(a, className));
                 initBossSkills?.forEach(a => preloadImage(a, 'mplus'));
-                bossNames?.forEach(b => preloadImage(`${process.env.PUBLIC_URL}/images/mplus/boss/face/${b}.png`));
+                bossNames?.forEach(b => preloadImage(`${process.env.REACT_APP_IMAGES_IP}/images/mplus/boss/face/${b}.png`));
 
                 // 보스정보 0번 인덱스로 초기화
                 setSelected(0);
 
             } catch (e) {
-                console.error('에러: ', e);
+                // console.error('에러: ', e);
             } finally { // 성공 혹은 실패 이후
                 setIsLoading(false) // 로딩 종료
             }
@@ -201,13 +199,29 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
         return <div></div>;
     }
 
+    // 주문번호 = 주문명 MAP 만들기
+    const skillMap = {};
+    [...data?.playerSkillInfo, ...data?.takenBuffInfo].forEach(skill => {
+        skillMap[skill.spellId] = skill.spellName;
+    });
     // MRT 모달용
     const modalPull = data?.rankings[isModalOpen]?.fights?.pulls[selected]
     const modalStartTime = modalPull?.startTime
-    const modalTimeline = modalPull?.events?.playerCasts?.reduce((acc, casts) => {
+    // 플레이어 캐스트 스킬, 받은 외생기 추출
+    const modalPlayerCasts = modalPull?.events?.playerCasts?.reduce((acc, casts) => {
         const timeline = convertToTimeline(casts);
         return [...acc, ...timeline];
-    }, []);
+    }, []) || [];
+    const modalPlayerTakenBuffs = modalPull?.events?.playerTakenDef?.reduce((acc, buffs) => {
+        const timeline = convertToTimeline(buffs);
+        return [...acc, ...timeline];
+    }, []) || [];
+
+    // 병합하고 타임스탬프로 정렬 + 스킬 정보 삽입
+    const modalTimeline = [...modalPlayerCasts, ...modalPlayerTakenBuffs].map(skill => ({
+        ...skill,
+        skillName: skillMap[skill.abilityGameID] || ''
+    }));
     modalTimeline?.sort((a, b) => a?.timestamp - b?.timestamp);
 
     // 0번(첫번째) 인덱스의 보스 데이터
@@ -236,15 +250,20 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
             {/* 보스 선택 */}
             <div className='flex my-2'>
                 {bossList?.map((boss, i) => (
-                    <img
-                        key={boss}
-                        src={`${process.env.REACT_APP_IMAGES_IP}/images/mplus/boss/face/${boss}.png`}
-                        className={`w-[100px] h-[50px] hover:bg-slate-300 cursor-pointer
-                            ${selected === i ? 'bg-slate-300' : ''}`}
-                        alt={boss}
-                        title={boss}
-                        onClick={() => handleSelectBoss(i)}
-                    />
+                    <div key={boss} className='relative'>
+                        <img
+                            src={`${process.env.REACT_APP_IMAGES_IP}/images/mplus/boss/face/${boss}.png`}
+                            className={`w-[100px] h-[50px] cursor-pointer transition-all duration-200
+                    ${selected === i ? 'shadow-md' : 'opacity-80'}
+                    hover:opacity-100 hover:shadow-lg hover:scale-[1.02]`}
+                            alt={boss}
+                            title={boss}
+                            onClick={() => handleSelectBoss(i)}
+                        />
+                        {selected === i && (
+                            <div className="absolute bottom-0 left-0 right-0 h-2 bg-slate-700 border-t-4 border-white"></div>
+                        )}
+                    </div>
                 ))}
             </div>
             {/* 스킬 표기 on/off */}

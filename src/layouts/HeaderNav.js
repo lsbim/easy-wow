@@ -20,19 +20,25 @@ const HeaderNav = ({ spec, dungeonId }) => {
             </Link>
             <div className="flex mr-8">
                 {mplusDungeonList.map(d => (
-                    <img
-                        key={d}
-                        src={`${process.env.REACT_APP_IMAGES_IP}/images/mplus/dungeon/${d}.jpg`}
-                        className={`hover:brightness-150 hover:opacity-100
-                            w-[50px] h-[50px] opacity-50 cursor-pointer`}
-                        style={{
-                            border: String(d) === dungeonId ? '4px solid white' : 'none',
-                            opacity: String(d) === dungeonId ? 1 : 0.5
-                        }}
-                        alt={d}
-                        title={d}
-                        onClick={() => handleDungeonClick(d)}
-                    />
+                    <div 
+                    key={d} 
+                    onClick={() => handleDungeonClick(d)}
+                    className="relative">
+                        <img
+                            src={`${process.env.REACT_APP_IMAGES_IP}/images/mplus/dungeon/${d}.jpg`}
+                            className={`hover:brightness-150 hover:opacity-100
+                                w-[50px] h-[50px] opacity-50 cursor-pointer`}
+                            style={{
+                                // borderBottom: String(d) === dungeonId ? '4px solid white' : 'none',
+                                opacity: String(d) === dungeonId ? 1 : 0.5
+                            }}
+                            alt={d}
+                            title={d}
+                        />
+                        {String(d) === dungeonId && (
+                            <div className="absolute bottom-0 left-0 right-0 h-2 bg-white border-[1px] border-black"></div>
+                        )}
+                    </div>
                 ))}
             </div>
         </div>

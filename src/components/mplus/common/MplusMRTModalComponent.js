@@ -3,6 +3,8 @@ import ModalText from "../../common/ModalText";
 
 const MplusMRTModalComponent = ({ setIsModalOpen, modalText, type, modalStartTime }) => {
 
+    // console.log(modalText)
+
     const modalTextStr = modalText?.map(item => {
         const timestamp = convertToMMSS(item.timestamp - modalStartTime);
 
