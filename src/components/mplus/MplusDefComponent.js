@@ -117,7 +117,7 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
                 const response = await getMplusTimeline({ dungeonId, className, specName });
                 // console.log('API Response', response)
                 if (response.status === "UPDATING") {
-                    if (data === "UPDATING") { // 업데이팅 상태에 쓸데없는 리렌더링 방지
+                    if (data !== "UPDATING") { // 업데이팅 상태에 쓸데없는 리렌더링 방지
                         setData("UPDATING");
                     }
                     setTimeout(loadData, 3000)
@@ -285,7 +285,7 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
                         style={{ width: `${PL_WIDTH + 30}px`, height: `${TL_DURATION_RECT_HEIGHT}px` }}
                     >
                         <div className="text-[14px] flex justify-center items-center h-full text-ellipsis overflow-hidden whitespace-nowrap">
-                            {firstBoss?.name}
+                            {firstBoss?.krBossName || "보스"}
                         </div>
                     </div>
                     {/* 좌측 플레이어 리스트 */}
@@ -358,9 +358,11 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
                             top: tooltip.y - 60
                         }}
                     >
-                        <div>
-                            {tooltip.text}
-                        </div>
+                        {tooltip?.text && tooltip?.text !== "null" && (
+                            <div>
+                                {tooltip.text}
+                            </div>
+                        )}
                         <div>
                             {tooltip.timestamp}
                         </div>

@@ -69,7 +69,7 @@ const BossCastCanvas = ({ enemyCastsTimeline, handleMouseEnter, handleMouseLeave
                                 type={'mplus'}
                                 timestamp={cast.timestamp}
                                 startTime={firstBoss.startTime}
-                                onMouseEnter={(e) => handleMouseEnter(e, cast.abilityGameID, convertToMMSS(cast.timestamp - firstBoss.startTime))}
+                                onMouseEnter={(e) => handleMouseEnter(e, null, convertToMMSS(cast.timestamp - firstBoss.startTime))}
                                 onMouseLeave={handleMouseLeave}
                             />
                         ))}
