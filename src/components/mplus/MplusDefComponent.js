@@ -125,7 +125,7 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
                 }
                 const loadedData = response?.data;
                 setData(loadedData);
-                // console.log("My DATA: ", loadedData)
+                console.log("My DATA: ", loadedData)
 
                 // 보스 이름 목록
                 const bossNames = loadedData?.rankings[0]?.fights?.pulls?.map(pull => pull?.name) || [];
@@ -248,9 +248,9 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
                 />
             )}
             {/* 보스 선택 */}
-            <div className='flex my-2'>
+            <div className='flex my-2 overflow-x-hidden '>
                 {bossList?.map((boss, i) => (
-                    <div key={boss} className='relative'>
+                    <div key={boss} className='relative min-w-[100px]'>
                         <img
                             src={`${process.env.REACT_APP_IMAGES_IP}/images/mplus/boss/face/${boss}.png`}
                             className={`w-[100px] h-[50px] cursor-pointer transition-all duration-200

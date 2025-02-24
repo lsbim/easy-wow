@@ -12,13 +12,13 @@ const HeaderNav = ({ spec, dungeonId }) => {
     }
 
     return (
-        <div className="flex justify-between items-center py-2 mb-20 bg-slate-700 text-white">
+        <div className="flex justify-between items-center py-2 mb-20 bg-slate-700 text-white overflow-x-hidden">
             <Link
                 to={"/"}
-                className="font-bold text-[18px] ml-8 hover:text-slate-300 transition-colors duration-300">
+                className="font-bold text-[18px] ml-8 mr-4 hover:text-slate-300 transition-colors duration-300">
                 HOME
             </Link>
-            <div className="flex mr-8">
+            <div className="flex mr-8 min-w-[400px]">
                 {mplusDungeonList.map(d => (
                     <div 
                     key={d} 

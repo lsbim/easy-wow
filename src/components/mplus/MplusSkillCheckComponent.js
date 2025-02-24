@@ -10,7 +10,7 @@ const MplusSkillCheckComponent = ({
             {/* 보스 스킬 표기 on/off */}
             <div className='flex items-center md:mr-3'>
                 <div className='w-[40px] h-[40px] mr-1 border-2 border-black'>
-                    <img className='w-[40px] h-[40px]'
+                    <img className='min-w-[36px]'
                         src={`${process.env.REACT_APP_IMAGES_IP}/images/common/mark/tyrannical.jpg`}
                     />
                 </div>
@@ -26,6 +26,7 @@ const MplusSkillCheckComponent = ({
                         >
                             <img
                                 src={`${process.env.REACT_APP_IMAGES_IP}/images/mplus/boss/spell/${skill}.jpg`}
+                                className="min-w-[28px]"
                             />
                         </a>
                     ))}
@@ -35,6 +36,7 @@ const MplusSkillCheckComponent = ({
                 <div className='w-[40px] h-[40px] mr-1 border-2 border-black'>
                     <img
                         src={`${process.env.REACT_APP_IMAGES_IP}/images/player/spec/${className}.jpg`}
+                        className="min-w-[36px]"
                     />
                 </div>
                 {playerSkillInfo?.map((skill, i) => (
@@ -47,6 +49,7 @@ const MplusSkillCheckComponent = ({
                     >
                         <img
                             src={`${process.env.REACT_APP_IMAGES_IP}/images/player/spell/${skill?.spellId}.jpg`}
+                            className="min-w-[28px]"
                         />
                     </a>
                 ))}
@@ -56,6 +59,7 @@ const MplusSkillCheckComponent = ({
                 <div className='w-[40px] h-[40px] mr-1 border-2 border-black'>
                     <img
                         src={`${process.env.REACT_APP_IMAGES_IP}/images/player/spell/10060.jpg`}
+                        className="min-w-[36px]"
                     />
                 </div>
                 {takenBuffInfo?.map((skill, i) => (
@@ -68,6 +72,7 @@ const MplusSkillCheckComponent = ({
                     >
                         <img
                             src={`${process.env.REACT_APP_IMAGES_IP}/images/player/spell/${skill?.spellId}.jpg`}
+                            className="min-w-[28px]"
                         />
                     </a>
                 ))}
