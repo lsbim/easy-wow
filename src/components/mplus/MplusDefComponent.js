@@ -12,11 +12,10 @@ import UpdatingApiStatus from '../common/UpdatingApiStatus';
 import MplusPlayerComponent from './MplusPlayerComponent';
 import MplusSkillCheckComponent from './MplusSkillCheckComponent';
 import { getMplusTimeline } from '../../api/mplusTimelineAPI';
+import TimelineStageCanvas from './canvas/TimelineStageCanvas';
 
 const MplusDefComponent = ({ className, specName, dungeonId }) => {
 
-    const stageRef = useRef();
-    const layerRef = useRef();
     const [isLoading, setIsLoading] = useState(true);
     const [data, setData] = useState(null);
     const [tooltip, setTooltip] = useState({ visible: false, x: 0, y: 0, text: '', timestamp: '' });
@@ -27,8 +26,6 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
     const [isDragging, setIsDragging] = useState(false);
     const [startX, setStartX] = useState(0); // 드래그 시작 X 좌표
     const [offsetX, setOffsetX] = useState(0); // 타임라인의 X 위치
-    const [stageWidth, setStageWidth] = useState(window.innerWidth);
-    const [stageHeight, setStageHeight] = useState(13 * TL_Y_PER_LIST + 9.5);
     const [isModalOpen, setIsModalOpen] = useState(-1);
 
     // 드래그 시작
@@ -104,10 +101,9 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
         }
     }
 
-    // 파일 불러오기
+    // 데이터 불러오기
     useEffect(() => {
         const loadData = async () => {
-            // import할 폴더나 파일이 없으면 catch 에러 발생
             try {
                 if (!isLoading) { // 업데이팅 상태에 쓸데없는 리렌더링 방지
                     setIsLoading(true) // 로딩 시작
@@ -125,7 +121,7 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
                 }
                 const loadedData = response?.data;
                 setData(loadedData);
-                console.log("My DATA: ", loadedData)
+                // console.log("My DATA: ", loadedData)
 
                 // 보스 이름 목록
                 const bossNames = loadedData?.rankings[0]?.fights?.pulls?.map(pull => pull?.name) || [];
@@ -165,21 +161,6 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
 
         loadData();
     }, [className, dungeonId, specName]);
-
-    // 화면 사이즈 바뀌면 리렌더링
-    useEffect(() => {
-        const handleResize = () => {
-            setStageWidth(window.innerWidth);
-            setStageHeight(13 * TL_Y_PER_LIST + 9.5);
-        };
-
-        window.addEventListener('resize', handleResize);
-
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    }, []);
-
 
 
     // 로딩?
@@ -307,47 +288,29 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
                     ))}
                 </div>
                 <div className='overflow-hidden flex-grow cursor-pointer'>
-                    {/* 타임라인 */}
-                    <Stage
-                        ref={stageRef}
-                        width={stageWidth}
-                        height={stageHeight}
-                        onMouseDown={handleMouseDown}
-                    // onMouseMove={handleMouseMove}
-                    // onMouseUp={handleMouseUp}
-                    >
-                        <Layer
-                            ref={layerRef}
-                            x={offsetX}
-                        >
-                            <TimelineBaseCanvas
-                                combatTime={combatTime}
-                            />
-                            <BossCastCanvas
-                                enemyCastsTimeline={enemyCastsTimeline}
-                                handleMouseEnter={handleMouseEnter}
-                                handleMouseLeave={handleMouseLeave}
-                                firstBoss={firstBoss}
-                                combatTime={combatTime}
-                                selectedBossSkill={selectedBossSkill}
-                            />
 
-                            <PlayerCastCanvas
-                                rankingData={data?.rankings}
-                                handleMouseEnter={handleMouseEnter}
-                                handleMouseLeave={handleMouseLeave}
-                                selected={selected}
-                                selectedSkill={selectedSkill}
-                                className={className}
-                                skillList={
-                                    new Array(
-                                        ...(data?.playerSkillInfo),
-                                        ...(data?.takenBuffInfo)
-                                    )
-                                }
-                            />
-                        </Layer>
-                    </Stage>
+                    {/* 타임라인 */}
+                    <TimelineStageCanvas
+                        handleMouseDown={handleMouseDown}
+                        offsetX={offsetX}
+                        combatTime={combatTime}
+                        enemyCastsTimeline={enemyCastsTimeline}
+                        handleMouseEnter={handleMouseEnter}
+                        handleMouseLeave={handleMouseLeave}
+                        firstBoss={firstBoss}
+                        selectedBossSkill={selectedBossSkill}
+                        rankingData={data?.rankings}
+                        selected={selected}
+                        selectedSkill={selectedSkill}
+                        className={className}
+                        skillList={
+                            new Array(
+                                ...(data?.playerSkillInfo),
+                                ...(data?.takenBuffInfo)
+                            )
+                        }
+                    />
+
                 </div>
                 {/* 툴팁박스 */}
                 {tooltip.visible && (
