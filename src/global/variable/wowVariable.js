@@ -2,238 +2,306 @@ export const wowClassList = [
     {
         "id": 1,
         "name": "DeathKnight",
+        "koName": "죽음의기사",
         "specs": [
             {
                 "id": 1,
-                "name": "Blood"
+                "name": "Blood",
+                "koName": "혈기"
             },
             {
                 "id": 2,
-                "name": "Frost"
+                "name": "Frost",
+                "koName": "냉기"
             },
             {
                 "id": 3,
-                "name": "Unholy"
+                "name": "Unholy",
+                "koName": "부정",
             }
         ]
     },
     {
         "id": 2,
         "name": "Druid",
+        "koName": "드루이드",
         "specs": [
             {
                 "id": 1,
                 "name": "Balance",
+                "koName": "조화",
                 "has": true
             },
             {
                 "id": 2,
-                "name": "Feral"
+                "name": "Feral",
+                "koName": "야성",
             },
             {
                 "id": 3,
-                "name": "Guardian"
+                "name": "Guardian",
+                "koName": "수호",
             },
             {
                 "id": 4,
-                "name": "Restoration"
+                "name": "Restoration",
+                "koName": "회복",
             }
         ]
     },
     {
         "id": 3,
         "name": "Hunter",
+        "koName": "사냥꾼",
         "specs": [
             {
                 "id": 1,
-                "name": "BeastMastery"
+                "name": "BeastMastery",
+                "koName": "야수",
             },
             {
                 "id": 2,
-                "name": "Marksmanship"
+                "name": "Marksmanship",
+                "koName": "사격",
             },
             {
                 "id": 3,
-                "name": "Survival"
+                "name": "Survival",
+                "koName": "생존",
             }
         ]
     },
     {
         "id": 4,
         "name": "Mage",
+        "koName": "마법사",
         "specs": [
             {
                 "id": 1,
-                "name": "Arcane"
+                "name": "Arcane",
+                "koName": "비전",
             },
             {
                 "id": 2,
-                "name": "Fire"
+                "name": "Fire",
+                "koName": "화염",
             },
             {
                 "id": 3,
-                "name": "Frost"
+                "name": "Frost",
+                "koName": "냉기",
             }
         ]
     },
     {
         "id": 5,
         "name": "Monk",
+        "koName": "수도사",
         "specs": [
             {
                 "id": 1,
-                "name": "Brewmaster"
+                "name": "Brewmaster",
+                "koName": "양조",
             },
             {
                 "id": 2,
-                "name": "Mistweaver"
+                "name": "Mistweaver",
+                "koName": "운무",
             },
             {
                 "id": 3,
-                "name": "Windwalker"
+                "name": "Windwalker",
+                "koName": "풍운",
             }
         ]
     },
     {
         "id": 6,
         "name": "Paladin",
+        "koName": "성기사",
         "specs": [
             {
                 "id": 1,
-                "name": "Holy"
+                "name": "Holy",
+                "koName": "신성",
             },
             {
                 "id": 2,
-                "name": "Protection"
+                "name": "Protection",
+                "koName": "보호",
             },
             {
                 "id": 3,
-                "name": "Retribution"
+                "name": "Retribution",
+                "koName": "징벌",
             }
         ]
     },
     {
         "id": 7,
         "name": "Priest",
+        "koName": "사제",
         "specs": [
             {
                 "id": 1,
                 "name": "Discipline",
+                "koName": "수양",
                 "has": true
             },
             {
                 "id": 2,
-                "name": "Holy"
+                "name": "Holy",
+                "koName": "신성",
             },
             {
                 "id": 3,
-                "name": "Shadow"
+                "name": "Shadow",
+                "koName": "암흑",
             }
         ]
     },
     {
         "id": 8,
         "name": "Rogue",
+        "koName": "도적",
         "specs": [
             {
                 "id": 1,
-                "name": "Assassination"
+                "name": "Assassination",
+                "koName": "암살",
             },
             {
                 "id": 3,
-                "name": "Subtlety"
+                "name": "Subtlety",
+                "koName": "잠행",
             },
             {
                 "id": 4,
-                "name": "Outlaw"
+                "name": "Outlaw",
+                "koName": "무법",
             }
         ]
     },
     {
         "id": 9,
         "name": "Shaman",
+        "koName": "주술사",
         "specs": [
             {
                 "id": 1,
-                "name": "Elemental"
+                "name": "Elemental",
+                "koName": "정기",
             },
             {
                 "id": 2,
-                "name": "Enhancement"
+                "name": "Enhancement",
+                "koName": "고양",
             },
             {
                 "id": 3,
-                "name": "Restoration"
+                "name": "Restoration",
+                "koName": "복원",
             }
         ]
     },
     {
         "id": 10,
         "name": "Warlock",
+        "koName": "흑마법사",
         "specs": [
             {
                 "id": 1,
-                "name": "Affliction"
+                "name": "Affliction",
+                "koName": "고통",
             },
             {
                 "id": 2,
-                "name": "Demonology"
+                "name": "Demonology",
+                "koName": "악마",
             },
             {
                 "id": 3,
-                "name": "Destruction"
+                "name": "Destruction",
+                "koName": "파괴",
             }
         ]
     },
     {
         "id": 11,
         "name": "Warrior",
+        "koName": "전사",
         "specs": [
             {
                 "id": 1,
-                "name": "Arms"
+                "name": "Arms",
+                "koName": "무기",
             },
             {
                 "id": 2,
-                "name": "Fury"
+                "name": "Fury",
+                "koName": "분노",
             },
             {
                 "id": 3,
-                "name": "Protection"
+                "name": "Protection",
+                "koName": "방어",
             }
         ]
     },
     {
         "id": 12,
         "name": "DemonHunter",
+        "koName": "악마사냥꾼",
         "specs": [
             {
                 "id": 1,
-                "name": "Havoc"
+                "name": "Havoc",
+                "koName": "파멸",
             },
             {
                 "id": 2,
-                "name": "Vengeance"
+                "name": "Vengeance",
+                "koName": "복수",
             }
         ]
     },
     {
         "id": 13,
         "name": "Evoker",
+        "koName": "기원사",
         "specs": [
             {
                 "id": 1,
-                "name": "Devastation"
+                "name": "Devastation",
+                "koName": "황폐",
             },
             {
                 "id": 2,
-                "name": "Preservation"
+                "name": "Preservation",
+                "koName": "보존",
             },
             {
                 "id": 3,
                 "name": "Augmentation",
+                "koName": "증강",
                 "has": true
             }
         ]
     }
 ]
+
+export function getKoClassName(className) {
+    const foundClass = wowClassList?.find(item => item?.name === className);
+
+    return foundClass ? foundClass?.koName : className
+}
+
+export function getKoSpecName(className, specName) {
+    const foundClass = wowClassList?.find(item => item?.name === className);
+    if(!foundClass){
+        return specName;
+    }
+
+    const foundSpec = foundClass?.specs?.find(spec => spec?.name === specName);
+    return foundSpec ? foundSpec?.koName : specName
+}

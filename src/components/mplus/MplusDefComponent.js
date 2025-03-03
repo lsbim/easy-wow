@@ -1,18 +1,13 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { Layer, Stage } from 'react-konva';
+import React, { useEffect, useState } from 'react';
+import { getMplusTimeline } from '../../api/mplusTimelineAPI';
 import { convertToMMSS, convertToSrc, convertToTimeline } from '../../global/function';
 import { bannedBossSkills } from '../../global/variable/mplusVariable';
 import { PL_WIDTH, TL_DURATION_RECT_HEIGHT, TL_Y_PER_LIST } from '../../global/variable/timelineConstants';
-import { REFERENCE_WIDTH } from '../../global/variable/variable';
-import BossCastCanvas from './canvas/BossCastCanvas';
-import PlayerCastCanvas from './canvas/PlayerCastCanvas';
-import TimelineBaseCanvas from './canvas/TimelineBaseCanvas';
-import MplusMRTModalComponent from './common/MplusMRTModalComponent';
 import UpdatingApiStatus from '../common/UpdatingApiStatus';
+import TimelineStageCanvas from './canvas/TimelineStageCanvas';
+import MplusMRTModalComponent from './common/MplusMRTModalComponent';
 import MplusPlayerComponent from './MplusPlayerComponent';
 import MplusSkillCheckComponent from './MplusSkillCheckComponent';
-import { getMplusTimeline } from '../../api/mplusTimelineAPI';
-import TimelineStageCanvas from './canvas/TimelineStageCanvas';
 
 const MplusDefComponent = ({ className, specName, dungeonId }) => {
 
@@ -217,6 +212,7 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
     // console.log('선택한 스킬', selectedSkill)
     // console.log('보스 스킬 가공 전: ', firstBoss?.events?.enemyCasts)
     // console.log('보스 스킬 가공 후: ', enemyCastsTimeline)
+
 
     return (
         <div className='relative mx-2'>

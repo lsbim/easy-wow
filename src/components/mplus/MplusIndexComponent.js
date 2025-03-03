@@ -35,14 +35,14 @@ const MplusIndexComponent = () => {
             <div className="flex">
                 {mplusDungeonList.map(d => (
                     <img
-                        key={d}
-                        src={`${process.env.REACT_APP_IMAGES_IP}/images/mplus/dungeon/${d}.jpg`}
+                        key={d?.id}
+                        src={`${process.env.REACT_APP_IMAGES_IP}/images/mplus/dungeon/${d?.id}.jpg`}
                         className={`w-[50px] h-[50px] hover:brightness-125 cursor-pointer ml-2
-                            ${selected?.dungeonId !== 0 && selected?.dungeonId === d
+                            ${selected?.dungeonId !== 0 && selected?.dungeonId === d?.id
                                 ? 'border-2 border-black' : 'opacity-50'}`}
-                        alt={d}
-                        title={d}
-                        onClick={() => handleDungeonClick(d)}
+                        alt={d?.koName}
+                        title={d?.koName}
+                        onClick={() => handleDungeonClick(d?.id)}
                     />
                 ))}
             </div>

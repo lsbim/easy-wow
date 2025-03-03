@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { getKoSpecName } from "../../global/variable/wowVariable";
+import { getKoDungeonName, getMplusKoName } from "../../global/variable/mplusVariable";
 
 const UpdatingApiStatus = ({ className, specName, dungeonId }) => {
 
@@ -16,6 +18,9 @@ const UpdatingApiStatus = ({ className, specName, dungeonId }) => {
         return '.'.repeat(dots);
     };
 
+    const koSpecName = getKoSpecName(specName);
+    const koDungeonName = getKoDungeonName(dungeonId);
+
     return (
         <div className="flex justify-center">
             <div>
@@ -24,14 +29,14 @@ const UpdatingApiStatus = ({ className, specName, dungeonId }) => {
                         src={`${process.env.REACT_APP_IMAGES_IP}/images/player/spec/${className}${specName}.jpg`}
                         className={`hover:brightness-125 cursor-pointer animate-pulse`}
                         style={{ height: 50 }}
-                        alt={specName}
-                        title={specName}
+                        alt={koSpecName}
+                        title={koSpecName}
                     />
                     <img
                         src={`${process.env.REACT_APP_IMAGES_IP}/images/mplus/dungeon/${dungeonId}.jpg`}
                         className={`w-[50px] h-[50px] hover:brightness-125 cursor-pointer ml-2 animate-pulse`}
-                        alt={dungeonId}
-                        title={dungeonId}
+                        alt={koDungeonName}
+                        title={koDungeonName}
                     />
                 </div>
                 <span className="font-bold">

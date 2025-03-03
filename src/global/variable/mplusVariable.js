@@ -1,5 +1,21 @@
 // 현 시즌 던전ID 목록(기준: WCL 던전ID)
-export const mplusDungeonList = [60670, 61822, 62286, 62290, 12652, 12660, 12662, 12669];
+export const mplusDungeonList = [
+    { id: 60670, koName: "asd" },
+    { id: 61822, koName: "asd" },
+    { id: 62286, koName: "asd" },
+    { id: 62290, koName: "asd" },
+    { id: 12652, koName: "asd" },
+    { id: 12660, koName: "asd" },
+    { id: 12662, koName: "asd" },
+    { id: 12669, koName: "asd" }
+  ];
+
+  export function getKoDungeonName(dungeonId) {
+    const foundDungeon = mplusDungeonList?.find(dungeon => dungeon?.id == dungeonId);
+
+    return foundDungeon ? foundDungeon?.koName : dungeonId;
+  }
+  
 
 // 출력에 제외할 보스 스킬들
 export const bannedBossSkills = [
