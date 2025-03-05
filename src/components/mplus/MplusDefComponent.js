@@ -98,25 +98,40 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
 
     // 데이터 불러오기
     useEffect(() => {
+        const controller = new AbortController();
         const loadData = async () => {
             try {
-                if (!isLoading) { // 업데이팅 상태에 쓸데없는 리렌더링 방지
+                if (!isLoading && data !== 'UPDATING') { // 업데이팅 상태에 쓸데없는 리렌더링 방지
                     setIsLoading(true) // 로딩 시작
                 }
 
                 // API 호출
-                const response = await getMplusTimeline({ dungeonId, className, specName });
+                const response = await getMplusTimeline({ dungeonId, className, specName, signal: controller.signal });
                 // console.log('API Response', response)
                 if (response.status === "UPDATING") {
                     if (data !== "UPDATING") { // 업데이팅 상태에 쓸데없는 리렌더링 방지
                         setData("UPDATING");
+                        console.log("업데이트 중...")
                     }
-                    setTimeout(loadData, 3000)
-                    return
+                    // 취소 가능한 타임아웃
+                    if (!controller.signal.aborted) {
+                        setTimeout(() => {
+                            if (!controller.signal.aborted) {
+                                loadData();
+                            }
+                        }, 3000);
+                    }
+                    return;
                 }
+
                 const loadedData = response?.data;
                 setData(loadedData);
-                // console.log("My DATA: ", loadedData)
+                console.log("My DATA: ", loadedData)
+                if (response?.data?.rankings?.length === 0) {
+                    console.log("랭킹 데이터가 없습니다!");
+                    setData(null);
+                    return;
+                }
 
                 // 보스 이름 목록
                 const bossNames = loadedData?.rankings[0]?.fights?.pulls?.map(pull => pull?.name) || [];
@@ -147,19 +162,28 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
                 // 보스정보 0번 인덱스로 초기화
                 setSelected(0);
 
+                if (response?.status !== 'UPDATING') {
+                    setIsLoading(false); // 업데이트중이 아닐 때에 로딩 종료
+                }
             } catch (e) {
                 // console.error('에러: ', e);
-            } finally { // 성공 혹은 실패 이후
-                setIsLoading(false) // 로딩 종료
+                if (e.name === 'AbortError') {
+                    console.log('Fetch aborted');
+                }
             }
         }
 
         loadData();
+
+        // 컴포넌트 언마운트 시 or 의존성 변경 시 모든 진행 중인 요청 취소
+        return () => {
+            controller.abort();
+        };
     }, [className, dungeonId, specName]);
 
 
     // 로딩?
-    if (isLoading) {
+    if (isLoading && data !== "UPDATING") {
         return <div></div>;
     }
 
@@ -266,7 +290,7 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
                         </div>
                     </div>
                     {/* 좌측 플레이어 리스트 */}
-                    {new Array(10).fill().map((_, i) => (
+                    {new Array(data?.rankings?.length || 0).fill().map((_, i) => (
                         <MplusPlayerComponent
                             key={'playerList' + i}
                             code={data?.rankings[i]?.report?.code}
