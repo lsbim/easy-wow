@@ -39,7 +39,7 @@ const MplusIndexComponent = () => {
         wowClassList?.forEach(c => {
             preloadImage(c?.name, "class");
 
-            c?.specs?.forEach(s => preloadImage(s?.name), "class");
+            c?.specs?.forEach(s => preloadImage(s?.name, "class"));
         })
     }, [])
 
