@@ -22,7 +22,7 @@ const HeaderNav = ({ spec, dungeonId, className, specName }) => {
                 </Link>
                 <div className="ml-4">
                     <span className="font-bold text-blue-50 items-center whitespace-nowrap mr-2">
-                        {getKoDungeonName(dungeonId) + ' vs ' + getKoClassAndSpecName(className, specName)}
+                        {getKoClassAndSpecName(className, specName) + ' vs ' + getKoDungeonName(dungeonId)}
                     </span>
                 </div>
             </div>

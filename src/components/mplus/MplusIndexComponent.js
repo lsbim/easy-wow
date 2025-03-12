@@ -104,7 +104,7 @@ const MplusIndexComponent = () => {
                 </div>
 
                 <div className="mt-12 text-[12px] flex justify-center">
-                    <div>던전, 전문화별 타임라인 상위 10인의 생존기 타임라인 데이터를 제공합니다.</div>
+                    <div>던전, 전문화별 상위 10인의 생존기 타임라인 데이터를 제공합니다.</div>
                 </div>
 
                 <div className="my-8 justify-center flex">
