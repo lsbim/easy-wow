@@ -298,10 +298,15 @@ export function getKoClassName(className) {
 
 export function getKoSpecName(className, specName) {
     const foundClass = wowClassList?.find(item => item?.name === className);
-    if(!foundClass){
+    if (!foundClass) {
         return specName;
     }
 
     const foundSpec = foundClass?.specs?.find(spec => spec?.name === specName);
     return foundSpec ? foundSpec?.koName : specName
+}
+
+export function getKoClassAndSpecName(className, specName) {
+    const myName = getKoSpecName(className, specName) + " " + getKoClassName(className)
+    return myName ? myName : className
 }

@@ -13,7 +13,7 @@ export const mplusDungeonList = [
 export function getKoDungeonName(dungeonId) {
   const foundDungeon = mplusDungeonList?.find(dungeon => dungeon?.id == dungeonId);
 
-  return foundDungeon ? foundDungeon?.koName : dungeonId;
+  return foundDungeon ? foundDungeon?.koName : '';
 }
 
 
@@ -52,4 +52,5 @@ export const bannedBossSkills = [
   1223803,
   474087,
   455219,
+  1214324,
 ];

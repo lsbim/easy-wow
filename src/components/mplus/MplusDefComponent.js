@@ -126,7 +126,7 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
 
                 const loadedData = response?.data;
                 setData(loadedData);
-                console.log("My DATA: ", loadedData)
+                // console.log("My DATA: ", loadedData)
                 if (response?.data?.rankings?.length === 0) {
                     console.log("랭킹 데이터가 없습니다!");
                     setData(null);
