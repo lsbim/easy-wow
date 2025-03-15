@@ -1,6 +1,4 @@
-import { Link } from "react-router-dom";
 import { PL_WIDTH } from "../../global/variable/timelineConstants";
-import { useState } from "react";
 
 const MplusPlayerComponent = ({ code, fightID, name, myClass, spec, hardModeLevel, medal, setIsModalOpen, height, index }) => {
 

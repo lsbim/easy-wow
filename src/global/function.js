@@ -116,8 +116,8 @@ export const convertToMMSS = (ms) => {
     return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
 }
 
-export const timestampToPosition = (timestamp) => {
-    return timestamp / 1000 * TL_SPELL_WIDTH_PER_SEC;
+export const timestampToPosition = (timestamp, timelineScaleX) => {
+    return timestamp / 1000 * timelineScaleX;
 };
 
 export const convertToSrc = (abil, type) => {

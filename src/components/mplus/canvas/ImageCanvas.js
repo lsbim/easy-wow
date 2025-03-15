@@ -4,7 +4,7 @@ import { convertToSrc, timestampToPosition } from "../../../global/function";
 import { TL_Y_PER_LIST } from "../../../global/variable/timelineConstants";
 import { useImageCache } from "../../../hooks/useImageCache";
 
-const ImageCanvas = ({ abilityGameID, timestamp, startTime, onMouseEnter, onMouseLeave, type }) => {
+const ImageCanvas = ({ abilityGameID, timestamp, startTime, onMouseEnter, onMouseLeave, type, timelineScaleX }) => {
 
     const src = convertToSrc(abilityGameID, type);
     const [image] = useImageCache(src);
@@ -16,7 +16,7 @@ const ImageCanvas = ({ abilityGameID, timestamp, startTime, onMouseEnter, onMous
             {image === "broken" ? (
                 <Image
                     fill={image}
-                    x={timestampToPosition(timestamp - startTime) + 3}
+                    x={timestampToPosition(timestamp - startTime, timelineScaleX) + 3}
                     y={y}
                     width={20}
                     height={20}
@@ -28,7 +28,7 @@ const ImageCanvas = ({ abilityGameID, timestamp, startTime, onMouseEnter, onMous
                 image && (
                     <Image
                         image={image}
-                        x={timestampToPosition(timestamp - startTime) + 3}
+                        x={timestampToPosition(timestamp - startTime, timelineScaleX) + 3}
                         y={y}
                         width={20}
                         height={20}

@@ -1,5 +1,5 @@
 // 타임라인 
-export const TL_SPELL_WIDTH_PER_SEC = 5; // 주문 블럭 초당 x축 픽셀값
+// export const TL_SPELL_WIDTH_PER_SEC = 5; // 주문 블럭 초당 x축 픽셀값(초기값)
 export const TL_Y_PER_LIST = 25; // 리스트당 타임라인 y축 위치
 export const TL_DURATION_RECT_HEIGHT = 28; // 타임라인 캐스팅(duration) RECT 크기
 export const TL_CENTER_LINE_STROKE_WIDTH = 1; // 보스, 플레이어 타임라인 구분선 두께

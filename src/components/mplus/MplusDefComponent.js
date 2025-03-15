@@ -22,6 +22,8 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
     const [startX, setStartX] = useState(0); // 드래그 시작 X 좌표
     const [offsetX, setOffsetX] = useState(0); // 타임라인의 X 위치
     const [isModalOpen, setIsModalOpen] = useState(-1);
+    const [timelineScaleX, setTimelineScaleX] = useState(6); // 타임라인 시간(초)과 간격(픽셀)의 비율
+    const [timelineHeight, setTimelineHeight] = useState(26)
 
     // 드래그 시작
     const handleMouseDown = (e) => {
@@ -69,6 +71,7 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
     // 보스선택
     const handleSelectBoss = (i) => {
         setOffsetX(0) // 보스 바꾸면 위치 초기화
+        setTimelineScaleX(6) // 보스 바꾸면 간격초기화
         setSelected(i)
     }
     // 스킬 표시 on/off
@@ -132,6 +135,8 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
                     setData(null);
                     return;
                 }
+                // 랭킹데이터 배열 크기만큼 타임라인 사이즈 설정
+                setTimelineHeight(26 + (loadedData?.rankings?.length + 1) * 28)
 
                 // 보스 이름 목록
                 const bossNames = loadedData?.rankings[0]?.fights?.pulls?.map(pull => pull?.name) || [];
@@ -182,10 +187,15 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
     }, [className, dungeonId, specName]);
 
 
-    // 로딩?
-    if (isLoading && data !== "UPDATING") {
-        return <div></div>;
-    }
+    // // 로딩?
+    // if (isLoading && data !== "UPDATING") {
+    //     return (
+    //         <div className="flex justify-center items-center h-screen">
+    //             {/* 원하는 스피너 UI */}
+    //             <div>Loading...</div>
+    //         </div>
+    //     );
+    // }
 
     if (data === "UPDATING") {
         return <UpdatingApiStatus
@@ -249,7 +259,7 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
                 />
             )}
             {/* 보스 선택 */}
-            <div className='flex my-2 overflow-x-hidden '>
+            <div className='flex my-2 overflow-x-scroll '>
                 {bossList?.map((boss, i) => (
                     <div key={boss} className='relative min-w-[100px]'>
                         <img
@@ -307,12 +317,13 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
                         />
                     ))}
                 </div>
-                <div className='overflow-hidden flex-grow cursor-pointer'>
+                <div className={`overflow-hidden flex-grow cursor-pointer ${timelineHeight > 25 && `h-${timelineHeight}`}`}>
 
                     {/* 타임라인 */}
                     <TimelineStageCanvas
                         handleMouseDown={handleMouseDown}
                         offsetX={offsetX}
+                        setOffsetX={setOffsetX}
                         combatTime={combatTime}
                         enemyCastsTimeline={enemyCastsTimeline}
                         handleMouseEnter={handleMouseEnter}
@@ -329,6 +340,9 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
                                 ...(data?.takenBuffInfo)
                             )
                         }
+                        timelineScaleX={timelineScaleX}
+                        setTimelineScaleX={setTimelineScaleX}
+                        timelineHeight={timelineHeight}
                     />
 
                 </div>
@@ -338,7 +352,8 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
                         className='absolute p-[6px] bg-black text-white rounded-md shadow-md pointer-events-none text-[12px]'
                         style={{
                             left: `${tooltip.x + PL_WIDTH + 30}px`,
-                            top: tooltip.y - 60
+                            top: tooltip.y - 10,
+                            transform: 'translateY(-100%)'
                         }}
                     >
                         {tooltip?.text && tooltip?.text !== "null" && (

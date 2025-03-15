@@ -1,11 +1,11 @@
 import React from "react";
 import { Group, Rect, Text } from "react-konva";
 import { convertToMMSS, convertToTimeline, timestampToPosition } from "../../../global/function";
-import { TL_DURATION_RECT_HEIGHT, TL_SPELL_WIDTH_PER_SEC, TL_Y_PER_LIST, TL_Y_PLAYER_RECT, TL_Y_PLAYER_TEXT } from "../../../global/variable/timelineConstants";
+import { TL_DURATION_RECT_HEIGHT, TL_Y_PER_LIST, TL_Y_PLAYER_RECT, TL_Y_PLAYER_TEXT } from "../../../global/variable/timelineConstants";
 import ImageCanvas from "./ImageCanvas";
 import RectColorCanvas from "./RectColorCanvas";
 
-const PlayerCastCanvas = ({ rankingData, handleMouseEnter, handleMouseLeave, selected, selectedSkill, className, skillList }) => {
+const PlayerCastCanvas = ({ rankingData, handleMouseEnter, handleMouseLeave, selected, selectedSkill, className, skillList, timelineScaleX }) => {
 
     return (
         <>
@@ -54,14 +54,14 @@ const PlayerCastCanvas = ({ rankingData, handleMouseEnter, handleMouseLeave, sel
                         {/* 플레이어 전투시간 박스 */}
                         <Rect
                             y={(TL_Y_PER_LIST) + 0.5}
-                            width={pull?.combatTime / 1000 * TL_SPELL_WIDTH_PER_SEC}
+                            width={pull?.combatTime / 1000 * timelineScaleX}
                             height={TL_DURATION_RECT_HEIGHT}
                             stroke="black"
                             strokeWidth={1}
                         />
                         {/* 플레이어 전투시간 텍스트 */}
                         <Text
-                            x={pull?.combatTime / 1000 * TL_SPELL_WIDTH_PER_SEC + 10}
+                            x={pull?.combatTime / 1000 * timelineScaleX + 10}
                             y={TL_Y_PLAYER_TEXT}
                             text={convertToMMSS(pull?.combatTime)}
                             fontSize={14}
@@ -70,22 +70,22 @@ const PlayerCastCanvas = ({ rankingData, handleMouseEnter, handleMouseLeave, sel
 
                         {/* 플레이어 캐스트 */}
                         <Group
-                            clipWidth={pull?.combatTime / 1000 * TL_SPELL_WIDTH_PER_SEC}
+                            clipWidth={pull?.combatTime / 1000 * timelineScaleX}
                             clipHeight={1000}>
                             {mergedEvents?.filter(c => selectedSkill.has(c?.abilityGameID))?.map((cast, playerCastIndex) => (
                                 <React.Fragment key={playerCastIndex + 'cast'}>
                                     {cast?.duration >= 10 && //
                                         <RectColorCanvas
-                                            x={timestampToPosition(cast?.timestamp - pull?.startTime)}
+                                            x={timestampToPosition(cast?.timestamp - pull?.startTime, timelineScaleX)}
                                             y={TL_Y_PLAYER_RECT}
-                                            width={cast?.duration / 1000 * TL_SPELL_WIDTH_PER_SEC || 0}
+                                            width={cast?.duration / 1000 * timelineScaleX || 0}
                                             height={cast?.duration ? TL_DURATION_RECT_HEIGHT : 0}
                                             abilityGameID={cast?.abilityGameID}
                                             type={className}
                                         />
                                     }
                                     <Text
-                                        x={timestampToPosition(cast?.timestamp - pull?.startTime) + 30}
+                                        x={timestampToPosition(cast?.timestamp - pull?.startTime, timelineScaleX) + 30}
                                         y={TL_Y_PLAYER_TEXT}
                                         text={convertToMMSS(cast?.timestamp - pull?.startTime)}
                                         fontSize={14}
@@ -98,7 +98,7 @@ const PlayerCastCanvas = ({ rankingData, handleMouseEnter, handleMouseLeave, sel
 
                         {/* 플레이어 캐스트 이미지, 이미지가 Rect와 Text를 덮도록 하단에 따로 구현 */}
                         <Group
-                            clipWidth={pull?.combatTime / 1000 * TL_SPELL_WIDTH_PER_SEC}
+                            clipWidth={pull?.combatTime / 1000 * timelineScaleX}
                             clipHeight={1000}>
                             {mergedEvents?.filter(c => selectedSkill?.has(c?.abilityGameID))?.map((cast, playerCastIndex) => {
 
@@ -112,6 +112,7 @@ const PlayerCastCanvas = ({ rankingData, handleMouseEnter, handleMouseLeave, sel
                                     startTime={pull?.startTime}
                                     onMouseEnter={(e) => handleMouseEnter(e, matchSpellName, convertToMMSS(cast?.timestamp - pull?.startTime))}
                                     onMouseLeave={handleMouseLeave}
+                                    timelineScaleX={timelineScaleX}
                                 />)
                             })}
                         </Group>
