@@ -5,7 +5,7 @@ import PlayerCastCanvas from "./PlayerCastCanvas";
 import TimelineBaseCanvas from "./TimelineBaseCanvas";
 
 const TimelineStageCanvas = ({
-    offsetX, setOffsetX, handleMouseDown, handleMouseEnter, handleMouseLeave, combatTime,
+    offsetX, setOffsetX, handlePointerDown, handleMouseEnter, handleMouseLeave, combatTime,
     enemyCastsTimeline, firstBoss, selectedBossSkill, rankingData, selected, className, selectedSkill, skillList,
     timelineScaleX, setTimelineScaleX, timelineHeight
 }) => {
@@ -14,12 +14,12 @@ const TimelineStageCanvas = ({
 
     // 컨트롤 휠 업/다운으로 확대/축소
     const handleWheel = useCallback((e) => {
-        e.evt.preventDefault();
-
         // 컨트롤 키를 누르지 않았다면 취소
         if (!e.evt.ctrlKey) {
             return;
         }
+
+        e.evt.preventDefault();
 
         // 마우스 커서의 화면상 X 좌표
         const stage = e.target.getStage();
@@ -68,7 +68,7 @@ const TimelineStageCanvas = ({
         <div>
 
             <Stage
-                onMouseDown={handleMouseDown}
+                onPointerDown={handlePointerDown}
                 width={stageWidth}
                 height={timelineHeight}
                 // State에서 관리 중인 X축 스케일과 위치 적용

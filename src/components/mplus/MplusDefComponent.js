@@ -8,6 +8,8 @@ import TimelineStageCanvas from './canvas/TimelineStageCanvas';
 import MplusMRTModalComponent from './common/MplusMRTModalComponent';
 import MplusPlayerComponent from './MplusPlayerComponent';
 import MplusSkillCheckComponent from './MplusSkillCheckComponent';
+import MplusChartModalComponent from './common/MplusChartModalComponent';
+import useStagePointerDrag from '../../hooks/useStagePointerDrag';
 
 const MplusDefComponent = ({ className, specName, dungeonId }) => {
 
@@ -18,46 +20,11 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
     const [selected, setSelected] = useState(0); // 선택한 pull 인덱스
     const [selectedSkill, setSelectedSkill] = useState(new Set()); // 타임라인에 표기할 플레이어가 사용한 스킬들
     const [selectedBossSkill, setSelectedBossSkill] = useState(new Set()); // 타임라인에 표기할 보스가 사용한 스킬들
-    const [isDragging, setIsDragging] = useState(false);
-    const [startX, setStartX] = useState(0); // 드래그 시작 X 좌표
-    const [offsetX, setOffsetX] = useState(0); // 타임라인의 X 위치
+    const [offsetX, setOffsetX, handlePointerDown] = useStagePointerDrag();
     const [isModalOpen, setIsModalOpen] = useState(-1);
     const [timelineScaleX, setTimelineScaleX] = useState(6); // 타임라인 시간(초)과 간격(픽셀)의 비율
-    const [timelineHeight, setTimelineHeight] = useState(26)
-
-    // 드래그 시작
-    const handleMouseDown = (e) => {
-        setIsDragging(true);
-        setStartX(e.evt.clientX); // 마우스 시작 좌표
-    };
-
-    // 드래그 이동
-    useEffect(() => {
-        const handleGlobalMouseMove = (e) => {
-            if (isDragging) {
-                const deltaX = e.movementX; // e.movementX는 마지막 이벤트 이후 마우스 이동값(픽셀 단위)
-                setOffsetX(prevOffsetX => Math.min(prevOffsetX + deltaX * 0.7, 0)); // 0.7는 추가 속도 보정
-                setStartX(e.clientX);
-            }
-        };
-
-        // 전역 드래그 해제 이벤트
-        const handleGlobalMouseUp = () => {
-            if (isDragging) {
-                setIsDragging(false);
-            }
-        };
-
-        // 이벤트 리스너 추가
-        window.addEventListener('mousemove', handleGlobalMouseMove);
-        window.addEventListener('mouseup', handleGlobalMouseUp);
-
-        // 클린업 함수 -> 컴포넌트 언마운트시 이벤트리스너를 제거하여 메모리 누수 방지
-        return () => {
-            window.removeEventListener('mousemove', handleGlobalMouseMove);
-            window.removeEventListener('mouseup', handleGlobalMouseUp);
-        };
-    }, [isDragging, startX]); // isDragging 상태가 변경될 때만 실행
+    const [timelineHeight, setTimelineHeight] = useState(26);
+    const [isChartModalOpen, setIsChartModalOpen] = useState(-1);
 
     // 툴팁
     const handleMouseEnter = (e, abilityGameID, timestamp) => {
@@ -68,6 +35,7 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
     const handleMouseLeave = () => {
         setTooltip({ visible: false, x: 0, y: 0, text: '' });
     };
+
     // 보스선택
     const handleSelectBoss = (i) => {
         setOffsetX(0) // 보스 바꾸면 위치 초기화
@@ -136,7 +104,7 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
                     return;
                 }
                 // 랭킹데이터 배열 크기만큼 타임라인 사이즈 설정
-                setTimelineHeight(26 + (loadedData?.rankings?.length + 1) * 28)
+                setTimelineHeight(27 + (loadedData?.rankings?.length + 1) * 28)
 
                 // 보스 이름 목록
                 const bossNames = loadedData?.rankings[0]?.fights?.pulls?.map(pull => pull?.name) || [];
@@ -186,16 +154,10 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
         };
     }, [className, dungeonId, specName]);
 
-
-    // // 로딩?
-    // if (isLoading && data !== "UPDATING") {
-    //     return (
-    //         <div className="flex justify-center items-center h-screen">
-    //             {/* 원하는 스피너 UI */}
-    //             <div>Loading...</div>
-    //         </div>
-    //     );
-    // }
+    // 로딩?
+    if (isLoading && data !== "UPDATING") {
+        return <div></div>;
+    }
 
     if (data === "UPDATING") {
         return <UpdatingApiStatus
@@ -234,6 +196,8 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
     }));
     modalTimeline?.sort((a, b) => a?.timestamp - b?.timestamp);
 
+    // console.log(modalTimeline)
+
     // 0번(첫번째) 인덱스의 보스 데이터
     const firstBoss = data?.rankings[0]?.fights?.pulls[selected]
     const combatTime = firstBoss?.combatTime // 전투시간
@@ -250,12 +214,31 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
 
     return (
         <div className='relative mx-2'>
-            {isModalOpen !== -1 && (
+            {/* 모달은 한 종류만 */}
+            {isChartModalOpen === -1 && isModalOpen !== -1 && (
                 <MplusMRTModalComponent
                     setIsModalOpen={setIsModalOpen}
                     type={"Reminder"}
                     modalText={modalTimeline}
                     modalStartTime={modalStartTime}
+                />
+            )}
+            {isModalOpen === -1 && isChartModalOpen !== -1 && (
+                <MplusChartModalComponent
+                    setIsChartModalOpen={setIsChartModalOpen}
+                    rankingData={[data?.rankings[isChartModalOpen]]}
+                    className={className}
+                    specName={specName}
+                    timelineScaleX={timelineScaleX}
+                    selected={selected}
+                    skillList={
+                        new Array(
+                            ...(data?.playerSkillInfo),
+                            ...(data?.takenBuffInfo)
+                        )}
+                    handleMouseEnter={handleMouseEnter}
+                    handleMouseLeave={handleMouseLeave}
+                    selectedBossSkill={new Set(data?.bossSkillInfo?.filter(s => !bannedBossSkills.includes(s))?.map(skill => skill))}
                 />
             )}
             {/* 보스 선택 */}
@@ -267,8 +250,8 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
                             className={`w-[100px] h-[50px] cursor-pointer transition-all duration-200
                     ${selected === i ? 'shadow-md' : 'opacity-80'}
                     hover:opacity-100 hover:shadow-lg hover:scale-[1.02]`}
-                            alt={boss}
-                            title={boss}
+                            // alt={boss}
+                            // title={boss}
                             onClick={() => handleSelectBoss(i)}
                         />
                         {selected === i && (
@@ -293,11 +276,11 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
                     {/* 보스 이름 */}
                     <div
                         className="block shadow-[1px_0_0_black,0_1px_0_black,1px_1px_0_black,1px_0_0_black_inset,0_1px_0_black_inset]"
-                        style={{ width: `${PL_WIDTH + 30}px`, height: `${TL_DURATION_RECT_HEIGHT}px` }}
+                        style={{ width: `${PL_WIDTH + 60}px`, height: `${TL_DURATION_RECT_HEIGHT}px` }}
                     >
-                        <div className="text-[14px] flex justify-center items-center h-full text-ellipsis overflow-hidden whitespace-nowrap">
+                        <span className="text-[14px] flex justify-center items-center h-full text-ellipsis overflow-hidden whitespace-nowrap">
                             {firstBoss?.krBossName || "보스"}
-                        </div>
+                        </span>
                     </div>
                     {/* 좌측 플레이어 리스트 */}
                     {new Array(data?.rankings?.length || 0).fill().map((_, i) => (
@@ -309,11 +292,13 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
                             name={data?.rankings[i]?.name}
                             medal={data?.rankings[i]?.medal}
                             hardModeLevel={data?.rankings[i]?.hardModeLevel}
-                            myClass={className}
-                            spec={data?.rankings[i]?.spec}
+                            className={className}
+                            specName={specName}
                             height={TL_DURATION_RECT_HEIGHT}
                             setIsModalOpen={setIsModalOpen}
                             index={i}
+                            setIsChartModalOpen={setIsChartModalOpen}
+                            hasResourcesData={data?.rankings[i]?.fights?.pulls[selected]?.events?.hasOwnProperty("resources")}
                         />
                     ))}
                 </div>
@@ -321,7 +306,7 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
 
                     {/* 타임라인 */}
                     <TimelineStageCanvas
-                        handleMouseDown={handleMouseDown}
+                        handlePointerDown={handlePointerDown}
                         offsetX={offsetX}
                         setOffsetX={setOffsetX}
                         combatTime={combatTime}
@@ -343,11 +328,14 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
                         timelineScaleX={timelineScaleX}
                         setTimelineScaleX={setTimelineScaleX}
                         timelineHeight={timelineHeight}
+                        setTimelineHeight={setTimelineHeight}
+                        isChartModalOpen={isChartModalOpen}
+                        setIsChartModalOpen={setIsChartModalOpen}
                     />
 
                 </div>
-                {/* 툴팁박스 */}
-                {tooltip.visible && (
+                {/* 툴팁박스... 모달이 띄워져 있는 동안 출력되지 않도록 */}
+                {tooltip.visible && (isChartModalOpen === -1 && isModalOpen === -1) && (
                     <div
                         className='absolute p-[6px] bg-black text-white rounded-md shadow-md pointer-events-none text-[12px]'
                         style={{

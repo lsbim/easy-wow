@@ -1,7 +1,7 @@
 import { Group, Line, Text } from "react-konva";
 import { timelineScaleX, TL_Y_PER_LIST } from "../../../global/variable/timelineConstants";
 
-const TimelineBaseCanvas = ({ combatTime, timelineScaleX }) => {
+const TimelineBaseCanvas = ({ combatTime, timelineScaleX, type }) => {
 
     // 기존 밀리초단위 변환이 아닌 초단위 전용 변환, 반복문을 ms로 하면 값이 너무 커져서 오류
     const convertToMMSS = (s) => {
@@ -26,7 +26,7 @@ const TimelineBaseCanvas = ({ combatTime, timelineScaleX }) => {
                     x,
                     isThirtyMultiple ? TL_Y_PER_LIST - 12 : TL_Y_PER_LIST - 6,
                     x,
-                    TL_Y_PER_LIST
+                    type === "down" ? isThirtyMultiple ? TL_Y_PER_LIST : TL_Y_PER_LIST - 12 : TL_Y_PER_LIST
                 ]}
                 stroke="black"
                 strokeWidth={isThirtyMultiple ? 2 : 1}
@@ -39,7 +39,7 @@ const TimelineBaseCanvas = ({ combatTime, timelineScaleX }) => {
                 <Text
                     key={"text_" + sec}
                     x={x === 0 ? x : x - 17.5}
-                    y={0}
+                    y={type === "down" ? TL_Y_PER_LIST : 0}
                     text={convertToMMSS(sec)}
                     fontSize={14}
                     fill="black"

@@ -57,7 +57,7 @@ const MplusIndexComponent = () => {
                         <img
                             key={d?.id}
                             src={`${process.env.REACT_APP_IMAGES_IP}/images/mplus/dungeon/${d?.id}.jpg`}
-                            className={`w-[50px] h-[50px] hover:brightness-125 cursor-pointer ml-2 mb-2
+                            className={`w-[50px] h-[50px] hover:brightness-125 cursor-pointer mx-1 mb-2
                             ${selected?.dungeonId !== 0 && selected?.dungeonId === d?.id
                                     ? 'border-2 border-black' : 'opacity-50'}`}
                             alt={d?.koName}
@@ -68,12 +68,12 @@ const MplusIndexComponent = () => {
                 </div>
                 <div className="flex flex-wrap mt-10 min-w-[465px]">
                     {wowClassList.map(c => (
-                        <div className="flex flex-col items-center ml-2 mb-4" key={c?.name}>
+                        <div className="flex flex-col items-center mx-1 mb-4" key={c?.name}>
                             <img
                                 src={`${process.env.REACT_APP_IMAGES_IP}/images/player/spec/${c?.name}.jpg`}
                                 className={`w-[50px] h-[50px] opacity-70`}
-                                alt={c?.name}
-                                title={c?.name}
+                                alt={c?.koName}
+                                title={c?.koName}
                             />
                             <div className="">
                                 {c?.specs?.
@@ -90,8 +90,8 @@ const MplusIndexComponent = () => {
                                                         ? 'border-2 border-black hover:brightness-125 cursor-pointer'
                                                         : 'opacity-70 hover:brightness-125 cursor-pointer'
                                                     : 'grayscale opacity-50'}`}
-                                            alt={s?.name}
-                                            title={s?.name}
+                                            alt={s?.koName}
+                                            title={s?.koName}
                                             onClick={() => {
                                                 // s?.has && 
                                                 handleSpecClick(c?.name + '-' + s?.name)
@@ -108,7 +108,7 @@ const MplusIndexComponent = () => {
                 </div>
 
                 <div className="my-8 justify-center flex min-w-[465px]">
-                    <a className="w-[34px] h-[34px]" href="https://open.kakao.com/o/s94ri9kh">
+                    <a className="w-[34px] h-[34px]" href="https://open.kakao.com/o/s94ri9kh" target="_blank" rel="noopener noreferrer">
                         <img src={`${process.env.REACT_APP_IMAGES_IP}/images/kakao/kakao_btn_small.png`} />
                     </a>
                 </div>

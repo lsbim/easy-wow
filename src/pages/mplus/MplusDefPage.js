@@ -29,7 +29,7 @@ const MplusDefPage = () => {
                 specName={specName}
                 dungeonId={dungeonId}
             />
-            <div>
+            <div className="mb-8">
                 <MplusDefComponent
                     className={className}
                     specName={specName}

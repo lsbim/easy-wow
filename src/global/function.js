@@ -3,7 +3,7 @@ import { TL_SPELL_WIDTH_PER_SEC } from "./variable/timelineConstants";
 // 캐스트 타임테이블 duration으로 가공
 export function convertToTimeline(casts) {
 
-    if(!casts){
+    if (!casts) {
         return [];
     }
 
@@ -108,13 +108,19 @@ export function convertToTimeline(casts) {
     return arr;
 }
 
-// 밀리초 -> mm:ss
-export const convertToMMSS = (ms) => {
-    const minutes = Math.floor(ms / 60000);
-    const seconds = Math.floor((ms % 60000) / 1000);
-    // const milliseconds = ms % 1000;
-    return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-}
+// 밀리초 -> mm:ss 또는 mm:ss.SSS
+export const convertToMMSS = (ms, type) => {
+    if (type === 'ms') {
+        const minutes = Math.floor(ms / 60000);
+        const seconds = Math.floor((ms % 60000) / 1000);
+        const milliseconds = ms % 1000;
+        return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}.${milliseconds.toString().padStart(3, '0')}`;
+    } else {
+        const minutes = Math.floor(ms / 60000);
+        const seconds = Math.floor((ms % 60000) / 1000);
+        return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    }
+};
 
 export const timestampToPosition = (timestamp, timelineScaleX) => {
     return timestamp / 1000 * timelineScaleX;
@@ -122,6 +128,24 @@ export const timestampToPosition = (timestamp, timelineScaleX) => {
 
 export const convertToSrc = (abil, type) => {
     return type === 'mplus'
-    ? `${process.env.REACT_APP_IMAGES_IP}/images/mplus/boss/spell/${abil}.jpg`
-    : `${process.env.REACT_APP_IMAGES_IP}/images/player/spell/${abil}.jpg`;
+        ? `${process.env.REACT_APP_IMAGES_IP}/images/mplus/boss/spell/${abil}.jpg`
+        : `${process.env.REACT_APP_IMAGES_IP}/images/player/spell/${abil}.jpg`;
+}
+
+// 모달 타입 번역
+export const translateType = (type) => {
+    switch (type) {
+        case "damage":
+            return (
+                <div className="flex justify-center text-[12px] w-[60px] py-2 mr-4 text-red-700">
+                    피해입음
+                </div>
+            );
+        case "absorbed":
+            return (
+                <div className="flex justify-center text-[12px] w-[60px] py-2 mr-4 text-sky-800">
+                    흡수됨
+                </div>
+            );
+    }
 }

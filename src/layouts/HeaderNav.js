@@ -21,8 +21,9 @@ const HeaderNav = ({ spec, dungeonId, className, specName }) => {
                     EASYWOW
                 </Link>
                 <div className="ml-4">
+                    <span className={`font-bold text-${className}`}>{getKoClassAndSpecName(className, specName)}</span>
                     <span className="font-bold text-blue-50 items-center whitespace-nowrap mr-2">
-                        {getKoClassAndSpecName(className, specName) + ' vs ' + getKoDungeonName(dungeonId)}
+                        {' vs ' + getKoDungeonName(dungeonId)}
                     </span>
                 </div>
             </div>

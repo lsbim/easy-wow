@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { Group, Rect, Text } from "react-konva";
 import { convertToMMSS, convertToTimeline, timestampToPosition } from "../../../global/function";
 import { TL_DURATION_RECT_HEIGHT, TL_Y_PER_LIST, TL_Y_PLAYER_RECT, TL_Y_PLAYER_TEXT } from "../../../global/variable/timelineConstants";
 import ImageCanvas from "./ImageCanvas";
 import RectColorCanvas from "./RectColorCanvas";
 
-const PlayerCastCanvas = ({ rankingData, handleMouseEnter, handleMouseLeave, selected, selectedSkill, className, skillList, timelineScaleX }) => {
+const PlayerCastCanvas = ({ rankingData, handleMouseEnter, handleMouseLeave, selected, selectedSkill, className, skillList, timelineScaleX
+}) => {
 
+    
     return (
         <>
             {/* 플레이어 단위 */}
@@ -31,6 +33,9 @@ const PlayerCastCanvas = ({ rankingData, handleMouseEnter, handleMouseLeave, sel
                     ...mergedPlayerTakenBuffs
                 ].sort((a, b) => a?.timestamp - b?.timestamp);
 
+                // console.log(mergedEvents)
+                // console.log(selectedSkill)
+
                 if (!player?.fights) {
                     return (
                         <Group key={player?.name + playerIndex}
@@ -48,7 +53,8 @@ const PlayerCastCanvas = ({ rankingData, handleMouseEnter, handleMouseLeave, sel
                 }
 
                 return (
-                    <Group key={player?.name + playerIndex}
+                    <Group
+                        key={player?.name + playerIndex}
                         y={(playerIndex + 1) * TL_DURATION_RECT_HEIGHT}
                     >
                         {/* 플레이어 전투시간 박스 */}
@@ -68,11 +74,12 @@ const PlayerCastCanvas = ({ rankingData, handleMouseEnter, handleMouseLeave, sel
                             fill="black"
                         />
 
-                        {/* 플레이어 캐스트 */}
+                        {/* 플레이어 캐스트 지속시간 텍스트와 지속 블럭 */}
                         <Group
                             clipWidth={pull?.combatTime / 1000 * timelineScaleX}
-                            clipHeight={1000}>
-                            {mergedEvents?.filter(c => selectedSkill.has(c?.abilityGameID))?.map((cast, playerCastIndex) => (
+                            clipHeight={1000}
+                        >
+                            {mergedEvents?.filter(c => selectedSkill?.has(c?.abilityGameID))?.map((cast, playerCastIndex) => (
                                 <React.Fragment key={playerCastIndex + 'cast'}>
                                     {cast?.duration >= 10 && //
                                         <RectColorCanvas

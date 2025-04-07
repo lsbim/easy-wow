@@ -3,9 +3,10 @@ const ModalText = ({ setIsModalOpen, modalText, type }) => {
 
     return (
         <div>
-            <div className="fixed z-50 top-0 left-0 w-full h-full flex items-center justify-center"
-                onClick={() => setIsModalOpen(-1)}>
-                <div className="bg-white p-4 shadow-xl rounded-md border-[1px] border-black w-[500px]"
+            <div className="fixed z-50 top-0 left-0 w-full h-full flex items-center justify-center bg-black/40"
+            // onClick={() => setIsModalOpen(-1)}
+            >
+                <div className="bg-white p-4 shadow-lg shadow-black rounded-md border-2 border-slate-700 w-[500px]"
                     onClick={(e) => e.stopPropagation()}>
                     <div className="flex justify-between mb-4 items-center">
                         <h2 className="text-2xl font-bold pl-2">{type}</h2>
