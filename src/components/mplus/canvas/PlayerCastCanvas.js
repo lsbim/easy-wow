@@ -4,17 +4,22 @@ import { convertToMMSS, convertToTimeline, timestampToPosition } from "../../../
 import { TL_DURATION_RECT_HEIGHT, TL_Y_PER_LIST, TL_Y_PLAYER_RECT, TL_Y_PLAYER_TEXT } from "../../../global/variable/timelineConstants";
 import ImageCanvas from "./ImageCanvas";
 import RectColorCanvas from "./RectColorCanvas";
+import HatchPatternRectCanvas from "./HatchPatternRectCanvas";
 
 const PlayerCastCanvas = ({ rankingData, handleMouseEnter, handleMouseLeave, selected, selectedSkill, className, skillList, timelineScaleX
 }) => {
 
-    
+
     return (
         <>
             {/* 플레이어 단위 */}
             {rankingData?.map((player, playerIndex) => {
                 // console.log('전투시간: ',convertToMMSS(pull?.combatTime))
-                const pull = player?.fights?.pulls[selected]
+                const pull = player?.fights?.pulls[selected];
+                const bloodlust = pull?.events?.bloodlusts?.reduce((acc, blood) => {
+                    const timeline = convertToTimeline(blood);
+                    return [...acc, ...timeline];
+                }, []);
                 const mergedPlayerCasts = pull?.events?.playerCasts?.reduce((acc, casts) => { // 플레이어 캐스트 배열 통합
                     const timeline = convertToTimeline(casts); // acc는 통합될 기준 배열, casts는 플레이어 캐스트 배열들
                     return [...acc, ...timeline];
@@ -79,6 +84,27 @@ const PlayerCastCanvas = ({ rankingData, handleMouseEnter, handleMouseLeave, sel
                             clipWidth={pull?.combatTime / 1000 * timelineScaleX}
                             clipHeight={1000}
                         >
+                            {selectedSkill?.has(2825) && bloodlust?.map((b, i) => (
+                                <React.Fragment key={i + 'bloodlust'}>
+                                    <HatchPatternRectCanvas
+                                        x={timestampToPosition(b?.timestamp - pull?.startTime, timelineScaleX)}
+                                        y={TL_Y_PLAYER_RECT}
+                                        width={b?.duration / 1000 * timelineScaleX || 0}
+                                        height={b?.duration ? TL_DURATION_RECT_HEIGHT : 0}
+                                        color={"blue"}
+                                    />
+
+                                    <Text
+                                        x={timestampToPosition(b?.timestamp - pull?.startTime, timelineScaleX)+5}
+                                        y={TL_Y_PLAYER_TEXT}
+                                        text={convertToMMSS(b?.timestamp - pull?.startTime)}
+                                        fontSize={14}
+                                        fontStyle="bold"
+                                        fill="black"
+                                    />
+                                </React.Fragment>
+                            ))}
+
                             {mergedEvents?.filter(c => selectedSkill?.has(c?.abilityGameID))?.map((cast, playerCastIndex) => (
                                 <React.Fragment key={playerCastIndex + 'cast'}>
                                     {cast?.duration >= 10 && //
@@ -99,7 +125,6 @@ const PlayerCastCanvas = ({ rankingData, handleMouseEnter, handleMouseLeave, sel
                                         fill="black"
                                     />
                                 </React.Fragment>
-
                             ))}
                         </Group>
 
@@ -122,6 +147,19 @@ const PlayerCastCanvas = ({ rankingData, handleMouseEnter, handleMouseLeave, sel
                                     timelineScaleX={timelineScaleX}
                                 />)
                             })}
+
+                            {/* {selectedSkill?.has(2825) && bloodlust?.map((b, i) => (
+                                <ImageCanvas
+                                    key={i + 'player-bloodlust' + player?.name}
+                                    abilityGameID={2825}
+                                    type={className}
+                                    timestamp={b?.timestamp}
+                                    startTime={pull?.startTime}
+                                    onMouseEnter={(e) => handleMouseEnter(e, "피의 욕망", convertToMMSS(b?.timestamp - pull?.startTime))}
+                                    onMouseLeave={handleMouseLeave}
+                                    timelineScaleX={timelineScaleX}
+                                />
+                            ))} */}
                         </Group>
                     </Group>)
             })}

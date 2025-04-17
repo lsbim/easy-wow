@@ -1,8 +1,8 @@
 import { bannedBossSkills } from "../../global/variable/mplusVariable";
 
 const MplusSkillCheckComponent = ({
-    className, bossSkillInfo, playerSkillInfo, takenBuffInfo
-    , firstBossIDs, selectedBossSkill, handleSelectSkill, selectedSkill
+    className, bossSkillInfo, playerSkillInfo, takenBuffInfo, firstBossIDs, selectedBossSkill
+    , handleSelectSkill, selectedSkill, takenBloodlusts, handleSelectBloodlust
 }) => {
 
     return (
@@ -48,7 +48,7 @@ const MplusSkillCheckComponent = ({
                         onClick={() => handleSelectSkill(skill?.spellId, 'player')}
                     >
                         <img
-                            src={`${process.env.REACT_APP_IMAGES_IP}/images/player/spell/${skill?.spellId}.jpg`}
+                            src={`${process.env.REACT_APP_IMAGES_IP}/images/ability/${skill?.spellId}.jpg`}
                             className="min-w-[28px]"
                         />
                     </a>
@@ -71,11 +71,27 @@ const MplusSkillCheckComponent = ({
                         onClick={() => handleSelectSkill(skill?.spellId, 'player')}
                     >
                         <img
-                            src={`${process.env.REACT_APP_IMAGES_IP}/images/player/spell/${skill?.spellId}.jpg`}
+                            src={`${process.env.REACT_APP_IMAGES_IP}/images/ability/${skill?.spellId}.jpg`}
                             className="min-w-[28px]"
                         />
                     </a>
                 ))}
+                {takenBloodlusts?.length > 1 && (
+                    <a
+                        href="#" data-wowhead={`spell=2825&domain=ko`}
+                        className={`w-[30px] h-[30px] hover:bg-slate-200 cursor-pointer
+                                ${takenBloodlusts?.
+                                every(spell => selectedSkill?.
+                                    has(spell.spellId))
+                                ? 'border-[1px] border-gray-900 rounded-sm' : 'opacity-40'}`}
+                        onClick={handleSelectBloodlust}
+                    >
+                        <img
+                            src={`${process.env.REACT_APP_IMAGES_IP}/images/ability/2825.jpg`}
+                            className="min-w-[28px]"
+                        />
+                    </a>
+                )}
             </div>
         </div>
     );

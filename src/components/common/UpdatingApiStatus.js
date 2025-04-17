@@ -40,7 +40,7 @@ const UpdatingApiStatus = ({ className, specName, dungeonId }) => {
                     />
                 </div>
                 <span className="font-bold">
-                    데이터가 없습니다. 최초 데이터 받아오는 중, 최소 7분 이상 소요됩니다.
+                    데이터가 없습니다. 최초 데이터 받아오는 중, 최소 3분 이상 소요됩니다.
                 </span>
                 <div className="animate-pulse text-[18px] font-bold">
                     {renderDots()}

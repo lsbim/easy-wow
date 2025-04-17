@@ -129,7 +129,7 @@ export const timestampToPosition = (timestamp, timelineScaleX) => {
 export const convertToSrc = (abil, type) => {
     return type === 'mplus'
         ? `${process.env.REACT_APP_IMAGES_IP}/images/mplus/boss/spell/${abil}.jpg`
-        : `${process.env.REACT_APP_IMAGES_IP}/images/player/spell/${abil}.jpg`;
+        : `${process.env.REACT_APP_IMAGES_IP}/images/ability/${abil}.jpg`;
 }
 
 // 모달 타입 번역

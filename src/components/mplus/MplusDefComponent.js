@@ -1,15 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { getMplusTimeline } from '../../api/mplusTimelineAPI';
 import { convertToMMSS, convertToSrc, convertToTimeline } from '../../global/function';
 import { bannedBossSkills } from '../../global/variable/mplusVariable';
 import { PL_WIDTH, TL_DURATION_RECT_HEIGHT, TL_Y_PER_LIST } from '../../global/variable/timelineConstants';
+import useStagePointerDrag from '../../hooks/useStagePointerDrag';
 import UpdatingApiStatus from '../common/UpdatingApiStatus';
 import TimelineStageCanvas from './canvas/TimelineStageCanvas';
 import MplusMRTModalComponent from './common/MplusMRTModalComponent';
 import MplusPlayerComponent from './MplusPlayerComponent';
 import MplusSkillCheckComponent from './MplusSkillCheckComponent';
-import MplusChartModalComponent from './common/MplusChartModalComponent';
-import useStagePointerDrag from '../../hooks/useStagePointerDrag';
 
 const MplusDefComponent = ({ className, specName, dungeonId }) => {
 
@@ -24,7 +23,6 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
     const [isModalOpen, setIsModalOpen] = useState(-1);
     const [timelineScaleX, setTimelineScaleX] = useState(6); // 타임라인 시간(초)과 간격(픽셀)의 비율
     const [timelineHeight, setTimelineHeight] = useState(26);
-    const [isChartModalOpen, setIsChartModalOpen] = useState(-1);
 
     // 툴팁
     const handleMouseEnter = (e, abilityGameID, timestamp) => {
@@ -43,7 +41,7 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
         setSelected(i)
     }
     // 스킬 표시 on/off
-    const handleSelectSkill = (i, type) => {
+    const handleSelectSkill = useCallback((i, type) => {
         if (type === 'player') {
             setSelectedSkill((prev) => {
                 const newSet = new Set(prev);
@@ -65,7 +63,29 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
                 return newSet;
             })
         }
-    }
+    },[selectedSkill])
+
+    const handleSelectBloodlust = useCallback(() => {
+        const isSelectBlood = data?.takenBloodlusts?.every( // 전부 포함됐는지?
+            spell => selectedSkill?.has(spell.spellId)
+        );
+
+        const newSelectedSkill = new Set(selectedSkill);
+
+        if (isSelectBlood) {
+            // 모두 포함되어 있으면, 해당 spellId들만 제거
+            data?.takenBloodlusts?.forEach(spell => {
+                newSelectedSkill?.delete(spell.spellId);
+            });
+        } else {
+            // 하나라도 빠져 있으면, 모두 추가
+            data?.takenBloodlusts?.forEach(spell => {
+                newSelectedSkill?.add(spell.spellId);
+            });
+        }
+
+        setSelectedSkill(newSelectedSkill);
+    }, [selectedSkill]); // data?.takenBloodlusts는 변경될 일 없는 객체라 넣지 않았다.
 
     // 데이터 불러오기
     useEffect(() => {
@@ -79,7 +99,7 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
                 // API 호출
                 const response = await getMplusTimeline({ dungeonId, className, specName, signal: controller.signal });
                 // console.log('API Response', response)
-                if (response.status === "UPDATING") {
+                if (response?.status === "UPDATING" && response?.data === null) {
                     if (data !== "UPDATING") { // 업데이팅 상태에 쓸데없는 리렌더링 방지
                         setData("UPDATING");
                         console.log("업데이트 중...")
@@ -97,7 +117,7 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
 
                 const loadedData = response?.data;
                 setData(loadedData);
-                // console.log("My DATA: ", loadedData)
+                console.log("My DATA: ", loadedData);
                 if (response?.data?.rankings?.length === 0) {
                     console.log("랭킹 데이터가 없습니다!");
                     setData(null);
@@ -113,9 +133,10 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
                 // on/off 직업스킬/받은외생기
                 const initSelectedSkills = new Set([ // 대괄호로 감싸고 두 map()을 스프레드연산자로 결합해야 두 배열을 한 Set에 넣기가능
                     ...(loadedData?.playerSkillInfo?.map(skill => skill?.spellId) || []), // 사용한 스킬
-                    ...(loadedData?.takenBuffInfo?.map(skill => skill?.spellId) || []) // 받은 외생기
+                    // ...(loadedData?.takenBuffInfo?.map(skill => skill?.spellId) || []) // 받은 외생기
                 ]);
                 setSelectedSkill(initSelectedSkills);
+ 
 
                 // on/off 보스스킬. 위와 합쳐도 되지 않나?
                 const initBossSkills = new Set(
@@ -215,30 +236,12 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
     return (
         <div className='relative mx-2'>
             {/* 모달은 한 종류만 */}
-            {isChartModalOpen === -1 && isModalOpen !== -1 && (
+            {isModalOpen !== -1 && (
                 <MplusMRTModalComponent
                     setIsModalOpen={setIsModalOpen}
                     type={"Reminder"}
                     modalText={modalTimeline}
                     modalStartTime={modalStartTime}
-                />
-            )}
-            {isModalOpen === -1 && isChartModalOpen !== -1 && (
-                <MplusChartModalComponent
-                    setIsChartModalOpen={setIsChartModalOpen}
-                    rankingData={[data?.rankings[isChartModalOpen]]}
-                    className={className}
-                    specName={specName}
-                    timelineScaleX={timelineScaleX}
-                    selected={selected}
-                    skillList={
-                        new Array(
-                            ...(data?.playerSkillInfo),
-                            ...(data?.takenBuffInfo)
-                        )}
-                    handleMouseEnter={handleMouseEnter}
-                    handleMouseLeave={handleMouseLeave}
-                    selectedBossSkill={new Set(data?.bossSkillInfo?.filter(s => !bannedBossSkills.includes(s))?.map(skill => skill))}
                 />
             )}
             {/* 보스 선택 */}
@@ -266,17 +269,19 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
                 bossSkillInfo={data?.bossSkillInfo}
                 playerSkillInfo={data?.playerSkillInfo}
                 takenBuffInfo={data?.takenBuffInfo}
+                takenBloodlusts={data?.takenBloodlusts}
                 firstBossIDs={firstBossIDs}
                 selectedBossSkill={selectedBossSkill}
                 handleSelectSkill={handleSelectSkill}
                 selectedSkill={selectedSkill}
+                handleSelectBloodlust={handleSelectBloodlust}
             />
             <div className='flex relative'>
                 <div style={{ marginTop: `${TL_Y_PER_LIST}px` }} >
                     {/* 보스 이름 */}
                     <div
                         className="block shadow-[1px_0_0_black,0_1px_0_black,1px_1px_0_black,1px_0_0_black_inset,0_1px_0_black_inset]"
-                        style={{ width: `${PL_WIDTH + 60}px`, height: `${TL_DURATION_RECT_HEIGHT}px` }}
+                        style={{ width: `${PL_WIDTH + 30}px`, height: `${TL_DURATION_RECT_HEIGHT}px` }}
                     >
                         <span className="text-[14px] flex justify-center items-center h-full text-ellipsis overflow-hidden whitespace-nowrap">
                             {firstBoss?.krBossName || "보스"}
@@ -297,7 +302,6 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
                             height={TL_DURATION_RECT_HEIGHT}
                             setIsModalOpen={setIsModalOpen}
                             index={i}
-                            setIsChartModalOpen={setIsChartModalOpen}
                             hasResourcesData={data?.rankings[i]?.fights?.pulls[selected]?.events?.hasOwnProperty("resources")}
                         />
                     ))}
@@ -329,13 +333,11 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
                         setTimelineScaleX={setTimelineScaleX}
                         timelineHeight={timelineHeight}
                         setTimelineHeight={setTimelineHeight}
-                        isChartModalOpen={isChartModalOpen}
-                        setIsChartModalOpen={setIsChartModalOpen}
                     />
 
                 </div>
                 {/* 툴팁박스... 모달이 띄워져 있는 동안 출력되지 않도록 */}
-                {tooltip.visible && (isChartModalOpen === -1 && isModalOpen === -1) && (
+                {tooltip.visible && (isModalOpen === -1) && (
                     <div
                         className='absolute p-[6px] bg-black text-white rounded-md shadow-md pointer-events-none text-[12px]'
                         style={{

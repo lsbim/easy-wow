@@ -1,7 +1,6 @@
 import { PL_WIDTH } from "../../global/variable/timelineConstants";
 
 const MplusPlayerComponent = ({ code, fightID, name, className, specName, hardModeLevel, medal, setIsModalOpen, height, index
-    , setIsChartModalOpen, hasResourcesData
 }) => {
 
     const medalStar = (medal) => {
@@ -60,18 +59,6 @@ const MplusPlayerComponent = ({ code, fightID, name, className, specName, hardMo
                 onClick={() => setIsModalOpen(index)}>
                 📄
             </div>
-            {/* 체력 그래프 데이터가 있는가? */}
-            {hasResourcesData === true ? (
-                <div className="w-[30px] flex items-center justify-center hover:bg-slate-300 cursor-pointer shadow-[1px_0_0_black,0_1px_0_black,1px_1px_0_black,1px_0_0_black_inset,0_1px_0_black_inset]"
-                    onClick={() => setIsChartModalOpen(index)}>
-                    📈
-                </div>
-            ) : (
-                <div className="w-[30px] flex items-center justify-center bg-stone-700 opacity-30 shadow-[1px_0_0_black,0_1px_0_black,1px_1px_0_black,1px_0_0_black_inset,0_1px_0_black_inset]"
-                    >
-                    📈
-                </div>
-            )}
         </div>
     );
 }
