@@ -3,14 +3,26 @@ import { Layer, Stage } from "react-konva";
 import BossCastCanvas from "./BossCastCanvas";
 import PlayerCastCanvas from "./PlayerCastCanvas";
 import TimelineBaseCanvas from "./TimelineBaseCanvas";
+import TooltipCanvas from "./common/TooltipCanvas";
 
 const TimelineStageCanvas = ({
-    offsetX, setOffsetX, handlePointerDown, handleMouseEnter, handleMouseLeave, combatTime,
+    offsetX, setOffsetX, handlePointerDown, combatTime,
     enemyCastsTimeline, firstBoss, selectedBossSkill, rankingData, selected, className, selectedSkill, skillList,
     timelineScaleX, setTimelineScaleX, timelineHeight
 }) => {
 
     const [stageWidth, setStageWidth] = useState(window.innerWidth);
+    const [tooltip, setTooltip] = useState({ visible: false, x: 0, y: 0, text: '', timestamp: '' });
+
+    // 툴팁
+    const handleMouseEnter = (e, abilityGameID, timestamp) => {
+        const { x, y } = e.target.getClientRect(); // 이미지의 위치 계산
+        setTooltip({ visible: true, x: x, y: y, text: `${abilityGameID}`, timestamp: `${timestamp}` });
+    };
+    // 툴팁
+    const handleMouseLeave = () => {
+        setTooltip({ visible: false, x: 0, y: 0, text: '' });
+    };
 
     // 컨트롤 휠 업/다운으로 확대/축소
     const handleWheel = useCallback((e) => {
@@ -100,6 +112,15 @@ const TimelineStageCanvas = ({
                         className={className}
                         skillList={skillList}
                         timelineScaleX={timelineScaleX}
+                    />
+                    <TooltipCanvas
+                        x={tooltip.x}
+                        y={tooltip.y}
+                        text={tooltip.text}
+                        timestamp={tooltip.timestamp}
+                        visible={tooltip.visible}
+                        offsetX={offsetX}
+                        timelineHeight={timelineHeight}
                     />
                 </Layer>
             </Stage>

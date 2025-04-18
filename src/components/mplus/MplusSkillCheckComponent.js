@@ -5,6 +5,8 @@ const MplusSkillCheckComponent = ({
     , handleSelectSkill, selectedSkill, takenBloodlusts, handleSelectBloodlust
 }) => {
 
+    // console.log(takenBloodlusts)
+
     return (
         <div className='mb-4 md:flex'>
             {/* 보스 스킬 표기 on/off */}
@@ -76,7 +78,7 @@ const MplusSkillCheckComponent = ({
                         />
                     </a>
                 ))}
-                {takenBloodlusts?.length > 1 && (
+                {takenBloodlusts?.length > 0 && (
                     <a
                         href="#" data-wowhead={`spell=2825&domain=ko`}
                         className={`w-[30px] h-[30px] hover:bg-slate-200 cursor-pointer

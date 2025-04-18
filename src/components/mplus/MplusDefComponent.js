@@ -1,8 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { getMplusTimeline } from '../../api/mplusTimelineAPI';
-import { convertToMMSS, convertToSrc, convertToTimeline } from '../../global/function';
-import { bannedBossSkills } from '../../global/variable/mplusVariable';
+import { convertToMMSS, convertToTimeline } from '../../global/function';
 import { PL_WIDTH, TL_DURATION_RECT_HEIGHT, TL_Y_PER_LIST } from '../../global/variable/timelineConstants';
+import { useFetch } from '../../hooks/useFetch';
 import useStagePointerDrag from '../../hooks/useStagePointerDrag';
 import UpdatingApiStatus from '../common/UpdatingApiStatus';
 import TimelineStageCanvas from './canvas/TimelineStageCanvas';
@@ -12,10 +11,8 @@ import MplusSkillCheckComponent from './MplusSkillCheckComponent';
 
 const MplusDefComponent = ({ className, specName, dungeonId }) => {
 
-    const [isLoading, setIsLoading] = useState(true);
-    const [data, setData] = useState(null);
-    const [tooltip, setTooltip] = useState({ visible: false, x: 0, y: 0, text: '', timestamp: '' });
-    const [bossList, setBossList] = useState([]); // 보스 이름 배열
+    const [data, isLoading, bossList, initSelectedSkill, initSelectedBossSkill, initTimelineHeight] =
+        useFetch({ dungeonId, className, specName })
     const [selected, setSelected] = useState(0); // 선택한 pull 인덱스
     const [selectedSkill, setSelectedSkill] = useState(new Set()); // 타임라인에 표기할 플레이어가 사용한 스킬들
     const [selectedBossSkill, setSelectedBossSkill] = useState(new Set()); // 타임라인에 표기할 보스가 사용한 스킬들
@@ -23,16 +20,6 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
     const [isModalOpen, setIsModalOpen] = useState(-1);
     const [timelineScaleX, setTimelineScaleX] = useState(6); // 타임라인 시간(초)과 간격(픽셀)의 비율
     const [timelineHeight, setTimelineHeight] = useState(26);
-
-    // 툴팁
-    const handleMouseEnter = (e, abilityGameID, timestamp) => {
-        const { x, y } = e.target.getClientRect(); // 이미지의 위치 계산
-        setTooltip({ visible: true, x: x, y: y, text: `${abilityGameID}`, timestamp: `${timestamp}` });
-    };
-    // 툴팁
-    const handleMouseLeave = () => {
-        setTooltip({ visible: false, x: 0, y: 0, text: '' });
-    };
 
     // 보스선택
     const handleSelectBoss = (i) => {
@@ -63,7 +50,7 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
                 return newSet;
             })
         }
-    },[selectedSkill])
+    }, [selectedSkill])
 
     const handleSelectBloodlust = useCallback(() => {
         const isSelectBlood = data?.takenBloodlusts?.every( // 전부 포함됐는지?
@@ -77,11 +64,19 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
             data?.takenBloodlusts?.forEach(spell => {
                 newSelectedSkill?.delete(spell.spellId);
             });
+            // 블러드 대표(피의욕망) 지우기
+            if(newSelectedSkill?.has(2825)){
+                newSelectedSkill?.delete(2825);
+            }
         } else {
             // 하나라도 빠져 있으면, 모두 추가
             data?.takenBloodlusts?.forEach(spell => {
                 newSelectedSkill?.add(spell.spellId);
             });
+            // 블러드 대표 추가
+            if(!newSelectedSkill?.has(2825)){
+                newSelectedSkill?.add(2825);
+            }
         }
 
         setSelectedSkill(newSelectedSkill);
@@ -89,91 +84,17 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
 
     // 데이터 불러오기
     useEffect(() => {
-        const controller = new AbortController();
-        const loadData = async () => {
-            try {
-                if (!isLoading && data !== 'UPDATING') { // 업데이팅 상태에 쓸데없는 리렌더링 방지
-                    setIsLoading(true) // 로딩 시작
-                }
 
-                // API 호출
-                const response = await getMplusTimeline({ dungeonId, className, specName, signal: controller.signal });
-                // console.log('API Response', response)
-                if (response?.status === "UPDATING" && response?.data === null) {
-                    if (data !== "UPDATING") { // 업데이팅 상태에 쓸데없는 리렌더링 방지
-                        setData("UPDATING");
-                        console.log("업데이트 중...")
-                    }
-                    // 취소 가능한 타임아웃
-                    if (!controller.signal.aborted) {
-                        setTimeout(() => {
-                            if (!controller.signal.aborted) {
-                                loadData();
-                            }
-                        }, 3000);
-                    }
-                    return;
-                }
+        if (!data) { return; }
 
-                const loadedData = response?.data;
-                setData(loadedData);
-                console.log("My DATA: ", loadedData);
-                if (response?.data?.rankings?.length === 0) {
-                    console.log("랭킹 데이터가 없습니다!");
-                    setData(null);
-                    return;
-                }
-                // 랭킹데이터 배열 크기만큼 타임라인 사이즈 설정
-                setTimelineHeight(27 + (loadedData?.rankings?.length + 1) * 28)
+        // 보스정보 0번 인덱스로 초기화
+        setSelected(0);
 
-                // 보스 이름 목록
-                const bossNames = loadedData?.rankings[0]?.fights?.pulls?.map(pull => pull?.name) || [];
-                setBossList(bossNames);
+        setSelectedSkill(initSelectedSkill)
+        setSelectedBossSkill(initSelectedBossSkill)
+        setTimelineHeight(initTimelineHeight) 
 
-                // on/off 직업스킬/받은외생기
-                const initSelectedSkills = new Set([ // 대괄호로 감싸고 두 map()을 스프레드연산자로 결합해야 두 배열을 한 Set에 넣기가능
-                    ...(loadedData?.playerSkillInfo?.map(skill => skill?.spellId) || []), // 사용한 스킬
-                    // ...(loadedData?.takenBuffInfo?.map(skill => skill?.spellId) || []) // 받은 외생기
-                ]);
-                setSelectedSkill(initSelectedSkills);
- 
-
-                // on/off 보스스킬. 위와 합쳐도 되지 않나?
-                const initBossSkills = new Set(
-                    loadedData?.bossSkillInfo?.filter(s => !bannedBossSkills.includes(s))?.map(skill => skill)
-                );
-                setSelectedBossSkill(initBossSkills);
-
-                // 이미지 프리로드 -> 네트워크 요청 감소
-                const preloadImage = (abil, type) => {
-                    const img = new Image();
-                    img.src = type ? convertToSrc(abil, type) : abil;
-                }
-                initSelectedSkills?.forEach(a => preloadImage(a, className));
-                initBossSkills?.forEach(a => preloadImage(a, 'mplus'));
-                bossNames?.forEach(b => preloadImage(`${process.env.REACT_APP_IMAGES_IP}/images/mplus/boss/face/${b}.png`));
-
-                // 보스정보 0번 인덱스로 초기화
-                setSelected(0);
-
-                if (response?.status !== 'UPDATING') {
-                    setIsLoading(false); // 업데이트중이 아닐 때에 로딩 종료
-                }
-            } catch (e) {
-                // console.error('에러: ', e);
-                if (e.name === 'AbortError') {
-                    console.log('Fetch aborted');
-                }
-            }
-        }
-
-        loadData();
-
-        // 컴포넌트 언마운트 시 or 의존성 변경 시 모든 진행 중인 요청 취소
-        return () => {
-            controller.abort();
-        };
-    }, [className, dungeonId, specName]);
+    }, [data]);
 
     // 로딩?
     if (isLoading && data !== "UPDATING") {
@@ -315,8 +236,6 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
                         setOffsetX={setOffsetX}
                         combatTime={combatTime}
                         enemyCastsTimeline={enemyCastsTimeline}
-                        handleMouseEnter={handleMouseEnter}
-                        handleMouseLeave={handleMouseLeave}
                         firstBoss={firstBoss}
                         selectedBossSkill={selectedBossSkill}
                         rankingData={data?.rankings}
@@ -336,26 +255,6 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
                     />
 
                 </div>
-                {/* 툴팁박스... 모달이 띄워져 있는 동안 출력되지 않도록 */}
-                {tooltip.visible && (isModalOpen === -1) && (
-                    <div
-                        className='absolute p-[6px] bg-black text-white rounded-md shadow-md pointer-events-none text-[12px]'
-                        style={{
-                            left: `${tooltip.x + PL_WIDTH + 30}px`,
-                            top: tooltip.y - 10,
-                            transform: 'translateY(-100%)'
-                        }}
-                    >
-                        {tooltip?.text && tooltip?.text !== "null" && (
-                            <div>
-                                {tooltip.text}
-                            </div>
-                        )}
-                        <div>
-                            {tooltip.timestamp}
-                        </div>
-                    </div>
-                )}
             </div>
 
         </div>

@@ -1,7 +1,7 @@
 import { TL_SPELL_WIDTH_PER_SEC } from "./variable/timelineConstants";
 
 // 캐스트 타임테이블 duration으로 가공
-export function convertToTimeline(casts) {
+export function convertToTimeline(casts, pullStartTime) {
 
     if (!casts) {
         return [];
@@ -47,6 +47,18 @@ export function convertToTimeline(casts) {
             continue;
         }
 
+        // 전투 시작 전에 미리 쓴 버프일 경우 0번 인덱스가 removebuff로 시작한다.
+        if (i === 0 && type === 'removebuff') {
+            const cast = {
+                timestamp: pullStartTime,
+                abilityGameID: currentCast?.abilityGameID,
+                duration: currentCast?.timestamp - pullStartTime, // 즉시 발동 스킬은 duration 0
+                skillName: currentCast?.skillName
+            };
+
+            arr.push(cast);
+        }
+
         // 타입: 시전 시작, 버프 시작
         if (type === 'begincast' || type === 'applybuff') {
             // 시전 시작 이후 목록 순회(캐스팅 중 다른스킬 시전한 경우가 있음)
@@ -56,7 +68,7 @@ export function convertToTimeline(casts) {
                     (filteredCasts[j]?.type === 'cast' || filteredCasts[j]?.type === 'removebuff') &&
                     filteredCasts[i]?.abilityGameID === filteredCasts[j]?.abilityGameID
                 ) {
-                    matchingCastIndex = j;
+                    matchingCastIndex = j; // 시전시작, 버프시작 이후 만나는 첫 시전, 버프삭제 인덱스 기록
                     break;
                 }
                 // 시전 완료 없이 새 begincast(시전시작)/removebuff(버프종료)를 만나면 시전 실패
@@ -67,8 +79,6 @@ export function convertToTimeline(casts) {
                     break;
                 }
             }
-
-
 
             if (matchingCastIndex !== -1) {
                 const timestampStart = filteredCasts[i]?.timestamp;
@@ -91,10 +101,10 @@ export function convertToTimeline(casts) {
         } else if (type === 'cast') {
             if (!checkedSet.has(i)) { // 즉시시전 cast만 취급
                 const cast = {
-                    timestamp: currentCast.timestamp,
-                    abilityGameID: currentCast.abilityGameID,
+                    timestamp: currentCast?.timestamp,
+                    abilityGameID: currentCast?.abilityGameID,
                     duration: 0, // 즉시 발동 스킬은 duration 0
-                    skillName: currentCast.skillName
+                    skillName: currentCast?.skillName
                 };
 
                 arr.push(cast);
@@ -123,29 +133,12 @@ export const convertToMMSS = (ms, type) => {
 };
 
 export const timestampToPosition = (timestamp, timelineScaleX) => {
-    return timestamp / 1000 * timelineScaleX;
+    const result = timestamp / 1000 * timelineScaleX;
+    return result > 0 ? result : 0;
 };
 
 export const convertToSrc = (abil, type) => {
     return type === 'mplus'
         ? `${process.env.REACT_APP_IMAGES_IP}/images/mplus/boss/spell/${abil}.jpg`
         : `${process.env.REACT_APP_IMAGES_IP}/images/ability/${abil}.jpg`;
-}
-
-// 모달 타입 번역
-export const translateType = (type) => {
-    switch (type) {
-        case "damage":
-            return (
-                <div className="flex justify-center text-[12px] w-[60px] py-2 mr-4 text-red-700">
-                    피해입음
-                </div>
-            );
-        case "absorbed":
-            return (
-                <div className="flex justify-center text-[12px] w-[60px] py-2 mr-4 text-sky-800">
-                    흡수됨
-                </div>
-            );
-    }
 }

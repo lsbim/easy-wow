@@ -9,7 +9,7 @@ import HatchPatternRectCanvas from "./HatchPatternRectCanvas";
 const PlayerCastCanvas = ({ rankingData, handleMouseEnter, handleMouseLeave, selected, selectedSkill, className, skillList, timelineScaleX
 }) => {
 
-
+    // console.log(selectedSkill)
     return (
         <>
             {/* 플레이어 단위 */}
@@ -17,18 +17,18 @@ const PlayerCastCanvas = ({ rankingData, handleMouseEnter, handleMouseLeave, sel
                 // console.log('전투시간: ',convertToMMSS(pull?.combatTime))
                 const pull = player?.fights?.pulls[selected];
                 const bloodlust = pull?.events?.bloodlusts?.reduce((acc, blood) => {
-                    const timeline = convertToTimeline(blood);
+                    const timeline = convertToTimeline(blood, pull?.startTime);
                     return [...acc, ...timeline];
                 }, []);
                 const mergedPlayerCasts = pull?.events?.playerCasts?.reduce((acc, casts) => { // 플레이어 캐스트 배열 통합
-                    const timeline = convertToTimeline(casts); // acc는 통합될 기준 배열, casts는 플레이어 캐스트 배열들
+                    const timeline = convertToTimeline(casts, pull?.startTime); // acc는 통합될 기준 배열, casts는 플레이어 캐스트 배열들
                     return [...acc, ...timeline];
                 }, []) ?? []; // , []는 acc의 최초 선언 타입 빈 배열
 
 
                 // 받은 외생기
                 const mergedPlayerTakenBuffs = pull?.events?.playerTakenDef?.reduce((acc, buffs) => {
-                    const timeline = convertToTimeline(buffs);
+                    const timeline = convertToTimeline(buffs, pull?.startTime);
                     return [...acc, ...timeline];
                 }, []) ?? [];
 
@@ -84,6 +84,7 @@ const PlayerCastCanvas = ({ rankingData, handleMouseEnter, handleMouseLeave, sel
                             clipWidth={pull?.combatTime / 1000 * timelineScaleX}
                             clipHeight={1000}
                         >
+                            {/* 블러드 전용 빗금블럭 */}
                             {selectedSkill?.has(2825) && bloodlust?.map((b, i) => (
                                 <React.Fragment key={i + 'bloodlust'}>
                                     <HatchPatternRectCanvas
@@ -95,7 +96,7 @@ const PlayerCastCanvas = ({ rankingData, handleMouseEnter, handleMouseLeave, sel
                                     />
 
                                     <Text
-                                        x={timestampToPosition(b?.timestamp - pull?.startTime, timelineScaleX)+5}
+                                        x={timestampToPosition(b?.timestamp - pull?.startTime, timelineScaleX) + 5}
                                         y={TL_Y_PLAYER_TEXT}
                                         text={convertToMMSS(b?.timestamp - pull?.startTime)}
                                         fontSize={14}
@@ -105,6 +106,7 @@ const PlayerCastCanvas = ({ rankingData, handleMouseEnter, handleMouseLeave, sel
                                 </React.Fragment>
                             ))}
 
+                            {/* 플레이어 주문 블럭 */}
                             {mergedEvents?.filter(c => selectedSkill?.has(c?.abilityGameID))?.map((cast, playerCastIndex) => (
                                 <React.Fragment key={playerCastIndex + 'cast'}>
                                     {cast?.duration >= 10 && //
