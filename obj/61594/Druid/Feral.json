@@ -1,0 +1,6133 @@
+{
+  "rankings" : [ {
+    "name" : "Фесида",
+    "spec" : "Feral",
+    "amount" : 4038598.8750399947,
+    "hardModeLevel" : 18,
+    "duration" : 1871883,
+    "report" : {
+      "code" : "r2DgXfNnk6W4wZH7",
+      "fightID" : 1
+    },
+    "affixes" : [ 9, 10, 147 ],
+    "medal" : "bronze",
+    "score" : 457.04767045455,
+    "server" : {
+      "name" : "Гордунни",
+      "region" : "EU"
+    },
+    "class" : "Druid",
+    "fights" : {
+      "pulls" : [ {
+        "name" : "Coin-Operated Crowd Pummeler",
+        "krBossName" : "동전 투입식 군중 난타기",
+        "bossGameId" : 0,
+        "startTime" : 3332981,
+        "endTime" : 3507839,
+        "combatTime" : 174858,
+        "enemyNpcs" : [ {
+          "id" : 8,
+          "gameId" : 129214
+        }, {
+          "id" : 43,
+          "gameId" : 129246
+        } ],
+        "events" : {
+          "enemyCasts" : [ {
+            "timestamp" : 3340165,
+            "type" : "begincast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 3342672,
+            "type" : "cast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 3352338,
+            "type" : "cast",
+            "abilityGameID" : 269493
+          }, {
+            "timestamp" : 3373026,
+            "type" : "begincast",
+            "abilityGameID" : 271903
+          }, {
+            "timestamp" : 3375519,
+            "type" : "cast",
+            "abilityGameID" : 271903
+          }, {
+            "timestamp" : 3386388,
+            "type" : "begincast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 3388881,
+            "type" : "cast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 3399749,
+            "type" : "cast",
+            "abilityGameID" : 269493
+          }, {
+            "timestamp" : 3410673,
+            "type" : "begincast",
+            "abilityGameID" : 1217294
+          }, {
+            "timestamp" : 3414677,
+            "type" : "cast",
+            "abilityGameID" : 1217294
+          }, {
+            "timestamp" : 3416749,
+            "type" : "begincast",
+            "abilityGameID" : 271903
+          }, {
+            "timestamp" : 3419260,
+            "type" : "cast",
+            "abilityGameID" : 271903
+          }, {
+            "timestamp" : 3430135,
+            "type" : "begincast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 3432635,
+            "type" : "cast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 3443464,
+            "type" : "cast",
+            "abilityGameID" : 269493
+          }, {
+            "timestamp" : 3460488,
+            "type" : "begincast",
+            "abilityGameID" : 271903
+          }, {
+            "timestamp" : 3462983,
+            "type" : "cast",
+            "abilityGameID" : 271903
+          }, {
+            "timestamp" : 3473852,
+            "type" : "begincast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 3476351,
+            "type" : "cast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 3486004,
+            "type" : "cast",
+            "abilityGameID" : 269493
+          }, {
+            "timestamp" : 3504188,
+            "type" : "begincast",
+            "abilityGameID" : 271903
+          }, {
+            "timestamp" : 3506700,
+            "type" : "cast",
+            "abilityGameID" : 271903
+          } ],
+          "playerCasts" : [ [ {
+            "timestamp" : 3339799,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          }, {
+            "timestamp" : 3431436,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          } ], [ ], [ ] ],
+          "playerTakenDef" : [ [ ], [ ], [ ], [ ], [ ], [ ] ],
+          "bloodlusts" : [ [ ], [ ], [ ], [ ], [ ], [ ], [ ] ]
+        }
+      }, {
+        "name" : "Azerokk",
+        "krBossName" : "아제로크",
+        "bossGameId" : 0,
+        "startTime" : 3757114,
+        "endTime" : 3975438,
+        "combatTime" : 218324,
+        "enemyNpcs" : [ {
+          "id" : 46,
+          "gameId" : 129227
+        }, {
+          "id" : 47,
+          "gameId" : 129802
+        } ],
+        "events" : {
+          "enemyCasts" : [ {
+            "timestamp" : 3762345,
+            "type" : "begincast",
+            "abilityGameID" : 271698
+          }, {
+            "timestamp" : 3762346,
+            "type" : "cast",
+            "abilityGameID" : 257596
+          }, {
+            "timestamp" : 3770206,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 3773711,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 3785998,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 3789498,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 3790851,
+            "type" : "begincast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 3795847,
+            "type" : "cast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 3798130,
+            "type" : "begincast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 3800637,
+            "type" : "cast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 3804201,
+            "type" : "begincast",
+            "abilityGameID" : 271698
+          }, {
+            "timestamp" : 3804202,
+            "type" : "cast",
+            "abilityGameID" : 257596
+          }, {
+            "timestamp" : 3810261,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 3813758,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 3826058,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 3829542,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 3830879,
+            "type" : "begincast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 3835888,
+            "type" : "cast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 3840614,
+            "type" : "begincast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 3843124,
+            "type" : "cast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 3846693,
+            "type" : "begincast",
+            "abilityGameID" : 271698
+          }, {
+            "timestamp" : 3846694,
+            "type" : "cast",
+            "abilityGameID" : 257596
+          }, {
+            "timestamp" : 3852764,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 3856257,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 3868565,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 3872060,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 3873411,
+            "type" : "begincast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 3878414,
+            "type" : "cast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 3883127,
+            "type" : "begincast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 3885637,
+            "type" : "cast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 3889196,
+            "type" : "begincast",
+            "abilityGameID" : 271698
+          }, {
+            "timestamp" : 3889196,
+            "type" : "cast",
+            "abilityGameID" : 257596
+          }, {
+            "timestamp" : 3895288,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 3898786,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 3911115,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 3914619,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 3915975,
+            "type" : "begincast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 3920984,
+            "type" : "cast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 3925686,
+            "type" : "begincast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 3928180,
+            "type" : "cast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 3931775,
+            "type" : "begincast",
+            "abilityGameID" : 271698
+          }, {
+            "timestamp" : 3931775,
+            "type" : "cast",
+            "abilityGameID" : 257596
+          }, {
+            "timestamp" : 3937848,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 3941346,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 3953627,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 3957133,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 3958472,
+            "type" : "begincast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 3963480,
+            "type" : "cast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 3968211,
+            "type" : "begincast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 3970705,
+            "type" : "cast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 3974295,
+            "type" : "begincast",
+            "abilityGameID" : 271698
+          }, {
+            "timestamp" : 3974295,
+            "type" : "cast",
+            "abilityGameID" : 257596
+          } ],
+          "playerCasts" : [ [ {
+            "timestamp" : 3768472,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          }, {
+            "timestamp" : 3873319,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          }, {
+            "timestamp" : 3935996,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          } ], [ {
+            "timestamp" : 3822737,
+            "type" : "cast",
+            "abilityGameID" : 108238
+          } ], [ {
+            "timestamp" : 3895434,
+            "type" : "cast",
+            "abilityGameID" : 61336
+          } ] ],
+          "playerTakenDef" : [ [ ], [ ], [ ], [ ], [ ], [ ] ],
+          "bloodlusts" : [ [ ], [ ], [ {
+            "timestamp" : 3888035,
+            "type" : "applybuff",
+            "abilityGameID" : 32182
+          }, {
+            "timestamp" : 3928044,
+            "type" : "removebuff",
+            "abilityGameID" : 32182
+          } ], [ ], [ ], [ ], [ ] ]
+        }
+      }, {
+        "name" : "Rixxa Fluxfume",
+        "krBossName" : "릭사 플럭스플레임",
+        "bossGameId" : 0,
+        "startTime" : 4243688,
+        "endTime" : 4445282,
+        "combatTime" : 201594,
+        "enemyNpcs" : [ {
+          "id" : 52,
+          "gameId" : 133463
+        }, {
+          "id" : 56,
+          "gameId" : 235631
+        }, {
+          "id" : 54,
+          "gameId" : 129231
+        } ],
+        "events" : {
+          "enemyCasts" : [ {
+            "timestamp" : 4246693,
+            "type" : "cast",
+            "abilityGameID" : 275992
+          }, {
+            "timestamp" : 4287698,
+            "type" : "begincast",
+            "abilityGameID" : 259940
+          }, {
+            "timestamp" : 4291191,
+            "type" : "cast",
+            "abilityGameID" : 259940
+          }, {
+            "timestamp" : 4299712,
+            "type" : "cast",
+            "abilityGameID" : 275992
+          }, {
+            "timestamp" : 4352724,
+            "type" : "cast",
+            "abilityGameID" : 275992
+          }, {
+            "timestamp" : 4382743,
+            "type" : "begincast",
+            "abilityGameID" : 259940
+          }, {
+            "timestamp" : 4386250,
+            "type" : "cast",
+            "abilityGameID" : 259940
+          }, {
+            "timestamp" : 4405740,
+            "type" : "cast",
+            "abilityGameID" : 275992
+          } ],
+          "playerCasts" : [ [ {
+            "timestamp" : 4269146,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          } ], [ {
+            "timestamp" : 4287718,
+            "type" : "cast",
+            "abilityGameID" : 108238
+          } ], [ {
+            "timestamp" : 4322169,
+            "type" : "cast",
+            "abilityGameID" : 61336
+          } ] ],
+          "playerTakenDef" : [ [ ], [ ], [ ], [ ], [ ], [ ] ],
+          "bloodlusts" : [ [ ], [ ], [ ], [ ], [ ], [ ], [ ] ]
+        }
+      }, {
+        "name" : "Mogul Razdunk",
+        "krBossName" : "모굴 라즈덩크",
+        "bossGameId" : 0,
+        "startTime" : 4668002,
+        "endTime" : 4950982,
+        "combatTime" : 282980,
+        "enemyNpcs" : [ {
+          "id" : 53,
+          "gameId" : 129232
+        }, {
+          "id" : 52,
+          "gameId" : 133463
+        }, {
+          "id" : 61,
+          "gameId" : 132056
+        }, {
+          "id" : 63,
+          "gameId" : 132713
+        } ],
+        "events" : {
+          "enemyCasts" : [ {
+            "timestamp" : 4668016,
+            "type" : "begincast",
+            "abilityGameID" : 276212
+          }, {
+            "timestamp" : 4670986,
+            "type" : "cast",
+            "abilityGameID" : 276212
+          }, {
+            "timestamp" : 4688006,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 4690996,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 4717999,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 4721000,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 4748018,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 4751022,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 4778003,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 4780996,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 4791474,
+            "type" : "cast",
+            "abilityGameID" : 260189
+          }, {
+            "timestamp" : 4814948,
+            "type" : "begincast",
+            "abilityGameID" : 260202
+          }, {
+            "timestamp" : 4816443,
+            "type" : "cast",
+            "abilityGameID" : 260202
+          }, {
+            "timestamp" : 4818600,
+            "type" : "begincast",
+            "abilityGameID" : 271456
+          }, {
+            "timestamp" : 4823597,
+            "type" : "cast",
+            "abilityGameID" : 271456
+          }, {
+            "timestamp" : 4827068,
+            "type" : "begincast",
+            "abilityGameID" : 260202
+          }, {
+            "timestamp" : 4828565,
+            "type" : "cast",
+            "abilityGameID" : 260202
+          }, {
+            "timestamp" : 4837994,
+            "type" : "begincast",
+            "abilityGameID" : 260202
+          }, {
+            "timestamp" : 4839489,
+            "type" : "cast",
+            "abilityGameID" : 260202
+          }, {
+            "timestamp" : 4839501,
+            "type" : "cast",
+            "abilityGameID" : 260190
+          }, {
+            "timestamp" : 4841623,
+            "type" : "begincast",
+            "abilityGameID" : 276212
+          }, {
+            "timestamp" : 4844623,
+            "type" : "cast",
+            "abilityGameID" : 276212
+          }, {
+            "timestamp" : 4856652,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 4859651,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 4876633,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 4879628,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 4901637,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 4904639,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 4921645,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 4924651,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 4936676,
+            "type" : "begincast",
+            "abilityGameID" : 260813
+          }, {
+            "timestamp" : 4939669,
+            "type" : "cast",
+            "abilityGameID" : 260813
+          } ],
+          "playerCasts" : [ [ {
+            "timestamp" : 4799493,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          }, {
+            "timestamp" : 4893732,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          } ], [ {
+            "timestamp" : 4945261,
+            "type" : "cast",
+            "abilityGameID" : 108238
+          } ], [ {
+            "timestamp" : 4915460,
+            "type" : "cast",
+            "abilityGameID" : 61336
+          } ] ],
+          "playerTakenDef" : [ [ ], [ ], [ ], [ ], [ ], [ ] ],
+          "bloodlusts" : [ [ ], [ ], [ ], [ ], [ ], [ ], [ ] ]
+        }
+      } ],
+      "pullsStartTime" : 3130368
+    }
+  }, {
+    "name" : "Helblinde",
+    "spec" : "Feral",
+    "amount" : 3728530.3201599717,
+    "hardModeLevel" : 18,
+    "duration" : 1831158,
+    "report" : {
+      "code" : "gZndrF1432pPJYWh",
+      "fightID" : 22
+    },
+    "affixes" : [ 9, 10, 147 ],
+    "medal" : "bronze",
+    "score" : 457.81897727273,
+    "server" : {
+      "name" : "Draenor",
+      "region" : "EU"
+    },
+    "class" : "Druid",
+    "fights" : {
+      "pulls" : [ {
+        "name" : "Coin-Operated Crowd Pummeler",
+        "krBossName" : "동전 투입식 군중 난타기",
+        "bossGameId" : 0,
+        "startTime" : 31876672,
+        "endTime" : 32049394,
+        "combatTime" : 172722,
+        "enemyNpcs" : [ {
+          "id" : 11,
+          "gameId" : 129214
+        }, {
+          "id" : 49,
+          "gameId" : 129246
+        } ],
+        "events" : {
+          "enemyCasts" : [ {
+            "timestamp" : 31883117,
+            "type" : "begincast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 31885620,
+            "type" : "cast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 31896093,
+            "type" : "cast",
+            "abilityGameID" : 269493
+          }, {
+            "timestamp" : 31916695,
+            "type" : "begincast",
+            "abilityGameID" : 271903
+          }, {
+            "timestamp" : 31919198,
+            "type" : "cast",
+            "abilityGameID" : 271903
+          }, {
+            "timestamp" : 31929249,
+            "type" : "begincast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 31931736,
+            "type" : "cast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 31942635,
+            "type" : "cast",
+            "abilityGameID" : 269493
+          }, {
+            "timestamp" : 31954351,
+            "type" : "begincast",
+            "abilityGameID" : 1217294
+          }, {
+            "timestamp" : 31958359,
+            "type" : "cast",
+            "abilityGameID" : 1217294
+          }, {
+            "timestamp" : 31960408,
+            "type" : "begincast",
+            "abilityGameID" : 271903
+          }, {
+            "timestamp" : 31962928,
+            "type" : "cast",
+            "abilityGameID" : 271903
+          }, {
+            "timestamp" : 31973730,
+            "type" : "begincast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 31976246,
+            "type" : "cast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 31987132,
+            "type" : "cast",
+            "abilityGameID" : 269493
+          }, {
+            "timestamp" : 32004172,
+            "type" : "begincast",
+            "abilityGameID" : 271903
+          }, {
+            "timestamp" : 32006665,
+            "type" : "cast",
+            "abilityGameID" : 271903
+          }, {
+            "timestamp" : 32017509,
+            "type" : "begincast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 32020013,
+            "type" : "cast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 32030887,
+            "type" : "cast",
+            "abilityGameID" : 269493
+          } ],
+          "playerCasts" : [ [ {
+            "timestamp" : 31884302,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          }, {
+            "timestamp" : 31975585,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          } ], [ {
+            "timestamp" : 32021334,
+            "type" : "cast",
+            "abilityGameID" : 108238
+          } ], [ {
+            "timestamp" : 31930828,
+            "type" : "cast",
+            "abilityGameID" : 61336
+          } ] ],
+          "playerTakenDef" : [ [ ], [ ], [ ], [ ], [ ], [ ] ],
+          "bloodlusts" : [ [ ], [ ], [ ], [ ], [ ], [ ], [ ] ]
+        }
+      }, {
+        "name" : "Azerokk",
+        "krBossName" : "아제로크",
+        "bossGameId" : 0,
+        "startTime" : 32298508,
+        "endTime" : 32502593,
+        "combatTime" : 204085,
+        "enemyNpcs" : [ {
+          "id" : 54,
+          "gameId" : 129227
+        }, {
+          "id" : 53,
+          "gameId" : 129802
+        } ],
+        "events" : {
+          "enemyCasts" : [ {
+            "timestamp" : 32303709,
+            "type" : "begincast",
+            "abilityGameID" : 271698
+          }, {
+            "timestamp" : 32303710,
+            "type" : "cast",
+            "abilityGameID" : 257596
+          }, {
+            "timestamp" : 32310618,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 32314116,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 32326409,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 32329907,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 32331245,
+            "type" : "begincast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 32336246,
+            "type" : "cast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 32338518,
+            "type" : "begincast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 32341039,
+            "type" : "cast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 32344593,
+            "type" : "begincast",
+            "abilityGameID" : 271698
+          }, {
+            "timestamp" : 32344593,
+            "type" : "cast",
+            "abilityGameID" : 257596
+          }, {
+            "timestamp" : 32350684,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 32354187,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 32366479,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 32369970,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 32371309,
+            "type" : "begincast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 32376301,
+            "type" : "cast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 32381027,
+            "type" : "begincast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 32383530,
+            "type" : "cast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 32387109,
+            "type" : "begincast",
+            "abilityGameID" : 271698
+          }, {
+            "timestamp" : 32387109,
+            "type" : "cast",
+            "abilityGameID" : 257596
+          }, {
+            "timestamp" : 32393152,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 32396645,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 32408959,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 32412447,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 32413812,
+            "type" : "begincast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 32418810,
+            "type" : "cast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 32423537,
+            "type" : "begincast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 32426047,
+            "type" : "cast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 32429598,
+            "type" : "begincast",
+            "abilityGameID" : 271698
+          }, {
+            "timestamp" : 32429599,
+            "type" : "cast",
+            "abilityGameID" : 257596
+          }, {
+            "timestamp" : 32435648,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 32439142,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 32451447,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 32454941,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 32456303,
+            "type" : "begincast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 32461307,
+            "type" : "cast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 32466031,
+            "type" : "begincast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 32468534,
+            "type" : "cast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 32472114,
+            "type" : "begincast",
+            "abilityGameID" : 271698
+          }, {
+            "timestamp" : 32472115,
+            "type" : "cast",
+            "abilityGameID" : 257596
+          }, {
+            "timestamp" : 32478177,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 32481679,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 32493941,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 32497441,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          } ],
+          "playerCasts" : [ [ {
+            "timestamp" : 32398618,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          }, {
+            "timestamp" : 32459093,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          } ], [ {
+            "timestamp" : 32405541,
+            "type" : "cast",
+            "abilityGameID" : 108238
+          } ], [ {
+            "timestamp" : 32438935,
+            "type" : "cast",
+            "abilityGameID" : 61336
+          } ] ],
+          "playerTakenDef" : [ [ ], [ ], [ ], [ ], [ ], [ ] ],
+          "bloodlusts" : [ [ ], [ ], [ {
+            "timestamp" : 32314195,
+            "type" : "applybuff",
+            "abilityGameID" : 32182
+          }, {
+            "timestamp" : 32354202,
+            "type" : "removebuff",
+            "abilityGameID" : 32182
+          } ], [ ], [ ], [ ], [ ] ]
+        }
+      }, {
+        "name" : "Rixxa Fluxfume",
+        "krBossName" : "릭사 플럭스플레임",
+        "bossGameId" : 0,
+        "startTime" : 32770372,
+        "endTime" : 32956855,
+        "combatTime" : 186483,
+        "enemyNpcs" : [ {
+          "id" : 58,
+          "gameId" : 133463
+        }, {
+          "id" : 61,
+          "gameId" : 235631
+        }, {
+          "id" : 59,
+          "gameId" : 129231
+        } ],
+        "events" : {
+          "enemyCasts" : [ {
+            "timestamp" : 32773383,
+            "type" : "cast",
+            "abilityGameID" : 275992
+          }, {
+            "timestamp" : 32814365,
+            "type" : "begincast",
+            "abilityGameID" : 259940
+          }, {
+            "timestamp" : 32817873,
+            "type" : "cast",
+            "abilityGameID" : 259940
+          }, {
+            "timestamp" : 32826369,
+            "type" : "cast",
+            "abilityGameID" : 275992
+          }, {
+            "timestamp" : 32833393,
+            "type" : "begincast",
+            "abilityGameID" : 270042
+          }, {
+            "timestamp" : 32835894,
+            "type" : "cast",
+            "abilityGameID" : 270042
+          }, {
+            "timestamp" : 32879384,
+            "type" : "cast",
+            "abilityGameID" : 275992
+          }, {
+            "timestamp" : 32909393,
+            "type" : "begincast",
+            "abilityGameID" : 259940
+          }, {
+            "timestamp" : 32912890,
+            "type" : "cast",
+            "abilityGameID" : 259940
+          }, {
+            "timestamp" : 32932391,
+            "type" : "cast",
+            "abilityGameID" : 275992
+          }, {
+            "timestamp" : 32939409,
+            "type" : "begincast",
+            "abilityGameID" : 270042
+          }, {
+            "timestamp" : 32941926,
+            "type" : "cast",
+            "abilityGameID" : 270042
+          } ],
+          "playerCasts" : [ [ {
+            "timestamp" : 32796553,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          } ], [ {
+            "timestamp" : 32797019,
+            "type" : "cast",
+            "abilityGameID" : 108238
+          } ], [ {
+            "timestamp" : 32832221,
+            "type" : "cast",
+            "abilityGameID" : 61336
+          } ] ],
+          "playerTakenDef" : [ [ ], [ ], [ ], [ ], [ ], [ ] ],
+          "bloodlusts" : [ [ ], [ ], [ ], [ ], [ ], [ ], [ ] ]
+        }
+      }, {
+        "name" : "Mogul Razdunk",
+        "krBossName" : "모굴 라즈덩크",
+        "bossGameId" : 0,
+        "startTime" : 33158405,
+        "endTime" : 33458724,
+        "combatTime" : 300319,
+        "enemyNpcs" : [ {
+          "id" : 60,
+          "gameId" : 129232
+        }, {
+          "id" : 117,
+          "gameId" : 132056
+        }, {
+          "id" : 119,
+          "gameId" : 132713
+        } ],
+        "events" : {
+          "enemyCasts" : [ {
+            "timestamp" : 33158409,
+            "type" : "begincast",
+            "abilityGameID" : 276212
+          }, {
+            "timestamp" : 33161381,
+            "type" : "cast",
+            "abilityGameID" : 276212
+          }, {
+            "timestamp" : 33178407,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 33181408,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 33208399,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 33211407,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 33238431,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 33241430,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 33266147,
+            "type" : "cast",
+            "abilityGameID" : 260189
+          }, {
+            "timestamp" : 33290879,
+            "type" : "begincast",
+            "abilityGameID" : 260202
+          }, {
+            "timestamp" : 33292385,
+            "type" : "cast",
+            "abilityGameID" : 260202
+          }, {
+            "timestamp" : 33301789,
+            "type" : "begincast",
+            "abilityGameID" : 260202
+          }, {
+            "timestamp" : 33303301,
+            "type" : "cast",
+            "abilityGameID" : 260202
+          }, {
+            "timestamp" : 33313919,
+            "type" : "begincast",
+            "abilityGameID" : 260202
+          }, {
+            "timestamp" : 33315420,
+            "type" : "cast",
+            "abilityGameID" : 260202
+          }, {
+            "timestamp" : 33323627,
+            "type" : "begincast",
+            "abilityGameID" : 260202
+          }, {
+            "timestamp" : 33325130,
+            "type" : "cast",
+            "abilityGameID" : 260202
+          }, {
+            "timestamp" : 33325151,
+            "type" : "cast",
+            "abilityGameID" : 260190
+          }, {
+            "timestamp" : 33327296,
+            "type" : "begincast",
+            "abilityGameID" : 276212
+          }, {
+            "timestamp" : 33330284,
+            "type" : "cast",
+            "abilityGameID" : 276212
+          }, {
+            "timestamp" : 33342315,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 33345318,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 33362294,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 33365298,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 33387309,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 33390318,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 33407327,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 33410329,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 33432355,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 33435350,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          } ],
+          "playerCasts" : [ [ {
+            "timestamp" : 33211462,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          }, {
+            "timestamp" : 33272392,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          }, {
+            "timestamp" : 33373284,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          } ], [ {
+            "timestamp" : 33314419,
+            "type" : "cast",
+            "abilityGameID" : 108238
+          } ], [ {
+            "timestamp" : 33284262,
+            "type" : "cast",
+            "abilityGameID" : 61336
+          } ] ],
+          "playerTakenDef" : [ [ ], [ ], [ ], [ ], [ ], [ ] ],
+          "bloodlusts" : [ [ ], [ ], [ ], [ ], [ ], [ ], [ ] ]
+        }
+      } ],
+      "pullsStartTime" : 31693982
+    }
+  }, {
+    "name" : "Zerotsu",
+    "spec" : "Feral",
+    "amount" : 3549587.5879300237,
+    "hardModeLevel" : 18,
+    "duration" : 2164796,
+    "report" : {
+      "code" : "6gW2BmkPVR9NJZhC",
+      "fightID" : 10
+    },
+    "affixes" : [ 9, 10, 147 ],
+    "medal" : "none",
+    "score" : 316.5,
+    "server" : {
+      "name" : "凤凰之神",
+      "region" : "CN"
+    },
+    "class" : "Druid",
+    "fights" : {
+      "pulls" : [ {
+        "name" : "Coin-Operated Crowd Pummeler",
+        "krBossName" : "동전 투입식 군중 난타기",
+        "bossGameId" : 0,
+        "startTime" : 11485839,
+        "endTime" : 11660882,
+        "combatTime" : 175043,
+        "enemyNpcs" : [ {
+          "id" : 468,
+          "gameId" : 129214
+        }, {
+          "id" : 483,
+          "gameId" : 129246
+        } ],
+        "events" : {
+          "enemyCasts" : [ {
+            "timestamp" : 11491913,
+            "type" : "begincast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 11494418,
+            "type" : "cast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 11505257,
+            "type" : "cast",
+            "abilityGameID" : 269493
+          }, {
+            "timestamp" : 11525876,
+            "type" : "begincast",
+            "abilityGameID" : 271903
+          }, {
+            "timestamp" : 11528384,
+            "type" : "cast",
+            "abilityGameID" : 271903
+          }, {
+            "timestamp" : 11539218,
+            "type" : "begincast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 11541732,
+            "type" : "cast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 11552606,
+            "type" : "cast",
+            "abilityGameID" : 269493
+          }, {
+            "timestamp" : 11569614,
+            "type" : "begincast",
+            "abilityGameID" : 271903
+          }, {
+            "timestamp" : 11572128,
+            "type" : "cast",
+            "abilityGameID" : 271903
+          }, {
+            "timestamp" : 11582997,
+            "type" : "begincast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 11585495,
+            "type" : "cast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 11596331,
+            "type" : "cast",
+            "abilityGameID" : 269493
+          }, {
+            "timestamp" : 11613339,
+            "type" : "begincast",
+            "abilityGameID" : 271903
+          }, {
+            "timestamp" : 11615838,
+            "type" : "cast",
+            "abilityGameID" : 271903
+          }, {
+            "timestamp" : 11626707,
+            "type" : "begincast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 11629197,
+            "type" : "cast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 11638861,
+            "type" : "cast",
+            "abilityGameID" : 269493
+          }, {
+            "timestamp" : 11651005,
+            "type" : "begincast",
+            "abilityGameID" : 1217294
+          }, {
+            "timestamp" : 11655003,
+            "type" : "cast",
+            "abilityGameID" : 1217294
+          }, {
+            "timestamp" : 11657056,
+            "type" : "begincast",
+            "abilityGameID" : 271903
+          }, {
+            "timestamp" : 11659557,
+            "type" : "cast",
+            "abilityGameID" : 271903
+          } ],
+          "playerCasts" : [ [ {
+            "timestamp" : 11541734,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          }, {
+            "timestamp" : 11628684,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          } ], [ ], [ ] ],
+          "playerTakenDef" : [ [ ], [ ], [ ], [ ], [ ], [ ] ],
+          "bloodlusts" : [ [ ], [ ], [ ], [ ], [ ], [ ], [ ] ]
+        }
+      }, {
+        "name" : "Azerokk",
+        "krBossName" : "아제로크",
+        "bossGameId" : 0,
+        "startTime" : 12000708,
+        "endTime" : 12224904,
+        "combatTime" : 224196,
+        "enemyNpcs" : [ {
+          "id" : 489,
+          "gameId" : 129227
+        }, {
+          "id" : 490,
+          "gameId" : 129802
+        } ],
+        "events" : {
+          "enemyCasts" : [ {
+            "timestamp" : 12005827,
+            "type" : "begincast",
+            "abilityGameID" : 271698
+          }, {
+            "timestamp" : 12005828,
+            "type" : "cast",
+            "abilityGameID" : 257596
+          }, {
+            "timestamp" : 12013787,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 12017308,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 12029579,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 12033088,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 12034457,
+            "type" : "begincast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 12039459,
+            "type" : "cast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 12041736,
+            "type" : "begincast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 12044253,
+            "type" : "cast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 12047795,
+            "type" : "begincast",
+            "abilityGameID" : 271698
+          }, {
+            "timestamp" : 12047796,
+            "type" : "cast",
+            "abilityGameID" : 257596
+          }, {
+            "timestamp" : 12053900,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 12057399,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 12069705,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 12073201,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 12074549,
+            "type" : "begincast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 12079552,
+            "type" : "cast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 12084246,
+            "type" : "begincast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 12086748,
+            "type" : "cast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 12090329,
+            "type" : "begincast",
+            "abilityGameID" : 271698
+          }, {
+            "timestamp" : 12090330,
+            "type" : "cast",
+            "abilityGameID" : 257596
+          }, {
+            "timestamp" : 12096397,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 12099905,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 12112183,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 12115671,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 12117010,
+            "type" : "begincast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 12122027,
+            "type" : "cast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 12126719,
+            "type" : "begincast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 12129222,
+            "type" : "cast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 12132791,
+            "type" : "begincast",
+            "abilityGameID" : 271698
+          }, {
+            "timestamp" : 12132792,
+            "type" : "cast",
+            "abilityGameID" : 257596
+          }, {
+            "timestamp" : 12138855,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 12142359,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 12154646,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 12158137,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 12159494,
+            "type" : "begincast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 12164499,
+            "type" : "cast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 12169208,
+            "type" : "begincast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 12171713,
+            "type" : "cast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 12175279,
+            "type" : "begincast",
+            "abilityGameID" : 271698
+          }, {
+            "timestamp" : 12175280,
+            "type" : "cast",
+            "abilityGameID" : 257596
+          }, {
+            "timestamp" : 12181347,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 12184839,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 12197164,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 12200665,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 12202038,
+            "type" : "begincast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 12207038,
+            "type" : "cast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 12211731,
+            "type" : "begincast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 12214238,
+            "type" : "cast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 12217798,
+            "type" : "begincast",
+            "abilityGameID" : 271698
+          }, {
+            "timestamp" : 12217799,
+            "type" : "cast",
+            "abilityGameID" : 257596
+          } ],
+          "playerCasts" : [ [ {
+            "timestamp" : 12012926,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          }, {
+            "timestamp" : 12094439,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          }, {
+            "timestamp" : 12176804,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          } ], [ {
+            "timestamp" : 12014391,
+            "type" : "cast",
+            "abilityGameID" : 108238
+          }, {
+            "timestamp" : 12106616,
+            "type" : "cast",
+            "abilityGameID" : 108238
+          }, {
+            "timestamp" : 12223979,
+            "type" : "cast",
+            "abilityGameID" : 108238
+          } ], [ ] ],
+          "playerTakenDef" : [ [ ], [ ], [ ], [ ], [ ], [ ] ],
+          "bloodlusts" : [ [ ], [ ], [ ], [ {
+            "timestamp" : 12039156,
+            "type" : "applybuff",
+            "abilityGameID" : 2825
+          }, {
+            "timestamp" : 12079175,
+            "type" : "removebuff",
+            "abilityGameID" : 2825
+          } ], [ ], [ ], [ ] ]
+        }
+      }, {
+        "name" : "Rixxa Fluxfume",
+        "krBossName" : "릭사 플럭스플레임",
+        "bossGameId" : 0,
+        "startTime" : 12631085,
+        "endTime" : 12876041,
+        "combatTime" : 244956,
+        "enemyNpcs" : [ {
+          "id" : 492,
+          "gameId" : 133463
+        }, {
+          "id" : 497,
+          "gameId" : 137029
+        }, {
+          "id" : 496,
+          "gameId" : 235631
+        }, {
+          "id" : 493,
+          "gameId" : 129231
+        } ],
+        "events" : {
+          "enemyCasts" : [ {
+            "timestamp" : 12634104,
+            "type" : "cast",
+            "abilityGameID" : 275992
+          }, {
+            "timestamp" : 12675111,
+            "type" : "begincast",
+            "abilityGameID" : 259940
+          }, {
+            "timestamp" : 12678610,
+            "type" : "cast",
+            "abilityGameID" : 259940
+          }, {
+            "timestamp" : 12687099,
+            "type" : "cast",
+            "abilityGameID" : 275992
+          }, {
+            "timestamp" : 12706111,
+            "type" : "begincast",
+            "abilityGameID" : 259940
+          }, {
+            "timestamp" : 12709619,
+            "type" : "cast",
+            "abilityGameID" : 259940
+          }, {
+            "timestamp" : 12740090,
+            "type" : "cast",
+            "abilityGameID" : 275992
+          }, {
+            "timestamp" : 12759075,
+            "type" : "begincast",
+            "abilityGameID" : 259940
+          }, {
+            "timestamp" : 12762587,
+            "type" : "cast",
+            "abilityGameID" : 259940
+          }, {
+            "timestamp" : 12793088,
+            "type" : "cast",
+            "abilityGameID" : 275992
+          }, {
+            "timestamp" : 12800123,
+            "type" : "begincast",
+            "abilityGameID" : 270042
+          }, {
+            "timestamp" : 12802628,
+            "type" : "cast",
+            "abilityGameID" : 270042
+          }, {
+            "timestamp" : 12846121,
+            "type" : "cast",
+            "abilityGameID" : 275992
+          }, {
+            "timestamp" : 12853122,
+            "type" : "begincast",
+            "abilityGameID" : 270042
+          }, {
+            "timestamp" : 12855634,
+            "type" : "cast",
+            "abilityGameID" : 270042
+          } ],
+          "playerCasts" : [ [ {
+            "timestamp" : 12648453,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          }, {
+            "timestamp" : 12755087,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          } ], [ {
+            "timestamp" : 12651646,
+            "type" : "cast",
+            "abilityGameID" : 108238
+          }, {
+            "timestamp" : 12794846,
+            "type" : "cast",
+            "abilityGameID" : 108238
+          } ], [ {
+            "timestamp" : 12708400,
+            "type" : "cast",
+            "abilityGameID" : 61336
+          } ] ],
+          "playerTakenDef" : [ [ ], [ ], [ ], [ ], [ ], [ ] ],
+          "bloodlusts" : [ [ ], [ ], [ ], [ {
+            "timestamp" : 12641379,
+            "type" : "applybuff",
+            "abilityGameID" : 2825
+          }, {
+            "timestamp" : 12681375,
+            "type" : "removebuff",
+            "abilityGameID" : 2825
+          } ], [ ], [ ], [ ] ]
+        }
+      }, {
+        "name" : "Mogul Razdunk",
+        "krBossName" : "모굴 라즈덩크",
+        "bossGameId" : 0,
+        "startTime" : 13162151,
+        "endTime" : 13436781,
+        "combatTime" : 274630,
+        "enemyNpcs" : [ {
+          "id" : 494,
+          "gameId" : 129232
+        }, {
+          "id" : 501,
+          "gameId" : 132056
+        }, {
+          "id" : 503,
+          "gameId" : 132713
+        } ],
+        "events" : {
+          "enemyCasts" : [ {
+            "timestamp" : 13162154,
+            "type" : "begincast",
+            "abilityGameID" : 276212
+          }, {
+            "timestamp" : 13165153,
+            "type" : "cast",
+            "abilityGameID" : 276212
+          }, {
+            "timestamp" : 13182152,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 13185151,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 13197152,
+            "type" : "begincast",
+            "abilityGameID" : 260813
+          }, {
+            "timestamp" : 13200158,
+            "type" : "cast",
+            "abilityGameID" : 260813
+          }, {
+            "timestamp" : 13212167,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 13215171,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 13242191,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 13245208,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 13270784,
+            "type" : "cast",
+            "abilityGameID" : 260189
+          }, {
+            "timestamp" : 13295452,
+            "type" : "begincast",
+            "abilityGameID" : 260202
+          }, {
+            "timestamp" : 13296960,
+            "type" : "cast",
+            "abilityGameID" : 260202
+          }, {
+            "timestamp" : 13307618,
+            "type" : "begincast",
+            "abilityGameID" : 260202
+          }, {
+            "timestamp" : 13309128,
+            "type" : "cast",
+            "abilityGameID" : 260202
+          }, {
+            "timestamp" : 13318574,
+            "type" : "begincast",
+            "abilityGameID" : 260202
+          }, {
+            "timestamp" : 13320074,
+            "type" : "cast",
+            "abilityGameID" : 260202
+          }, {
+            "timestamp" : 13320095,
+            "type" : "cast",
+            "abilityGameID" : 260190
+          }, {
+            "timestamp" : 13322221,
+            "type" : "begincast",
+            "abilityGameID" : 276212
+          }, {
+            "timestamp" : 13325231,
+            "type" : "cast",
+            "abilityGameID" : 276212
+          }, {
+            "timestamp" : 13337234,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 13340234,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 13348277,
+            "type" : "begincast",
+            "abilityGameID" : 260813
+          }, {
+            "timestamp" : 13351278,
+            "type" : "cast",
+            "abilityGameID" : 260813
+          }, {
+            "timestamp" : 13357257,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 13360254,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 13382282,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 13385281,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 13402262,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 13405273,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          } ],
+          "playerCasts" : [ [ {
+            "timestamp" : 13278248,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          } ], [ {
+            "timestamp" : 13208925,
+            "type" : "cast",
+            "abilityGameID" : 108238
+          } ], [ {
+            "timestamp" : 13292549,
+            "type" : "cast",
+            "abilityGameID" : 61336
+          } ] ],
+          "playerTakenDef" : [ [ ], [ ], [ ], [ ], [ ], [ ] ],
+          "bloodlusts" : [ [ ], [ ], [ ], [ {
+            "timestamp" : 13346417,
+            "type" : "applybuff",
+            "abilityGameID" : 2825
+          }, {
+            "timestamp" : 13386418,
+            "type" : "removebuff",
+            "abilityGameID" : 2825
+          } ], [ ], [ ], [ ] ]
+        }
+      } ],
+      "pullsStartTime" : 11354170
+    }
+  }, {
+    "name" : "Meteos",
+    "spec" : "Feral",
+    "amount" : 3183807.5679100156,
+    "hardModeLevel" : 18,
+    "duration" : 2344162,
+    "report" : {
+      "code" : "PhCBkjx1WfAnTXz2",
+      "fightID" : 85
+    },
+    "affixes" : [ 9, 10, 147 ],
+    "medal" : "none",
+    "score" : 313.10000610352,
+    "server" : {
+      "name" : "Tichondrius",
+      "region" : "US"
+    },
+    "class" : "Druid",
+    "fights" : {
+      "pulls" : [ {
+        "name" : "Coin-Operated Crowd Pummeler",
+        "krBossName" : "동전 투입식 군중 난타기",
+        "bossGameId" : 0,
+        "startTime" : 329190181,
+        "endTime" : 329405148,
+        "combatTime" : 214967,
+        "enemyNpcs" : [ {
+          "id" : 554,
+          "gameId" : 129214
+        }, {
+          "id" : 579,
+          "gameId" : 129246
+        } ],
+        "events" : {
+          "enemyCasts" : [ {
+            "timestamp" : 329197122,
+            "type" : "begincast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 329199621,
+            "type" : "cast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 329209271,
+            "type" : "cast",
+            "abilityGameID" : 269493
+          }, {
+            "timestamp" : 329231127,
+            "type" : "begincast",
+            "abilityGameID" : 271903
+          }, {
+            "timestamp" : 329233631,
+            "type" : "cast",
+            "abilityGameID" : 271903
+          }, {
+            "timestamp" : 329244509,
+            "type" : "begincast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 329247016,
+            "type" : "cast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 329256641,
+            "type" : "cast",
+            "abilityGameID" : 269493
+          }, {
+            "timestamp" : 329268842,
+            "type" : "begincast",
+            "abilityGameID" : 1217294
+          }, {
+            "timestamp" : 329272848,
+            "type" : "cast",
+            "abilityGameID" : 1217294
+          }, {
+            "timestamp" : 329274922,
+            "type" : "begincast",
+            "abilityGameID" : 271903
+          }, {
+            "timestamp" : 329277432,
+            "type" : "cast",
+            "abilityGameID" : 271903
+          }, {
+            "timestamp" : 329288278,
+            "type" : "begincast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 329290783,
+            "type" : "cast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 329300442,
+            "type" : "cast",
+            "abilityGameID" : 269493
+          }, {
+            "timestamp" : 329318615,
+            "type" : "begincast",
+            "abilityGameID" : 271903
+          }, {
+            "timestamp" : 329321126,
+            "type" : "cast",
+            "abilityGameID" : 271903
+          }, {
+            "timestamp" : 329331973,
+            "type" : "begincast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 329334486,
+            "type" : "cast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 329345312,
+            "type" : "cast",
+            "abilityGameID" : 269493
+          }, {
+            "timestamp" : 329362321,
+            "type" : "begincast",
+            "abilityGameID" : 271903
+          }, {
+            "timestamp" : 329364827,
+            "type" : "cast",
+            "abilityGameID" : 271903
+          }, {
+            "timestamp" : 329375685,
+            "type" : "begincast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 329378190,
+            "type" : "cast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 329389047,
+            "type" : "cast",
+            "abilityGameID" : 269493
+          } ],
+          "playerCasts" : [ [ {
+            "timestamp" : 329245458,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          }, {
+            "timestamp" : 329333328,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          } ], [ ], [ {
+            "timestamp" : 329290031,
+            "type" : "cast",
+            "abilityGameID" : 61336
+          } ] ],
+          "playerTakenDef" : [ [ ], [ ], [ ], [ ], [ ], [ ] ],
+          "bloodlusts" : [ [ ], [ ], [ {
+            "timestamp" : 329190306,
+            "type" : "removebuff",
+            "abilityGameID" : 32182
+          } ], [ ], [ ], [ ], [ ] ]
+        }
+      }, {
+        "name" : "Azerokk",
+        "krBossName" : "아제로크",
+        "bossGameId" : 0,
+        "startTime" : 329837662,
+        "endTime" : 330056675,
+        "combatTime" : 219013,
+        "enemyNpcs" : [ {
+          "id" : 586,
+          "gameId" : 129227
+        }, {
+          "id" : 587,
+          "gameId" : 129802
+        } ],
+        "events" : {
+          "enemyCasts" : [ {
+            "timestamp" : 329842773,
+            "type" : "begincast",
+            "abilityGameID" : 271698
+          }, {
+            "timestamp" : 329842773,
+            "type" : "cast",
+            "abilityGameID" : 257596
+          }, {
+            "timestamp" : 329850801,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 329854321,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 329866582,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 329870080,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 329871437,
+            "type" : "begincast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 329876440,
+            "type" : "cast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 329878715,
+            "type" : "begincast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 329881225,
+            "type" : "cast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 329884771,
+            "type" : "begincast",
+            "abilityGameID" : 271698
+          }, {
+            "timestamp" : 329884772,
+            "type" : "cast",
+            "abilityGameID" : 257596
+          }, {
+            "timestamp" : 329890855,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 329894354,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 329906664,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 329910172,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 329911539,
+            "type" : "begincast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 329916538,
+            "type" : "cast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 329921245,
+            "type" : "begincast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 329923750,
+            "type" : "cast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 329927308,
+            "type" : "begincast",
+            "abilityGameID" : 271698
+          }, {
+            "timestamp" : 329927309,
+            "type" : "cast",
+            "abilityGameID" : 257596
+          }, {
+            "timestamp" : 329933366,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 329936855,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 329949164,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 329952656,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 329954020,
+            "type" : "begincast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 329959025,
+            "type" : "cast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 329963719,
+            "type" : "begincast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 329966213,
+            "type" : "cast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 329969804,
+            "type" : "begincast",
+            "abilityGameID" : 271698
+          }, {
+            "timestamp" : 329969805,
+            "type" : "cast",
+            "abilityGameID" : 257596
+          }, {
+            "timestamp" : 329975877,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 329979378,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 329991644,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 329995149,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 329996507,
+            "type" : "begincast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 330001510,
+            "type" : "cast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 330006252,
+            "type" : "begincast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 330008748,
+            "type" : "cast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 330012297,
+            "type" : "begincast",
+            "abilityGameID" : 271698
+          }, {
+            "timestamp" : 330012298,
+            "type" : "cast",
+            "abilityGameID" : 257596
+          }, {
+            "timestamp" : 330018361,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 330021867,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 330034123,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 330037622,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 330038970,
+            "type" : "begincast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 330043975,
+            "type" : "cast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 330048699,
+            "type" : "begincast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 330051197,
+            "type" : "cast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 330054778,
+            "type" : "begincast",
+            "abilityGameID" : 271698
+          }, {
+            "timestamp" : 330054778,
+            "type" : "cast",
+            "abilityGameID" : 257596
+          } ],
+          "playerCasts" : [ [ {
+            "timestamp" : 329855533,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          }, {
+            "timestamp" : 329935085,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          }, {
+            "timestamp" : 330014118,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          } ], [ {
+            "timestamp" : 330035942,
+            "type" : "cast",
+            "abilityGameID" : 108238
+          } ], [ ] ],
+          "playerTakenDef" : [ [ ], [ ], [ ], [ ], [ ], [ ] ],
+          "bloodlusts" : [ [ ], [ ], [ {
+            "timestamp" : 329838939,
+            "type" : "applybuff",
+            "abilityGameID" : 32182
+          }, {
+            "timestamp" : 329878947,
+            "type" : "removebuff",
+            "abilityGameID" : 32182
+          } ], [ ], [ ], [ ], [ ] ]
+        }
+      }, {
+        "name" : "Rixxa Fluxfume",
+        "krBossName" : "릭사 플럭스플레임",
+        "bossGameId" : 0,
+        "startTime" : 330355133,
+        "endTime" : 330568491,
+        "combatTime" : 213358,
+        "enemyNpcs" : [ {
+          "id" : 592,
+          "gameId" : 133463
+        }, {
+          "id" : 593,
+          "gameId" : 235631
+        }, {
+          "id" : 591,
+          "gameId" : 129231
+        } ],
+        "events" : {
+          "enemyCasts" : [ {
+            "timestamp" : 330358132,
+            "type" : "cast",
+            "abilityGameID" : 275992
+          }, {
+            "timestamp" : 330388159,
+            "type" : "begincast",
+            "abilityGameID" : 259940
+          }, {
+            "timestamp" : 330391658,
+            "type" : "cast",
+            "abilityGameID" : 259940
+          }, {
+            "timestamp" : 330411150,
+            "type" : "cast",
+            "abilityGameID" : 275992
+          }, {
+            "timestamp" : 330464139,
+            "type" : "cast",
+            "abilityGameID" : 275992
+          }, {
+            "timestamp" : 330505155,
+            "type" : "begincast",
+            "abilityGameID" : 259940
+          }, {
+            "timestamp" : 330508664,
+            "type" : "cast",
+            "abilityGameID" : 259940
+          }, {
+            "timestamp" : 330517183,
+            "type" : "cast",
+            "abilityGameID" : 275992
+          }, {
+            "timestamp" : 330536204,
+            "type" : "begincast",
+            "abilityGameID" : 259940
+          }, {
+            "timestamp" : 330539699,
+            "type" : "cast",
+            "abilityGameID" : 259940
+          } ],
+          "playerCasts" : [ [ {
+            "timestamp" : 330387515,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          }, {
+            "timestamp" : 330509382,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          } ], [ ], [ {
+            "timestamp" : 330369438,
+            "type" : "cast",
+            "abilityGameID" : 61336
+          } ] ],
+          "playerTakenDef" : [ [ ], [ ], [ ], [ ], [ ], [ ] ],
+          "bloodlusts" : [ [ ], [ ], [ ], [ ], [ ], [ ], [ ] ]
+        }
+      }, {
+        "name" : "Mogul Razdunk",
+        "krBossName" : "모굴 라즈덩크",
+        "bossGameId" : 0,
+        "startTime" : 331005091,
+        "endTime" : 331288946,
+        "combatTime" : 283855,
+        "enemyNpcs" : [ {
+          "id" : 590,
+          "gameId" : 129232
+        }, {
+          "id" : 598,
+          "gameId" : 132056
+        }, {
+          "id" : 600,
+          "gameId" : 132713
+        } ],
+        "events" : {
+          "enemyCasts" : [ {
+            "timestamp" : 331005093,
+            "type" : "begincast",
+            "abilityGameID" : 276212
+          }, {
+            "timestamp" : 331008089,
+            "type" : "cast",
+            "abilityGameID" : 276212
+          }, {
+            "timestamp" : 331025093,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 331028081,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 331055108,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 331058123,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 331085127,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 331088138,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 331115115,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 331118125,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 331128281,
+            "type" : "cast",
+            "abilityGameID" : 260189
+          }, {
+            "timestamp" : 331152943,
+            "type" : "begincast",
+            "abilityGameID" : 260202
+          }, {
+            "timestamp" : 331154449,
+            "type" : "cast",
+            "abilityGameID" : 260202
+          }, {
+            "timestamp" : 331163853,
+            "type" : "begincast",
+            "abilityGameID" : 260202
+          }, {
+            "timestamp" : 331165362,
+            "type" : "cast",
+            "abilityGameID" : 260202
+          }, {
+            "timestamp" : 331174764,
+            "type" : "begincast",
+            "abilityGameID" : 260202
+          }, {
+            "timestamp" : 331176270,
+            "type" : "cast",
+            "abilityGameID" : 260202
+          }, {
+            "timestamp" : 331176303,
+            "type" : "cast",
+            "abilityGameID" : 260190
+          }, {
+            "timestamp" : 331178425,
+            "type" : "begincast",
+            "abilityGameID" : 276212
+          }, {
+            "timestamp" : 331181417,
+            "type" : "cast",
+            "abilityGameID" : 276212
+          }, {
+            "timestamp" : 331193424,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 331196435,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 331213431,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 331216426,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 331238466,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 331241474,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 331258464,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 331261472,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 331273475,
+            "type" : "begincast",
+            "abilityGameID" : 260813
+          }, {
+            "timestamp" : 331276470,
+            "type" : "cast",
+            "abilityGameID" : 260813
+          } ],
+          "playerCasts" : [ [ {
+            "timestamp" : 331010285,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          }, {
+            "timestamp" : 331134579,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          }, {
+            "timestamp" : 331271957,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          } ], [ {
+            "timestamp" : 331155305,
+            "type" : "cast",
+            "abilityGameID" : 108238
+          } ], [ {
+            "timestamp" : 331162283,
+            "type" : "cast",
+            "abilityGameID" : 61336
+          } ] ],
+          "playerTakenDef" : [ [ ], [ ], [ ], [ ], [ ], [ ] ],
+          "bloodlusts" : [ [ ], [ ], [ {
+            "timestamp" : 331252266,
+            "type" : "applybuff",
+            "abilityGameID" : 32182
+          } ], [ ], [ ], [ ], [ ] ]
+        }
+      } ],
+      "pullsStartTime" : 329086370
+    }
+  }, {
+    "name" : "Scritch",
+    "spec" : "Feral",
+    "amount" : 2831574.4170899987,
+    "hardModeLevel" : 18,
+    "duration" : 2557840,
+    "report" : {
+      "code" : "PhCBkjx1WfAnTXz2",
+      "fightID" : 55
+    },
+    "affixes" : [ 9, 10, 147 ],
+    "medal" : "none",
+    "score" : 309.05999755859,
+    "server" : {
+      "name" : "Area 52",
+      "region" : "US"
+    },
+    "class" : "Druid",
+    "fights" : {
+      "pulls" : [ {
+        "name" : "Coin-Operated Crowd Pummeler",
+        "krBossName" : "동전 투입식 군중 난타기",
+        "bossGameId" : 0,
+        "startTime" : 178315827,
+        "endTime" : 178537369,
+        "combatTime" : 221542,
+        "enemyNpcs" : [ {
+          "id" : 554,
+          "gameId" : 129214
+        }, {
+          "id" : 579,
+          "gameId" : 129246
+        } ],
+        "events" : {
+          "enemyCasts" : [ {
+            "timestamp" : 178322996,
+            "type" : "begincast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 178325489,
+            "type" : "cast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 178335136,
+            "type" : "cast",
+            "abilityGameID" : 269493
+          }, {
+            "timestamp" : 178356968,
+            "type" : "begincast",
+            "abilityGameID" : 271903
+          }, {
+            "timestamp" : 178359472,
+            "type" : "cast",
+            "abilityGameID" : 271903
+          }, {
+            "timestamp" : 178370315,
+            "type" : "begincast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 178372823,
+            "type" : "cast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 178383694,
+            "type" : "cast",
+            "abilityGameID" : 269493
+          }, {
+            "timestamp" : 178394618,
+            "type" : "begincast",
+            "abilityGameID" : 1217294
+          }, {
+            "timestamp" : 178398616,
+            "type" : "cast",
+            "abilityGameID" : 1217294
+          }, {
+            "timestamp" : 178400695,
+            "type" : "begincast",
+            "abilityGameID" : 271903
+          }, {
+            "timestamp" : 178403184,
+            "type" : "cast",
+            "abilityGameID" : 271903
+          }, {
+            "timestamp" : 178414028,
+            "type" : "begincast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 178416519,
+            "type" : "cast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 178427396,
+            "type" : "cast",
+            "abilityGameID" : 269493
+          }, {
+            "timestamp" : 178438319,
+            "type" : "begincast",
+            "abilityGameID" : 1217294
+          }, {
+            "timestamp" : 178442305,
+            "type" : "cast",
+            "abilityGameID" : 1217294
+          }, {
+            "timestamp" : 178444393,
+            "type" : "begincast",
+            "abilityGameID" : 271903
+          }, {
+            "timestamp" : 178446914,
+            "type" : "cast",
+            "abilityGameID" : 271903
+          }, {
+            "timestamp" : 178457787,
+            "type" : "begincast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 178460275,
+            "type" : "cast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 178471113,
+            "type" : "cast",
+            "abilityGameID" : 269493
+          }, {
+            "timestamp" : 178488150,
+            "type" : "begincast",
+            "abilityGameID" : 271903
+          }, {
+            "timestamp" : 178490659,
+            "type" : "cast",
+            "abilityGameID" : 271903
+          }, {
+            "timestamp" : 178501465,
+            "type" : "begincast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 178503994,
+            "type" : "cast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 178514857,
+            "type" : "cast",
+            "abilityGameID" : 269493
+          }, {
+            "timestamp" : 178531872,
+            "type" : "begincast",
+            "abilityGameID" : 271903
+          }, {
+            "timestamp" : 178534371,
+            "type" : "cast",
+            "abilityGameID" : 271903
+          } ],
+          "playerCasts" : [ [ {
+            "timestamp" : 178324521,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          }, {
+            "timestamp" : 178415514,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          }, {
+            "timestamp" : 178503078,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          } ], [ ], [ {
+            "timestamp" : 178459223,
+            "type" : "cast",
+            "abilityGameID" : 61336
+          } ] ],
+          "playerTakenDef" : [ [ ], [ ], [ ], [ ], [ ], [ ] ],
+          "bloodlusts" : [ [ ], [ ], [ ], [ ], [ ], [ ], [ ] ]
+        }
+      }, {
+        "name" : "Azerokk",
+        "krBossName" : "아제로크",
+        "bossGameId" : 0,
+        "startTime" : 178949892,
+        "endTime" : 179170876,
+        "combatTime" : 220984,
+        "enemyNpcs" : [ {
+          "id" : 586,
+          "gameId" : 129227
+        }, {
+          "id" : 587,
+          "gameId" : 129802
+        } ],
+        "events" : {
+          "enemyCasts" : [ {
+            "timestamp" : 178955920,
+            "type" : "begincast",
+            "abilityGameID" : 271698
+          }, {
+            "timestamp" : 178955920,
+            "type" : "cast",
+            "abilityGameID" : 257596
+          }, {
+            "timestamp" : 178962006,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 178965523,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 178978222,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 178981730,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 178983066,
+            "type" : "begincast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 178988063,
+            "type" : "cast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 178990349,
+            "type" : "begincast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 178992858,
+            "type" : "cast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 178996407,
+            "type" : "begincast",
+            "abilityGameID" : 271698
+          }, {
+            "timestamp" : 178996407,
+            "type" : "cast",
+            "abilityGameID" : 257596
+          }, {
+            "timestamp" : 179002486,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 179005981,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 179018230,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 179021742,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 179023109,
+            "type" : "begincast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 179028115,
+            "type" : "cast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 179032340,
+            "type" : "begincast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 179034844,
+            "type" : "cast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 179037707,
+            "type" : "begincast",
+            "abilityGameID" : 271698
+          }, {
+            "timestamp" : 179037707,
+            "type" : "cast",
+            "abilityGameID" : 257596
+          }, {
+            "timestamp" : 179044969,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 179048460,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 179060759,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 179064272,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 179065642,
+            "type" : "begincast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 179070630,
+            "type" : "cast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 179074124,
+            "type" : "begincast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 179076618,
+            "type" : "cast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 179080196,
+            "type" : "begincast",
+            "abilityGameID" : 271698
+          }, {
+            "timestamp" : 179080197,
+            "type" : "cast",
+            "abilityGameID" : 257596
+          }, {
+            "timestamp" : 179086240,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 179089747,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 179102051,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 179105556,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 179106908,
+            "type" : "begincast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 179111917,
+            "type" : "cast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 179116626,
+            "type" : "begincast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 179119128,
+            "type" : "cast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 179122697,
+            "type" : "begincast",
+            "abilityGameID" : 271698
+          }, {
+            "timestamp" : 179122698,
+            "type" : "cast",
+            "abilityGameID" : 257596
+          }, {
+            "timestamp" : 179128784,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 179132285,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 179144541,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 179148065,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 179149397,
+            "type" : "begincast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 179154399,
+            "type" : "cast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 179159129,
+            "type" : "begincast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 179161629,
+            "type" : "cast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 179165181,
+            "type" : "begincast",
+            "abilityGameID" : 271698
+          }, {
+            "timestamp" : 179165181,
+            "type" : "cast",
+            "abilityGameID" : 257596
+          } ],
+          "playerCasts" : [ [ {
+            "timestamp" : 179002095,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          }, {
+            "timestamp" : 179068725,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          }, {
+            "timestamp" : 179129223,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          } ], [ ], [ {
+            "timestamp" : 179042535,
+            "type" : "cast",
+            "abilityGameID" : 61336
+          } ] ],
+          "playerTakenDef" : [ [ ], [ ], [ ], [ ], [ ], [ ] ],
+          "bloodlusts" : [ [ ], [ ], [ {
+            "timestamp" : 178956475,
+            "type" : "applybuff",
+            "abilityGameID" : 32182
+          }, {
+            "timestamp" : 178996472,
+            "type" : "removebuff",
+            "abilityGameID" : 32182
+          } ], [ ], [ ], [ ], [ ] ]
+        }
+      }, {
+        "name" : "Rixxa Fluxfume",
+        "krBossName" : "릭사 플럭스플레임",
+        "bossGameId" : 0,
+        "startTime" : 179596324,
+        "endTime" : 179820105,
+        "combatTime" : 223781,
+        "enemyNpcs" : [ {
+          "id" : 592,
+          "gameId" : 133463
+        }, {
+          "id" : 594,
+          "gameId" : 137029
+        }, {
+          "id" : 593,
+          "gameId" : 235631
+        }, {
+          "id" : 591,
+          "gameId" : 129231
+        } ],
+        "events" : {
+          "enemyCasts" : [ {
+            "timestamp" : 179599323,
+            "type" : "cast",
+            "abilityGameID" : 275992
+          }, {
+            "timestamp" : 179618354,
+            "type" : "begincast",
+            "abilityGameID" : 259940
+          }, {
+            "timestamp" : 179621844,
+            "type" : "cast",
+            "abilityGameID" : 259940
+          }, {
+            "timestamp" : 179652338,
+            "type" : "cast",
+            "abilityGameID" : 275992
+          }, {
+            "timestamp" : 179671364,
+            "type" : "begincast",
+            "abilityGameID" : 259940
+          }, {
+            "timestamp" : 179674866,
+            "type" : "cast",
+            "abilityGameID" : 259940
+          }, {
+            "timestamp" : 179705392,
+            "type" : "cast",
+            "abilityGameID" : 275992
+          }, {
+            "timestamp" : 179746369,
+            "type" : "begincast",
+            "abilityGameID" : 259940
+          }, {
+            "timestamp" : 179749897,
+            "type" : "cast",
+            "abilityGameID" : 259940
+          }, {
+            "timestamp" : 179758416,
+            "type" : "cast",
+            "abilityGameID" : 275992
+          }, {
+            "timestamp" : 179811436,
+            "type" : "cast",
+            "abilityGameID" : 275992
+          } ],
+          "playerCasts" : [ [ {
+            "timestamp" : 179612417,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          }, {
+            "timestamp" : 179779189,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          } ], [ ], [ ] ],
+          "playerTakenDef" : [ [ ], [ ], [ ], [ ], [ ], [ ] ],
+          "bloodlusts" : [ [ ], [ ], [ {
+            "timestamp" : 179622754,
+            "type" : "applybuff",
+            "abilityGameID" : 32182
+          }, {
+            "timestamp" : 179662747,
+            "type" : "removebuff",
+            "abilityGameID" : 32182
+          } ], [ ], [ ], [ ], [ ] ]
+        }
+      }, {
+        "name" : "Mogul Razdunk",
+        "krBossName" : "모굴 라즈덩크",
+        "bossGameId" : 0,
+        "startTime" : 180103059,
+        "endTime" : 180400994,
+        "combatTime" : 297935,
+        "enemyNpcs" : [ {
+          "id" : 590,
+          "gameId" : 129232
+        }, {
+          "id" : 598,
+          "gameId" : 132056
+        }, {
+          "id" : 600,
+          "gameId" : 132713
+        } ],
+        "events" : {
+          "enemyCasts" : [ {
+            "timestamp" : 180103063,
+            "type" : "begincast",
+            "abilityGameID" : 276212
+          }, {
+            "timestamp" : 180106056,
+            "type" : "cast",
+            "abilityGameID" : 276212
+          }, {
+            "timestamp" : 180123056,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 180126061,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 180153072,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 180156071,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 180183053,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 180186052,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 180198062,
+            "type" : "begincast",
+            "abilityGameID" : 260813
+          }, {
+            "timestamp" : 180201070,
+            "type" : "cast",
+            "abilityGameID" : 260813
+          }, {
+            "timestamp" : 180213070,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 180216068,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 180226654,
+            "type" : "cast",
+            "abilityGameID" : 260189
+          }, {
+            "timestamp" : 180251362,
+            "type" : "begincast",
+            "abilityGameID" : 260202
+          }, {
+            "timestamp" : 180252865,
+            "type" : "cast",
+            "abilityGameID" : 260202
+          }, {
+            "timestamp" : 180261870,
+            "type" : "begincast",
+            "abilityGameID" : 260202
+          }, {
+            "timestamp" : 180263384,
+            "type" : "cast",
+            "abilityGameID" : 260202
+          }, {
+            "timestamp" : 180274000,
+            "type" : "begincast",
+            "abilityGameID" : 260202
+          }, {
+            "timestamp" : 180275504,
+            "type" : "cast",
+            "abilityGameID" : 260202
+          }, {
+            "timestamp" : 180275526,
+            "type" : "cast",
+            "abilityGameID" : 260190
+          }, {
+            "timestamp" : 180277645,
+            "type" : "begincast",
+            "abilityGameID" : 276212
+          }, {
+            "timestamp" : 180280638,
+            "type" : "cast",
+            "abilityGameID" : 276212
+          }, {
+            "timestamp" : 180292662,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 180295664,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 180312669,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 180315669,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 180337672,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 180340670,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 180348729,
+            "type" : "begincast",
+            "abilityGameID" : 260813
+          }, {
+            "timestamp" : 180351734,
+            "type" : "cast",
+            "abilityGameID" : 260813
+          }, {
+            "timestamp" : 180357654,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 180360660,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          } ],
+          "playerCasts" : [ [ {
+            "timestamp" : 180353476,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          } ], [ ], [ {
+            "timestamp" : 180249875,
+            "type" : "cast",
+            "abilityGameID" : 61336
+          } ] ],
+          "playerTakenDef" : [ [ ], [ ], [ ], [ ], [ ], [ ] ],
+          "bloodlusts" : [ [ ], [ ], [ {
+            "timestamp" : 180278979,
+            "type" : "applybuff",
+            "abilityGameID" : 32182
+          }, {
+            "timestamp" : 180318991,
+            "type" : "removebuff",
+            "abilityGameID" : 32182
+          } ], [ ], [ ], [ ], [ ] ]
+        }
+      } ],
+      "pullsStartTime" : 178177674
+    }
+  }, {
+    "name" : "Murtaz",
+    "spec" : "Feral",
+    "amount" : 3976870.0469899774,
+    "hardModeLevel" : 17,
+    "duration" : 1888675,
+    "report" : {
+      "code" : "zxGdBVN4H9Jq7Tyb",
+      "fightID" : 1
+    },
+    "affixes" : [ 9, 10, 147 ],
+    "medal" : "bronze",
+    "score" : 441.72964015152,
+    "server" : {
+      "name" : "Kazzak",
+      "region" : "EU"
+    },
+    "class" : "Druid",
+    "fights" : {
+      "pulls" : [ {
+        "name" : "Coin-Operated Crowd Pummeler",
+        "krBossName" : "동전 투입식 군중 난타기",
+        "bossGameId" : 0,
+        "startTime" : 441071,
+        "endTime" : 608262,
+        "combatTime" : 167191,
+        "enemyNpcs" : [ {
+          "id" : 59,
+          "gameId" : 136688
+        }, {
+          "id" : 22,
+          "gameId" : 129214
+        }, {
+          "id" : 62,
+          "gameId" : 129246
+        } ],
+        "events" : {
+          "enemyCasts" : [ {
+            "timestamp" : 448428,
+            "type" : "begincast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 450926,
+            "type" : "cast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 460564,
+            "type" : "cast",
+            "abilityGameID" : 269493
+          }, {
+            "timestamp" : 482018,
+            "type" : "begincast",
+            "abilityGameID" : 271903
+          }, {
+            "timestamp" : 484512,
+            "type" : "cast",
+            "abilityGameID" : 271903
+          }, {
+            "timestamp" : 495326,
+            "type" : "begincast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 497831,
+            "type" : "cast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 508689,
+            "type" : "cast",
+            "abilityGameID" : 269493
+          }, {
+            "timestamp" : 525701,
+            "type" : "begincast",
+            "abilityGameID" : 271903
+          }, {
+            "timestamp" : 528194,
+            "type" : "cast",
+            "abilityGameID" : 271903
+          }, {
+            "timestamp" : 539067,
+            "type" : "begincast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 541567,
+            "type" : "cast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 551228,
+            "type" : "cast",
+            "abilityGameID" : 269493
+          }, {
+            "timestamp" : 569440,
+            "type" : "begincast",
+            "abilityGameID" : 271903
+          }, {
+            "timestamp" : 571931,
+            "type" : "cast",
+            "abilityGameID" : 271903
+          }, {
+            "timestamp" : 582810,
+            "type" : "begincast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 585307,
+            "type" : "cast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 594959,
+            "type" : "cast",
+            "abilityGameID" : 269493
+          } ],
+          "playerCasts" : [ [ {
+            "timestamp" : 497368,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          } ], [ ], [ ] ],
+          "playerTakenDef" : [ [ ], [ ], [ ], [ ], [ ], [ ] ],
+          "bloodlusts" : [ [ ], [ ], [ ], [ ], [ ], [ ], [ ] ]
+        }
+      }, {
+        "name" : "Azerokk",
+        "krBossName" : "아제로크",
+        "bossGameId" : 0,
+        "startTime" : 832687,
+        "endTime" : 1022910,
+        "combatTime" : 190223,
+        "enemyNpcs" : [ {
+          "id" : 67,
+          "gameId" : 129227
+        }, {
+          "id" : 66,
+          "gameId" : 129802
+        } ],
+        "events" : {
+          "enemyCasts" : [ {
+            "timestamp" : 837770,
+            "type" : "begincast",
+            "abilityGameID" : 271698
+          }, {
+            "timestamp" : 837770,
+            "type" : "cast",
+            "abilityGameID" : 257596
+          }, {
+            "timestamp" : 845742,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 849251,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 861573,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 865048,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 866383,
+            "type" : "begincast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 871383,
+            "type" : "cast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 873672,
+            "type" : "begincast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 876176,
+            "type" : "cast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 879762,
+            "type" : "begincast",
+            "abilityGameID" : 271698
+          }, {
+            "timestamp" : 879762,
+            "type" : "cast",
+            "abilityGameID" : 257596
+          }, {
+            "timestamp" : 885843,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 889346,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 901673,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 905167,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 906530,
+            "type" : "begincast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 911552,
+            "type" : "cast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 916229,
+            "type" : "begincast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 918748,
+            "type" : "cast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 922306,
+            "type" : "begincast",
+            "abilityGameID" : 271698
+          }, {
+            "timestamp" : 922307,
+            "type" : "cast",
+            "abilityGameID" : 257596
+          }, {
+            "timestamp" : 928386,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 931891,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 944191,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 947703,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 949082,
+            "type" : "begincast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 954062,
+            "type" : "cast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 958799,
+            "type" : "begincast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 961317,
+            "type" : "cast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 964862,
+            "type" : "begincast",
+            "abilityGameID" : 271698
+          }, {
+            "timestamp" : 964862,
+            "type" : "cast",
+            "abilityGameID" : 257596
+          }, {
+            "timestamp" : 970960,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 974453,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 986811,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 990312,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 991680,
+            "type" : "begincast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 996681,
+            "type" : "cast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 1001402,
+            "type" : "begincast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 1003905,
+            "type" : "cast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 1006469,
+            "type" : "begincast",
+            "abilityGameID" : 271698
+          }, {
+            "timestamp" : 1006469,
+            "type" : "cast",
+            "abilityGameID" : 257596
+          }, {
+            "timestamp" : 1013548,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 1017056,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          } ],
+          "playerCasts" : [ [ {
+            "timestamp" : 845109,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          }, {
+            "timestamp" : 926760,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          }, {
+            "timestamp" : 1012445,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          } ], [ {
+            "timestamp" : 907304,
+            "type" : "cast",
+            "abilityGameID" : 108238
+          } ], [ {
+            "timestamp" : 879126,
+            "type" : "cast",
+            "abilityGameID" : 61336
+          } ] ],
+          "playerTakenDef" : [ [ ], [ ], [ ], [ ], [ ], [ ] ],
+          "bloodlusts" : [ [ ], [ ], [ ], [ {
+            "timestamp" : 835175,
+            "type" : "applybuff",
+            "abilityGameID" : 2825
+          }, {
+            "timestamp" : 875188,
+            "type" : "removebuff",
+            "abilityGameID" : 2825
+          } ], [ ], [ ], [ ] ]
+        }
+      }, {
+        "name" : "Rixxa Fluxfume",
+        "krBossName" : "릭사 플럭스플레임",
+        "bossGameId" : 0,
+        "startTime" : 1324135,
+        "endTime" : 1540044,
+        "combatTime" : 215909,
+        "enemyNpcs" : [ {
+          "id" : 71,
+          "gameId" : 133463
+        }, {
+          "id" : 74,
+          "gameId" : 235631
+        }, {
+          "id" : 72,
+          "gameId" : 129231
+        } ],
+        "events" : {
+          "enemyCasts" : [ {
+            "timestamp" : 1327125,
+            "type" : "cast",
+            "abilityGameID" : 275992
+          }, {
+            "timestamp" : 1357150,
+            "type" : "begincast",
+            "abilityGameID" : 259940
+          }, {
+            "timestamp" : 1360634,
+            "type" : "cast",
+            "abilityGameID" : 259940
+          }, {
+            "timestamp" : 1380149,
+            "type" : "cast",
+            "abilityGameID" : 275992
+          }, {
+            "timestamp" : 1421144,
+            "type" : "begincast",
+            "abilityGameID" : 259940
+          }, {
+            "timestamp" : 1424651,
+            "type" : "cast",
+            "abilityGameID" : 259940
+          }, {
+            "timestamp" : 1433144,
+            "type" : "cast",
+            "abilityGameID" : 275992
+          }, {
+            "timestamp" : 1452166,
+            "type" : "begincast",
+            "abilityGameID" : 259940
+          }, {
+            "timestamp" : 1455669,
+            "type" : "cast",
+            "abilityGameID" : 259940
+          }, {
+            "timestamp" : 1486159,
+            "type" : "cast",
+            "abilityGameID" : 275992
+          }, {
+            "timestamp" : 1516174,
+            "type" : "begincast",
+            "abilityGameID" : 259940
+          }, {
+            "timestamp" : 1519671,
+            "type" : "cast",
+            "abilityGameID" : 259940
+          }, {
+            "timestamp" : 1539187,
+            "type" : "cast",
+            "abilityGameID" : 275992
+          } ],
+          "playerCasts" : [ [ {
+            "timestamp" : 1331701,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          } ], [ {
+            "timestamp" : 1351333,
+            "type" : "cast",
+            "abilityGameID" : 108238
+          } ], [ ] ],
+          "playerTakenDef" : [ [ ], [ ], [ ], [ ], [ ], [ ] ],
+          "bloodlusts" : [ [ ], [ ], [ ], [ ], [ ], [ ], [ ] ]
+        }
+      }, {
+        "name" : "Mogul Razdunk",
+        "krBossName" : "모굴 라즈덩크",
+        "bossGameId" : 0,
+        "startTime" : 1818656,
+        "endTime" : 2075333,
+        "combatTime" : 256677,
+        "enemyNpcs" : [ {
+          "id" : 73,
+          "gameId" : 129232
+        }, {
+          "id" : 79,
+          "gameId" : 132056
+        }, {
+          "id" : 81,
+          "gameId" : 132713
+        } ],
+        "events" : {
+          "enemyCasts" : [ {
+            "timestamp" : 1818659,
+            "type" : "begincast",
+            "abilityGameID" : 276212
+          }, {
+            "timestamp" : 1821679,
+            "type" : "cast",
+            "abilityGameID" : 276212
+          }, {
+            "timestamp" : 1823647,
+            "type" : "begincast",
+            "abilityGameID" : 260813
+          }, {
+            "timestamp" : 1826648,
+            "type" : "cast",
+            "abilityGameID" : 260813
+          }, {
+            "timestamp" : 1838670,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 1841662,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 1868656,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 1871655,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 1883693,
+            "type" : "begincast",
+            "abilityGameID" : 260813
+          }, {
+            "timestamp" : 1886689,
+            "type" : "cast",
+            "abilityGameID" : 260813
+          }, {
+            "timestamp" : 1898671,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 1901675,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 1914281,
+            "type" : "cast",
+            "abilityGameID" : 260189
+          }, {
+            "timestamp" : 1937814,
+            "type" : "begincast",
+            "abilityGameID" : 260202
+          }, {
+            "timestamp" : 1939313,
+            "type" : "cast",
+            "abilityGameID" : 260202
+          }, {
+            "timestamp" : 1947545,
+            "type" : "begincast",
+            "abilityGameID" : 260202
+          }, {
+            "timestamp" : 1949063,
+            "type" : "cast",
+            "abilityGameID" : 260202
+          }, {
+            "timestamp" : 1959692,
+            "type" : "begincast",
+            "abilityGameID" : 260202
+          }, {
+            "timestamp" : 1961196,
+            "type" : "cast",
+            "abilityGameID" : 260202
+          }, {
+            "timestamp" : 1961212,
+            "type" : "cast",
+            "abilityGameID" : 260190
+          }, {
+            "timestamp" : 1963367,
+            "type" : "begincast",
+            "abilityGameID" : 276212
+          }, {
+            "timestamp" : 1966365,
+            "type" : "cast",
+            "abilityGameID" : 276212
+          }, {
+            "timestamp" : 1978352,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 1981355,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 1998347,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 2001356,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 2023399,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 2026398,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 2043399,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 2046401,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 2058404,
+            "type" : "begincast",
+            "abilityGameID" : 260813
+          }, {
+            "timestamp" : 2061415,
+            "type" : "cast",
+            "abilityGameID" : 260813
+          } ],
+          "playerCasts" : [ [ {
+            "timestamp" : 1833104,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          }, {
+            "timestamp" : 1923701,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          }, {
+            "timestamp" : 2060565,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          } ], [ {
+            "timestamp" : 1933017,
+            "type" : "cast",
+            "abilityGameID" : 108238
+          } ], [ {
+            "timestamp" : 1960523,
+            "type" : "cast",
+            "abilityGameID" : 61336
+          } ] ],
+          "playerTakenDef" : [ [ ], [ ], [ ], [ ], [ ], [ ] ],
+          "bloodlusts" : [ [ ], [ ], [ ], [ ], [ ], [ ], [ ] ]
+        }
+      } ],
+      "pullsStartTime" : 193904
+    }
+  }, {
+    "name" : "Фесида",
+    "spec" : "Feral",
+    "amount" : 3930193.250769973,
+    "hardModeLevel" : 17,
+    "duration" : 1709411,
+    "report" : {
+      "code" : "dq78RtVwMBDrxnvH",
+      "fightID" : 1
+    },
+    "affixes" : [ 9, 10, 147 ],
+    "medal" : "bronze",
+    "score" : 445.12479166667,
+    "server" : {
+      "name" : "Гордунни",
+      "region" : "EU"
+    },
+    "class" : "Druid",
+    "fights" : {
+      "pulls" : [ {
+        "name" : "Coin-Operated Crowd Pummeler",
+        "krBossName" : "동전 투입식 군중 난타기",
+        "bossGameId" : 0,
+        "startTime" : 4344468,
+        "endTime" : 4512703,
+        "combatTime" : 168235,
+        "enemyNpcs" : [ {
+          "id" : 31,
+          "gameId" : 129214
+        }, {
+          "id" : 44,
+          "gameId" : 129246
+        } ],
+        "events" : {
+          "enemyCasts" : [ {
+            "timestamp" : 4351541,
+            "type" : "begincast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 4354051,
+            "type" : "cast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 4363686,
+            "type" : "cast",
+            "abilityGameID" : 269493
+          }, {
+            "timestamp" : 4385561,
+            "type" : "begincast",
+            "abilityGameID" : 271903
+          }, {
+            "timestamp" : 4388059,
+            "type" : "cast",
+            "abilityGameID" : 271903
+          }, {
+            "timestamp" : 4398918,
+            "type" : "begincast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 4401416,
+            "type" : "cast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 4411079,
+            "type" : "cast",
+            "abilityGameID" : 269493
+          }, {
+            "timestamp" : 4423275,
+            "type" : "begincast",
+            "abilityGameID" : 1217294
+          }, {
+            "timestamp" : 4427276,
+            "type" : "cast",
+            "abilityGameID" : 1217294
+          }, {
+            "timestamp" : 4429354,
+            "type" : "begincast",
+            "abilityGameID" : 271903
+          }, {
+            "timestamp" : 4431857,
+            "type" : "cast",
+            "abilityGameID" : 271903
+          }, {
+            "timestamp" : 4442691,
+            "type" : "begincast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 4445210,
+            "type" : "cast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 4456042,
+            "type" : "cast",
+            "abilityGameID" : 269493
+          }, {
+            "timestamp" : 4473036,
+            "type" : "begincast",
+            "abilityGameID" : 271903
+          }, {
+            "timestamp" : 4475535,
+            "type" : "cast",
+            "abilityGameID" : 271903
+          }, {
+            "timestamp" : 4486392,
+            "type" : "begincast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 4488893,
+            "type" : "cast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 4499755,
+            "type" : "cast",
+            "abilityGameID" : 269493
+          } ],
+          "playerCasts" : [ [ {
+            "timestamp" : 4352788,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          }, {
+            "timestamp" : 4443774,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          } ], [ ], [ ] ],
+          "playerTakenDef" : [ [ ], [ ], [ ], [ ], [ ], [ ] ],
+          "bloodlusts" : [ [ ], [ ], [ ], [ ], [ ], [ ], [ ] ]
+        }
+      }, {
+        "name" : "Azerokk",
+        "krBossName" : "아제로크",
+        "bossGameId" : 0,
+        "startTime" : 4724511,
+        "endTime" : 4935159,
+        "combatTime" : 210648,
+        "enemyNpcs" : [ {
+          "id" : 47,
+          "gameId" : 129227
+        }, {
+          "id" : 48,
+          "gameId" : 129802
+        } ],
+        "events" : {
+          "enemyCasts" : [ {
+            "timestamp" : 4729608,
+            "type" : "begincast",
+            "abilityGameID" : 271698
+          }, {
+            "timestamp" : 4729608,
+            "type" : "cast",
+            "abilityGameID" : 257596
+          }, {
+            "timestamp" : 4736686,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 4740191,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 4752482,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 4755983,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 4757331,
+            "type" : "begincast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 4762343,
+            "type" : "cast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 4764648,
+            "type" : "begincast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 4767150,
+            "type" : "cast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 4770715,
+            "type" : "begincast",
+            "abilityGameID" : 271698
+          }, {
+            "timestamp" : 4770715,
+            "type" : "cast",
+            "abilityGameID" : 257596
+          }, {
+            "timestamp" : 4776810,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 4780302,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 4792585,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 4796085,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 4797448,
+            "type" : "begincast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 4802449,
+            "type" : "cast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 4807163,
+            "type" : "begincast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 4809661,
+            "type" : "cast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 4813236,
+            "type" : "begincast",
+            "abilityGameID" : 271698
+          }, {
+            "timestamp" : 4813236,
+            "type" : "cast",
+            "abilityGameID" : 257596
+          }, {
+            "timestamp" : 4819331,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 4822828,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 4835100,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 4838591,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 4839950,
+            "type" : "begincast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 4844958,
+            "type" : "cast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 4849651,
+            "type" : "begincast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 4852154,
+            "type" : "cast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 4855737,
+            "type" : "begincast",
+            "abilityGameID" : 271698
+          }, {
+            "timestamp" : 4855738,
+            "type" : "cast",
+            "abilityGameID" : 257596
+          }, {
+            "timestamp" : 4861815,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 4865311,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 4877631,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 4881134,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 4882481,
+            "type" : "begincast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 4887491,
+            "type" : "cast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 4892225,
+            "type" : "begincast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 4894730,
+            "type" : "cast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 4898283,
+            "type" : "begincast",
+            "abilityGameID" : 271698
+          }, {
+            "timestamp" : 4898283,
+            "type" : "cast",
+            "abilityGameID" : 257596
+          }, {
+            "timestamp" : 4904355,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 4907843,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 4920155,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 4923662,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 4925011,
+            "type" : "begincast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 4930014,
+            "type" : "cast",
+            "abilityGameID" : 258622
+          } ],
+          "playerCasts" : [ [ {
+            "timestamp" : 4734223,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          }, {
+            "timestamp" : 4831314,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          }, {
+            "timestamp" : 4907922,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          } ], [ {
+            "timestamp" : 4777071,
+            "type" : "cast",
+            "abilityGameID" : 108238
+          }, {
+            "timestamp" : 4874566,
+            "type" : "cast",
+            "abilityGameID" : 108238
+          } ], [ ] ],
+          "playerTakenDef" : [ [ ], [ ], [ ], [ ], [ ], [ ] ],
+          "bloodlusts" : [ [ ], [ ], [ ], [ ], [ ], [ ], [ ] ]
+        }
+      }, {
+        "name" : "Rixxa Fluxfume",
+        "krBossName" : "릭사 플럭스플레임",
+        "bossGameId" : 0,
+        "startTime" : 5165722,
+        "endTime" : 5345514,
+        "combatTime" : 179792,
+        "enemyNpcs" : [ {
+          "id" : 52,
+          "gameId" : 133463
+        }, {
+          "id" : 57,
+          "gameId" : 235631
+        }, {
+          "id" : 54,
+          "gameId" : 129231
+        } ],
+        "events" : {
+          "enemyCasts" : [ {
+            "timestamp" : 5168721,
+            "type" : "cast",
+            "abilityGameID" : 275992
+          }, {
+            "timestamp" : 5198719,
+            "type" : "begincast",
+            "abilityGameID" : 259940
+          }, {
+            "timestamp" : 5202239,
+            "type" : "cast",
+            "abilityGameID" : 259940
+          }, {
+            "timestamp" : 5221721,
+            "type" : "cast",
+            "abilityGameID" : 275992
+          }, {
+            "timestamp" : 5274760,
+            "type" : "cast",
+            "abilityGameID" : 275992
+          }, {
+            "timestamp" : 5304762,
+            "type" : "begincast",
+            "abilityGameID" : 259940
+          }, {
+            "timestamp" : 5308264,
+            "type" : "cast",
+            "abilityGameID" : 259940
+          }, {
+            "timestamp" : 5327758,
+            "type" : "cast",
+            "abilityGameID" : 275992
+          } ],
+          "playerCasts" : [ [ {
+            "timestamp" : 5174990,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          } ], [ ], [ {
+            "timestamp" : 5191534,
+            "type" : "cast",
+            "abilityGameID" : 61336
+          } ] ],
+          "playerTakenDef" : [ [ ], [ ], [ ], [ ], [ ], [ ] ],
+          "bloodlusts" : [ [ ], [ ], [ ], [ ], [ ], [ ], [ ] ]
+        }
+      }, {
+        "name" : "Mogul Razdunk",
+        "krBossName" : "모굴 라즈덩크",
+        "bossGameId" : 0,
+        "startTime" : 5556067,
+        "endTime" : 5794280,
+        "combatTime" : 238213,
+        "enemyNpcs" : [ {
+          "id" : 53,
+          "gameId" : 129232
+        }, {
+          "id" : 61,
+          "gameId" : 132056
+        }, {
+          "id" : 64,
+          "gameId" : 132713
+        } ],
+        "events" : {
+          "enemyCasts" : [ {
+            "timestamp" : 5556071,
+            "type" : "begincast",
+            "abilityGameID" : 276212
+          }, {
+            "timestamp" : 5559051,
+            "type" : "cast",
+            "abilityGameID" : 276212
+          }, {
+            "timestamp" : 5576058,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 5579059,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 5606055,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 5609040,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 5634421,
+            "type" : "cast",
+            "abilityGameID" : 260189
+          }, {
+            "timestamp" : 5657947,
+            "type" : "begincast",
+            "abilityGameID" : 260202
+          }, {
+            "timestamp" : 5659440,
+            "type" : "cast",
+            "abilityGameID" : 260202
+          }, {
+            "timestamp" : 5668913,
+            "type" : "begincast",
+            "abilityGameID" : 260202
+          }, {
+            "timestamp" : 5670400,
+            "type" : "cast",
+            "abilityGameID" : 260202
+          }, {
+            "timestamp" : 5679855,
+            "type" : "begincast",
+            "abilityGameID" : 260202
+          }, {
+            "timestamp" : 5681356,
+            "type" : "cast",
+            "abilityGameID" : 260202
+          }, {
+            "timestamp" : 5681369,
+            "type" : "cast",
+            "abilityGameID" : 260190
+          }, {
+            "timestamp" : 5683505,
+            "type" : "begincast",
+            "abilityGameID" : 276212
+          }, {
+            "timestamp" : 5686518,
+            "type" : "cast",
+            "abilityGameID" : 276212
+          }, {
+            "timestamp" : 5688524,
+            "type" : "begincast",
+            "abilityGameID" : 260813
+          }, {
+            "timestamp" : 5691533,
+            "type" : "cast",
+            "abilityGameID" : 260813
+          }, {
+            "timestamp" : 5698535,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 5701543,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 5718508,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 5721509,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 5743529,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 5746521,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 5763547,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 5766581,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          } ],
+          "playerCasts" : [ [ {
+            "timestamp" : 5643290,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          } ], [ ], [ ] ],
+          "playerTakenDef" : [ [ ], [ ], [ ], [ ], [ ], [ ] ],
+          "bloodlusts" : [ [ ], [ ], [ {
+            "timestamp" : 5565115,
+            "type" : "applybuff",
+            "abilityGameID" : 32182
+          }, {
+            "timestamp" : 5605124,
+            "type" : "removebuff",
+            "abilityGameID" : 32182
+          } ], [ ], [ ], [ ], [ ] ]
+        }
+      } ],
+      "pullsStartTime" : 4152169
+    }
+  }, {
+    "name" : "Kovu",
+    "spec" : "Feral",
+    "amount" : 3881895.6694899797,
+    "hardModeLevel" : 17,
+    "duration" : 1836596,
+    "report" : {
+      "code" : "wFr9RxJvNmd2TgP3",
+      "fightID" : 22
+    },
+    "affixes" : [ 9, 10, 147 ],
+    "medal" : "bronze",
+    "score" : 442.71598484848,
+    "server" : {
+      "name" : "Ragnaros",
+      "region" : "US"
+    },
+    "class" : "Druid",
+    "fights" : {
+      "pulls" : [ {
+        "name" : "Coin-Operated Crowd Pummeler",
+        "krBossName" : "동전 투입식 군중 난타기",
+        "bossGameId" : 0,
+        "startTime" : 17050066,
+        "endTime" : 17220168,
+        "combatTime" : 170102,
+        "enemyNpcs" : [ {
+          "id" : 318,
+          "gameId" : 130653
+        }, {
+          "id" : 312,
+          "gameId" : 129214
+        }, {
+          "id" : 332,
+          "gameId" : 129246
+        } ],
+        "events" : {
+          "enemyCasts" : [ {
+            "timestamp" : 17056282,
+            "type" : "begincast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 17058789,
+            "type" : "cast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 17069680,
+            "type" : "cast",
+            "abilityGameID" : 269493
+          }, {
+            "timestamp" : 17091135,
+            "type" : "begincast",
+            "abilityGameID" : 271903
+          }, {
+            "timestamp" : 17093653,
+            "type" : "cast",
+            "abilityGameID" : 271903
+          }, {
+            "timestamp" : 17104507,
+            "type" : "begincast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 17107005,
+            "type" : "cast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 17117845,
+            "type" : "cast",
+            "abilityGameID" : 269493
+          }, {
+            "timestamp" : 17134874,
+            "type" : "begincast",
+            "abilityGameID" : 271903
+          }, {
+            "timestamp" : 17137382,
+            "type" : "cast",
+            "abilityGameID" : 271903
+          }, {
+            "timestamp" : 17148272,
+            "type" : "begincast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 17150767,
+            "type" : "cast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 17160399,
+            "type" : "cast",
+            "abilityGameID" : 269493
+          }, {
+            "timestamp" : 17172554,
+            "type" : "begincast",
+            "abilityGameID" : 1217294
+          }, {
+            "timestamp" : 17176553,
+            "type" : "cast",
+            "abilityGameID" : 1217294
+          }, {
+            "timestamp" : 17178624,
+            "type" : "begincast",
+            "abilityGameID" : 271903
+          }, {
+            "timestamp" : 17181135,
+            "type" : "cast",
+            "abilityGameID" : 271903
+          }, {
+            "timestamp" : 17191945,
+            "type" : "begincast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 17194449,
+            "type" : "cast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 17205309,
+            "type" : "cast",
+            "abilityGameID" : 269493
+          } ],
+          "playerCasts" : [ [ {
+            "timestamp" : 17105731,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          }, {
+            "timestamp" : 17193213,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          } ], [ ], [ {
+            "timestamp" : 17149630,
+            "type" : "cast",
+            "abilityGameID" : 61336
+          } ] ],
+          "playerTakenDef" : [ [ ], [ ], [ ], [ ], [ ], [ ] ],
+          "bloodlusts" : [ [ ], [ ], [ ], [ ], [ ], [ ], [ ] ]
+        }
+      }, {
+        "name" : "Azerokk",
+        "krBossName" : "아제로크",
+        "bossGameId" : 0,
+        "startTime" : 17440673,
+        "endTime" : 17637272,
+        "combatTime" : 196599,
+        "enemyNpcs" : [ {
+          "id" : 335,
+          "gameId" : 129227
+        }, {
+          "id" : 336,
+          "gameId" : 129802
+        } ],
+        "events" : {
+          "enemyCasts" : [ {
+            "timestamp" : 17446598,
+            "type" : "begincast",
+            "abilityGameID" : 271698
+          }, {
+            "timestamp" : 17446599,
+            "type" : "cast",
+            "abilityGameID" : 257596
+          }, {
+            "timestamp" : 17453875,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 17457376,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 17469644,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 17473153,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 17474503,
+            "type" : "begincast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 17479517,
+            "type" : "cast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 17481783,
+            "type" : "begincast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 17484298,
+            "type" : "cast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 17487877,
+            "type" : "begincast",
+            "abilityGameID" : 271698
+          }, {
+            "timestamp" : 17487877,
+            "type" : "cast",
+            "abilityGameID" : 257596
+          }, {
+            "timestamp" : 17493961,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 17497468,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 17509729,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 17513225,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 17514602,
+            "type" : "begincast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 17519603,
+            "type" : "cast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 17524305,
+            "type" : "begincast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 17526820,
+            "type" : "cast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 17530365,
+            "type" : "begincast",
+            "abilityGameID" : 271698
+          }, {
+            "timestamp" : 17530365,
+            "type" : "cast",
+            "abilityGameID" : 257596
+          }, {
+            "timestamp" : 17536445,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 17539952,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 17552245,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 17555743,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 17557074,
+            "type" : "begincast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 17562085,
+            "type" : "cast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 17566817,
+            "type" : "begincast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 17569323,
+            "type" : "cast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 17572865,
+            "type" : "begincast",
+            "abilityGameID" : 271698
+          }, {
+            "timestamp" : 17572865,
+            "type" : "cast",
+            "abilityGameID" : 257596
+          }, {
+            "timestamp" : 17578939,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 17582437,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 17594717,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 17598220,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 17599562,
+            "type" : "begincast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 17604570,
+            "type" : "cast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 17609295,
+            "type" : "begincast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 17611803,
+            "type" : "cast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 17615347,
+            "type" : "begincast",
+            "abilityGameID" : 271698
+          }, {
+            "timestamp" : 17615347,
+            "type" : "cast",
+            "abilityGameID" : 257596
+          }, {
+            "timestamp" : 17621440,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 17624943,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          } ],
+          "playerCasts" : [ [ {
+            "timestamp" : 17538105,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          }, {
+            "timestamp" : 17623220,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          } ], [ {
+            "timestamp" : 17544222,
+            "type" : "cast",
+            "abilityGameID" : 108238
+          } ], [ {
+            "timestamp" : 17579107,
+            "type" : "cast",
+            "abilityGameID" : 61336
+          } ] ],
+          "playerTakenDef" : [ [ ], [ ], [ ], [ ], [ ], [ ] ],
+          "bloodlusts" : [ [ {
+            "timestamp" : 17470558,
+            "type" : "applybuff",
+            "abilityGameID" : 80353
+          }, {
+            "timestamp" : 17510550,
+            "type" : "removebuff",
+            "abilityGameID" : 80353
+          } ], [ ], [ ], [ ], [ ], [ ], [ ] ]
+        }
+      }, {
+        "name" : "Rixxa Fluxfume",
+        "krBossName" : "릭사 플럭스플레임",
+        "bossGameId" : 0,
+        "startTime" : 17871039,
+        "endTime" : 18057931,
+        "combatTime" : 186892,
+        "enemyNpcs" : [ {
+          "id" : 580,
+          "gameId" : 129231
+        } ],
+        "events" : {
+          "enemyCasts" : [ {
+            "timestamp" : 17874027,
+            "type" : "cast",
+            "abilityGameID" : 275992
+          }, {
+            "timestamp" : 17904037,
+            "type" : "begincast",
+            "abilityGameID" : 259940
+          }, {
+            "timestamp" : 17907539,
+            "type" : "cast",
+            "abilityGameID" : 259940
+          }, {
+            "timestamp" : 17927049,
+            "type" : "cast",
+            "abilityGameID" : 275992
+          }, {
+            "timestamp" : 17946055,
+            "type" : "begincast",
+            "abilityGameID" : 259940
+          }, {
+            "timestamp" : 17949559,
+            "type" : "cast",
+            "abilityGameID" : 259940
+          }, {
+            "timestamp" : 17980072,
+            "type" : "cast",
+            "abilityGameID" : 275992
+          }, {
+            "timestamp" : 17999074,
+            "type" : "begincast",
+            "abilityGameID" : 259940
+          }, {
+            "timestamp" : 18002584,
+            "type" : "cast",
+            "abilityGameID" : 259940
+          }, {
+            "timestamp" : 18033090,
+            "type" : "cast",
+            "abilityGameID" : 275992
+          } ],
+          "playerCasts" : [ [ {
+            "timestamp" : 17905868,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          }, {
+            "timestamp" : 18000479,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          } ], [ ], [ ] ],
+          "playerTakenDef" : [ [ ], [ ], [ ], [ ], [ ], [ ] ],
+          "bloodlusts" : [ [ ], [ ], [ ], [ ], [ ], [ ], [ ] ]
+        }
+      }, {
+        "name" : "Mogul Razdunk",
+        "krBossName" : "모굴 라즈덩크",
+        "bossGameId" : 0,
+        "startTime" : 18292286,
+        "endTime" : 18546355,
+        "combatTime" : 254069,
+        "enemyNpcs" : [ {
+          "id" : 579,
+          "gameId" : 129232
+        }, {
+          "id" : 583,
+          "gameId" : 133482
+        }, {
+          "id" : 588,
+          "gameId" : 132056
+        }, {
+          "id" : 590,
+          "gameId" : 132713
+        } ],
+        "events" : {
+          "enemyCasts" : [ {
+            "timestamp" : 18292290,
+            "type" : "begincast",
+            "abilityGameID" : 276212
+          }, {
+            "timestamp" : 18295282,
+            "type" : "cast",
+            "abilityGameID" : 276212
+          }, {
+            "timestamp" : 18312301,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 18315307,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 18342306,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 18345301,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 18372334,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 18375329,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 18387344,
+            "type" : "begincast",
+            "abilityGameID" : 260813
+          }, {
+            "timestamp" : 18392428,
+            "type" : "cast",
+            "abilityGameID" : 260189
+          }, {
+            "timestamp" : 18417132,
+            "type" : "begincast",
+            "abilityGameID" : 260202
+          }, {
+            "timestamp" : 18418639,
+            "type" : "cast",
+            "abilityGameID" : 260202
+          }, {
+            "timestamp" : 18428033,
+            "type" : "begincast",
+            "abilityGameID" : 260202
+          }, {
+            "timestamp" : 18429530,
+            "type" : "cast",
+            "abilityGameID" : 260202
+          }, {
+            "timestamp" : 18438975,
+            "type" : "begincast",
+            "abilityGameID" : 260202
+          }, {
+            "timestamp" : 18440484,
+            "type" : "cast",
+            "abilityGameID" : 260202
+          }, {
+            "timestamp" : 18440496,
+            "type" : "cast",
+            "abilityGameID" : 260190
+          }, {
+            "timestamp" : 18442599,
+            "type" : "begincast",
+            "abilityGameID" : 276212
+          }, {
+            "timestamp" : 18445613,
+            "type" : "cast",
+            "abilityGameID" : 276212
+          }, {
+            "timestamp" : 18457630,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 18460622,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 18477623,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 18480632,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 18502632,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 18505629,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 18522655,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 18525655,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          } ],
+          "playerCasts" : [ [ {
+            "timestamp" : 18399591,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          }, {
+            "timestamp" : 18483900,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          } ], [ {
+            "timestamp" : 18431100,
+            "type" : "cast",
+            "abilityGameID" : 108238
+          } ], [ {
+            "timestamp" : 18413992,
+            "type" : "cast",
+            "abilityGameID" : 61336
+          } ] ],
+          "playerTakenDef" : [ [ ], [ {
+            "timestamp" : 18417612,
+            "type" : "applybuff",
+            "abilityGameID" : 116849
+          }, {
+            "timestamp" : 18425137,
+            "type" : "removebuff",
+            "abilityGameID" : 116849
+          } ], [ ], [ ], [ ], [ ] ],
+          "bloodlusts" : [ [ ], [ ], [ ], [ ], [ ], [ ], [ ] ]
+        }
+      } ],
+      "pullsStartTime" : 16746645
+    }
+  }, {
+    "name" : "Joolya",
+    "spec" : "Feral",
+    "amount" : 3821735.3024700284,
+    "hardModeLevel" : 17,
+    "duration" : 1633540,
+    "report" : {
+      "code" : "Xv6kAqVCwL4JfGHP",
+      "fightID" : 21
+    },
+    "affixes" : [ 9, 10, 147 ],
+    "medal" : "bronze",
+    "score" : 446.56174242424,
+    "server" : {
+      "name" : "Tichondrius",
+      "region" : "US"
+    },
+    "class" : "Druid",
+    "fights" : {
+      "pulls" : [ {
+        "name" : "Coin-Operated Crowd Pummeler",
+        "krBossName" : "동전 투입식 군중 난타기",
+        "bossGameId" : 0,
+        "startTime" : 23919882,
+        "endTime" : 24087702,
+        "combatTime" : 167820,
+        "enemyNpcs" : [ {
+          "id" : 112,
+          "gameId" : 129214
+        }, {
+          "id" : 136,
+          "gameId" : 129246
+        } ],
+        "events" : {
+          "enemyCasts" : [ {
+            "timestamp" : 23927257,
+            "type" : "begincast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 23929763,
+            "type" : "cast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 23939018,
+            "type" : "cast",
+            "abilityGameID" : 269493
+          }, {
+            "timestamp" : 23949947,
+            "type" : "begincast",
+            "abilityGameID" : 1217294
+          }, {
+            "timestamp" : 23953945,
+            "type" : "cast",
+            "abilityGameID" : 1217294
+          }, {
+            "timestamp" : 23960893,
+            "type" : "begincast",
+            "abilityGameID" : 271903
+          }, {
+            "timestamp" : 23963397,
+            "type" : "cast",
+            "abilityGameID" : 271903
+          }, {
+            "timestamp" : 23974236,
+            "type" : "begincast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 23976744,
+            "type" : "cast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 23987614,
+            "type" : "cast",
+            "abilityGameID" : 269493
+          }, {
+            "timestamp" : 24004707,
+            "type" : "begincast",
+            "abilityGameID" : 271903
+          }, {
+            "timestamp" : 24007209,
+            "type" : "cast",
+            "abilityGameID" : 271903
+          }, {
+            "timestamp" : 24018064,
+            "type" : "begincast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 24020557,
+            "type" : "cast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 24030231,
+            "type" : "cast",
+            "abilityGameID" : 269493
+          }, {
+            "timestamp" : 24048427,
+            "type" : "begincast",
+            "abilityGameID" : 271903
+          }, {
+            "timestamp" : 24050936,
+            "type" : "cast",
+            "abilityGameID" : 271903
+          }, {
+            "timestamp" : 24061809,
+            "type" : "begincast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 24064306,
+            "type" : "cast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 24073960,
+            "type" : "cast",
+            "abilityGameID" : 269493
+          } ],
+          "playerCasts" : [ [ {
+            "timestamp" : 23928751,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          }, {
+            "timestamp" : 24019904,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          } ], [ {
+            "timestamp" : 23979614,
+            "type" : "cast",
+            "abilityGameID" : 108238
+          } ], [ ] ],
+          "playerTakenDef" : [ [ ], [ ], [ ], [ ], [ ], [ ] ],
+          "bloodlusts" : [ [ ], [ ], [ ], [ ], [ ], [ ], [ ] ]
+        }
+      }, {
+        "name" : "Azerokk",
+        "krBossName" : "아제로크",
+        "bossGameId" : 0,
+        "startTime" : 24382153,
+        "endTime" : 24592300,
+        "combatTime" : 210147,
+        "enemyNpcs" : [ {
+          "id" : 142,
+          "gameId" : 129227
+        }, {
+          "id" : 143,
+          "gameId" : 129802
+        } ],
+        "events" : {
+          "enemyCasts" : [ {
+            "timestamp" : 24387292,
+            "type" : "begincast",
+            "abilityGameID" : 271698
+          }, {
+            "timestamp" : 24387292,
+            "type" : "cast",
+            "abilityGameID" : 257596
+          }, {
+            "timestamp" : 24394264,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 24397763,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 24410094,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 24413596,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 24414957,
+            "type" : "begincast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 24419956,
+            "type" : "cast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 24422239,
+            "type" : "begincast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 24424743,
+            "type" : "cast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 24428312,
+            "type" : "begincast",
+            "abilityGameID" : 271698
+          }, {
+            "timestamp" : 24428312,
+            "type" : "cast",
+            "abilityGameID" : 257596
+          }, {
+            "timestamp" : 24434372,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 24437884,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 24450161,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 24453657,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 24455015,
+            "type" : "begincast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 24460014,
+            "type" : "cast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 24464713,
+            "type" : "begincast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 24467222,
+            "type" : "cast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 24470774,
+            "type" : "begincast",
+            "abilityGameID" : 271698
+          }, {
+            "timestamp" : 24470774,
+            "type" : "cast",
+            "abilityGameID" : 257596
+          }, {
+            "timestamp" : 24476842,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 24480353,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 24492645,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 24496142,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 24497494,
+            "type" : "begincast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 24502515,
+            "type" : "cast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 24507204,
+            "type" : "begincast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 24509715,
+            "type" : "cast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 24513282,
+            "type" : "begincast",
+            "abilityGameID" : 271698
+          }, {
+            "timestamp" : 24513283,
+            "type" : "cast",
+            "abilityGameID" : 257596
+          }, {
+            "timestamp" : 24519324,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 24522824,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 24535121,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 24538625,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 24539969,
+            "type" : "begincast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 24544973,
+            "type" : "cast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 24549682,
+            "type" : "begincast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 24552184,
+            "type" : "cast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 24555752,
+            "type" : "begincast",
+            "abilityGameID" : 271698
+          }, {
+            "timestamp" : 24555752,
+            "type" : "cast",
+            "abilityGameID" : 257596
+          }, {
+            "timestamp" : 24561793,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 24565311,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 24577593,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 24581084,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 24582450,
+            "type" : "begincast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 24587467,
+            "type" : "cast",
+            "abilityGameID" : 258622
+          } ],
+          "playerCasts" : [ [ {
+            "timestamp" : 24434829,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          }, {
+            "timestamp" : 24521441,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          }, {
+            "timestamp" : 24584451,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          } ], [ {
+            "timestamp" : 24479149,
+            "type" : "cast",
+            "abilityGameID" : 108238
+          }, {
+            "timestamp" : 24575657,
+            "type" : "cast",
+            "abilityGameID" : 108238
+          } ], [ {
+            "timestamp" : 24560773,
+            "type" : "cast",
+            "abilityGameID" : 61336
+          } ] ],
+          "playerTakenDef" : [ [ ], [ ], [ ], [ ], [ ], [ ] ],
+          "bloodlusts" : [ [ ], [ ], [ {
+            "timestamp" : 24385069,
+            "type" : "applybuff",
+            "abilityGameID" : 32182
+          }, {
+            "timestamp" : 24425063,
+            "type" : "removebuff",
+            "abilityGameID" : 32182
+          } ], [ ], [ ], [ ], [ ] ]
+        }
+      }, {
+        "name" : "Rixxa Fluxfume",
+        "krBossName" : "릭사 플럭스플레임",
+        "bossGameId" : 0,
+        "startTime" : 24775396,
+        "endTime" : 24957800,
+        "combatTime" : 182404,
+        "enemyNpcs" : [ {
+          "id" : 145,
+          "gameId" : 129231
+        } ],
+        "events" : {
+          "enemyCasts" : [ {
+            "timestamp" : 24778391,
+            "type" : "cast",
+            "abilityGameID" : 275992
+          }, {
+            "timestamp" : 24831419,
+            "type" : "cast",
+            "abilityGameID" : 275992
+          }, {
+            "timestamp" : 24850448,
+            "type" : "begincast",
+            "abilityGameID" : 259940
+          }, {
+            "timestamp" : 24853951,
+            "type" : "cast",
+            "abilityGameID" : 259940
+          }, {
+            "timestamp" : 24884460,
+            "type" : "cast",
+            "abilityGameID" : 275992
+          }, {
+            "timestamp" : 24925427,
+            "type" : "begincast",
+            "abilityGameID" : 259940
+          }, {
+            "timestamp" : 24928926,
+            "type" : "cast",
+            "abilityGameID" : 259940
+          }, {
+            "timestamp" : 24937448,
+            "type" : "cast",
+            "abilityGameID" : 275992
+          } ],
+          "playerCasts" : [ [ {
+            "timestamp" : 24852814,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          } ], [ ], [ ] ],
+          "playerTakenDef" : [ [ ], [ ], [ ], [ ], [ ], [ ] ],
+          "bloodlusts" : [ [ ], [ ], [ ], [ ], [ ], [ ], [ ] ]
+        }
+      }, {
+        "name" : "Mogul Razdunk",
+        "krBossName" : "모굴 라즈덩크",
+        "bossGameId" : 0,
+        "startTime" : 25115600,
+        "endTime" : 25356686,
+        "combatTime" : 241086,
+        "enemyNpcs" : [ {
+          "id" : 146,
+          "gameId" : 129232
+        }, {
+          "id" : 154,
+          "gameId" : 132056
+        }, {
+          "id" : 156,
+          "gameId" : 132713
+        } ],
+        "events" : {
+          "enemyCasts" : [ {
+            "timestamp" : 25115603,
+            "type" : "begincast",
+            "abilityGameID" : 276212
+          }, {
+            "timestamp" : 25118591,
+            "type" : "cast",
+            "abilityGameID" : 276212
+          }, {
+            "timestamp" : 25135604,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 25138609,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 25165592,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 25168593,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 25195631,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 25198637,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 25210648,
+            "type" : "begincast",
+            "abilityGameID" : 260813
+          }, {
+            "timestamp" : 25215806,
+            "type" : "cast",
+            "abilityGameID" : 260189
+          }, {
+            "timestamp" : 25240525,
+            "type" : "begincast",
+            "abilityGameID" : 260202
+          }, {
+            "timestamp" : 25242032,
+            "type" : "cast",
+            "abilityGameID" : 260202
+          }, {
+            "timestamp" : 25252683,
+            "type" : "begincast",
+            "abilityGameID" : 260202
+          }, {
+            "timestamp" : 25254196,
+            "type" : "cast",
+            "abilityGameID" : 260202
+          }, {
+            "timestamp" : 25264823,
+            "type" : "begincast",
+            "abilityGameID" : 260202
+          }, {
+            "timestamp" : 25266319,
+            "type" : "cast",
+            "abilityGameID" : 260202
+          }, {
+            "timestamp" : 25266334,
+            "type" : "cast",
+            "abilityGameID" : 260190
+          }, {
+            "timestamp" : 25268474,
+            "type" : "begincast",
+            "abilityGameID" : 276212
+          }, {
+            "timestamp" : 25271478,
+            "type" : "cast",
+            "abilityGameID" : 276212
+          }, {
+            "timestamp" : 25283480,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 25286490,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 25303501,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 25306504,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 25328509,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 25331508,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          } ],
+          "playerCasts" : [ [ {
+            "timestamp" : 25221553,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          } ], [ ], [ {
+            "timestamp" : 25237452,
+            "type" : "cast",
+            "abilityGameID" : 61336
+          } ] ],
+          "playerTakenDef" : [ [ ], [ ], [ ], [ ], [ ], [ ] ],
+          "bloodlusts" : [ [ ], [ ], [ ], [ ], [ ], [ ], [ ] ]
+        }
+      } ],
+      "pullsStartTime" : 23729737
+    }
+  }, {
+    "name" : "Aleasamna",
+    "spec" : "Feral",
+    "amount" : 3745222.835409999,
+    "hardModeLevel" : 17,
+    "duration" : 1646233,
+    "report" : {
+      "code" : "Pyn8FzcdRHbp7ZTa",
+      "fightID" : 7
+    },
+    "affixes" : [ 9, 10, 147 ],
+    "medal" : "bronze",
+    "score" : 446.32134469697,
+    "server" : {
+      "name" : "Argent Dawn",
+      "region" : "EU"
+    },
+    "class" : "Druid",
+    "fights" : {
+      "pulls" : [ {
+        "name" : "Coin-Operated Crowd Pummeler",
+        "krBossName" : "동전 투입식 군중 난타기",
+        "bossGameId" : 0,
+        "startTime" : 22551271,
+        "endTime" : 22714750,
+        "combatTime" : 163479,
+        "enemyNpcs" : [ {
+          "id" : 85,
+          "gameId" : 129214
+        }, {
+          "id" : 113,
+          "gameId" : 129246
+        } ],
+        "events" : {
+          "enemyCasts" : [ {
+            "timestamp" : 22558457,
+            "type" : "begincast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 22560973,
+            "type" : "cast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 22570613,
+            "type" : "cast",
+            "abilityGameID" : 269493
+          }, {
+            "timestamp" : 22592475,
+            "type" : "begincast",
+            "abilityGameID" : 271903
+          }, {
+            "timestamp" : 22594972,
+            "type" : "cast",
+            "abilityGameID" : 271903
+          }, {
+            "timestamp" : 22605828,
+            "type" : "begincast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 22608328,
+            "type" : "cast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 22619208,
+            "type" : "cast",
+            "abilityGameID" : 269493
+          }, {
+            "timestamp" : 22636180,
+            "type" : "begincast",
+            "abilityGameID" : 271903
+          }, {
+            "timestamp" : 22638673,
+            "type" : "cast",
+            "abilityGameID" : 271903
+          }, {
+            "timestamp" : 22649522,
+            "type" : "begincast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 22652034,
+            "type" : "cast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 22662866,
+            "type" : "cast",
+            "abilityGameID" : 269493
+          }, {
+            "timestamp" : 22679867,
+            "type" : "begincast",
+            "abilityGameID" : 271903
+          }, {
+            "timestamp" : 22682367,
+            "type" : "cast",
+            "abilityGameID" : 271903
+          }, {
+            "timestamp" : 22693266,
+            "type" : "begincast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 22695750,
+            "type" : "cast",
+            "abilityGameID" : 262347
+          }, {
+            "timestamp" : 22705398,
+            "type" : "cast",
+            "abilityGameID" : 269493
+          } ],
+          "playerCasts" : [ [ {
+            "timestamp" : 22559206,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          }, {
+            "timestamp" : 22651060,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          } ], [ ], [ ] ],
+          "playerTakenDef" : [ [ ], [ ], [ ], [ ], [ ], [ ] ],
+          "bloodlusts" : [ [ ], [ ], [ ], [ ], [ ], [ ], [ ] ]
+        }
+      }, {
+        "name" : "Azerokk",
+        "krBossName" : "아제로크",
+        "bossGameId" : 0,
+        "startTime" : 22922822,
+        "endTime" : 23116904,
+        "combatTime" : 194082,
+        "enemyNpcs" : [ {
+          "id" : 115,
+          "gameId" : 129227
+        }, {
+          "id" : 116,
+          "gameId" : 129802
+        } ],
+        "events" : {
+          "enemyCasts" : [ {
+            "timestamp" : 22928003,
+            "type" : "begincast",
+            "abilityGameID" : 271698
+          }, {
+            "timestamp" : 22928004,
+            "type" : "cast",
+            "abilityGameID" : 257596
+          }, {
+            "timestamp" : 22934961,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 22938465,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 22950740,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 22954248,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 22955620,
+            "type" : "begincast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 22960598,
+            "type" : "cast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 22962886,
+            "type" : "begincast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 22965381,
+            "type" : "cast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 22968964,
+            "type" : "begincast",
+            "abilityGameID" : 271698
+          }, {
+            "timestamp" : 22968965,
+            "type" : "cast",
+            "abilityGameID" : 257596
+          }, {
+            "timestamp" : 22975019,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 22978522,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 22990818,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 22994312,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 22995657,
+            "type" : "begincast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 23000661,
+            "type" : "cast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 23005386,
+            "type" : "begincast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 23007888,
+            "type" : "cast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 23011468,
+            "type" : "begincast",
+            "abilityGameID" : 271698
+          }, {
+            "timestamp" : 23011468,
+            "type" : "cast",
+            "abilityGameID" : 257596
+          }, {
+            "timestamp" : 23017529,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 23021029,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 23033273,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 23036781,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 23038129,
+            "type" : "begincast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 23043147,
+            "type" : "cast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 23047845,
+            "type" : "begincast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 23050365,
+            "type" : "cast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 23053921,
+            "type" : "begincast",
+            "abilityGameID" : 271698
+          }, {
+            "timestamp" : 23053922,
+            "type" : "cast",
+            "abilityGameID" : 257596
+          }, {
+            "timestamp" : 23059966,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 23063474,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 23075772,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 23079242,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 23080640,
+            "type" : "begincast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 23085637,
+            "type" : "cast",
+            "abilityGameID" : 258622
+          }, {
+            "timestamp" : 23090324,
+            "type" : "begincast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 23092825,
+            "type" : "cast",
+            "abilityGameID" : 257593
+          }, {
+            "timestamp" : 23096409,
+            "type" : "begincast",
+            "abilityGameID" : 271698
+          }, {
+            "timestamp" : 23096409,
+            "type" : "cast",
+            "abilityGameID" : 257596
+          }, {
+            "timestamp" : 23102471,
+            "type" : "begincast",
+            "abilityGameID" : 275907
+          }, {
+            "timestamp" : 23105986,
+            "type" : "cast",
+            "abilityGameID" : 275907
+          } ],
+          "playerCasts" : [ [ {
+            "timestamp" : 22974895,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          }, {
+            "timestamp" : 23064732,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          } ], [ {
+            "timestamp" : 23111655,
+            "type" : "cast",
+            "abilityGameID" : 108238
+          } ], [ {
+            "timestamp" : 22934826,
+            "type" : "cast",
+            "abilityGameID" : 61336
+          } ] ],
+          "playerTakenDef" : [ [ ], [ ], [ ], [ ], [ ], [ ] ],
+          "bloodlusts" : [ [ ], [ ], [ ], [ ], [ {
+            "timestamp" : 22996915,
+            "type" : "applybuff",
+            "abilityGameID" : 466904
+          }, {
+            "timestamp" : 23036928,
+            "type" : "removebuff",
+            "abilityGameID" : 466904
+          } ], [ ], [ ] ]
+        }
+      }, {
+        "name" : "Rixxa Fluxfume",
+        "krBossName" : "릭사 플럭스플레임",
+        "bossGameId" : 0,
+        "startTime" : 23382628,
+        "endTime" : 23549583,
+        "combatTime" : 166955,
+        "enemyNpcs" : [ {
+          "id" : 118,
+          "gameId" : 133463
+        }, {
+          "id" : 122,
+          "gameId" : 235631
+        }, {
+          "id" : 119,
+          "gameId" : 129231
+        } ],
+        "events" : {
+          "enemyCasts" : [ {
+            "timestamp" : 23385624,
+            "type" : "cast",
+            "abilityGameID" : 275992
+          }, {
+            "timestamp" : 23415634,
+            "type" : "begincast",
+            "abilityGameID" : 259940
+          }, {
+            "timestamp" : 23419132,
+            "type" : "cast",
+            "abilityGameID" : 259940
+          }, {
+            "timestamp" : 23438623,
+            "type" : "cast",
+            "abilityGameID" : 275992
+          }, {
+            "timestamp" : 23479630,
+            "type" : "begincast",
+            "abilityGameID" : 259940
+          }, {
+            "timestamp" : 23483138,
+            "type" : "cast",
+            "abilityGameID" : 259940
+          }, {
+            "timestamp" : 23491659,
+            "type" : "cast",
+            "abilityGameID" : 275992
+          }, {
+            "timestamp" : 23544650,
+            "type" : "cast",
+            "abilityGameID" : 275992
+          } ],
+          "playerCasts" : [ [ {
+            "timestamp" : 23417761,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          } ], [ ], [ {
+            "timestamp" : 23456435,
+            "type" : "cast",
+            "abilityGameID" : 61336
+          } ] ],
+          "playerTakenDef" : [ [ ], [ ], [ ], [ ], [ ], [ ] ],
+          "bloodlusts" : [ [ ], [ ], [ ], [ ], [ ], [ ], [ ] ]
+        }
+      }, {
+        "name" : "Mogul Razdunk",
+        "krBossName" : "모굴 라즈덩크",
+        "bossGameId" : 0,
+        "startTime" : 23715886,
+        "endTime" : 23968920,
+        "combatTime" : 253034,
+        "enemyNpcs" : [ {
+          "id" : 120,
+          "gameId" : 129232
+        }, {
+          "id" : 127,
+          "gameId" : 132056
+        }, {
+          "id" : 129,
+          "gameId" : 132713
+        } ],
+        "events" : {
+          "enemyCasts" : [ {
+            "timestamp" : 23715890,
+            "type" : "begincast",
+            "abilityGameID" : 276212
+          }, {
+            "timestamp" : 23718874,
+            "type" : "cast",
+            "abilityGameID" : 276212
+          }, {
+            "timestamp" : 23735890,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 23738895,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 23765893,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 23768898,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 23795917,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 23798899,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 23815878,
+            "type" : "cast",
+            "abilityGameID" : 260189
+          }, {
+            "timestamp" : 23833290,
+            "type" : "begincast",
+            "abilityGameID" : 271456
+          }, {
+            "timestamp" : 23838304,
+            "type" : "cast",
+            "abilityGameID" : 271456
+          }, {
+            "timestamp" : 23840552,
+            "type" : "begincast",
+            "abilityGameID" : 260202
+          }, {
+            "timestamp" : 23842062,
+            "type" : "cast",
+            "abilityGameID" : 260202
+          }, {
+            "timestamp" : 23852708,
+            "type" : "begincast",
+            "abilityGameID" : 260202
+          }, {
+            "timestamp" : 23854212,
+            "type" : "cast",
+            "abilityGameID" : 260202
+          }, {
+            "timestamp" : 23863646,
+            "type" : "begincast",
+            "abilityGameID" : 260202
+          }, {
+            "timestamp" : 23865148,
+            "type" : "cast",
+            "abilityGameID" : 260202
+          }, {
+            "timestamp" : 23865173,
+            "type" : "cast",
+            "abilityGameID" : 260190
+          }, {
+            "timestamp" : 23867285,
+            "type" : "begincast",
+            "abilityGameID" : 276212
+          }, {
+            "timestamp" : 23870284,
+            "type" : "cast",
+            "abilityGameID" : 276212
+          }, {
+            "timestamp" : 23882281,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 23885287,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 23902283,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 23905298,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 23927312,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 23930333,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 23947310,
+            "type" : "begincast",
+            "abilityGameID" : 260280
+          }, {
+            "timestamp" : 23950309,
+            "type" : "cast",
+            "abilityGameID" : 260280
+          } ],
+          "playerCasts" : [ [ {
+            "timestamp" : 23721898,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          }, {
+            "timestamp" : 23831246,
+            "type" : "cast",
+            "abilityGameID" : 22812
+          } ], [ ], [ ] ],
+          "playerTakenDef" : [ [ ], [ ], [ ], [ ], [ ], [ ] ],
+          "bloodlusts" : [ [ ], [ ], [ ], [ ], [ ], [ ], [ ] ]
+        }
+      } ],
+      "pullsStartTime" : 22374289
+    }
+  } ],
+  "playerSkillInfo" : [ {
+    "spellId" : 22812,
+    "spellName" : "나무 껍질"
+  }, {
+    "spellId" : 61336,
+    "spellName" : "생존 본능"
+  }, {
+    "spellId" : 108238,
+    "spellName" : "소생"
+  } ],
+  "bossSkillInfo" : [ 271456, 275907, 259940, 260202, 260813, 262347, 276212, 269493, 271698, 257593, 271903, 260280, 1217294, 275992, 258622, 260190, 260189, 270042, 257596 ],
+  "takenBuffInfo" : [ {
+    "spellId" : 116849,
+    "spellName" : "기의 고치"
+  } ],
+  "takenBloodlusts" : [ {
+    "spellId" : 2825,
+    "spellName" : "피의 욕망"
+  }, {
+    "spellId" : 32182,
+    "spellName" : "영웅심"
+  }, {
+    "spellId" : 80353,
+    "spellName" : "시간 왜곡"
+  }, {
+    "spellId" : 466904,
+    "spellName" : "유린자의 울음소리"
+  } ]
+}
