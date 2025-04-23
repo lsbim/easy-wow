@@ -7,17 +7,20 @@ export const wowClassList = [
             {
                 "id": 1,
                 "name": "Blood",
-                "koName": "혈기"
+                "koName": "혈기",
+                highPrioritySkill: [48792,49028]
             },
             {
                 "id": 2,
                 "name": "Frost",
-                "koName": "냉기"
+                "koName": "냉기",
+                highPrioritySkill: [48792,48707]
             },
             {
                 "id": 3,
                 "name": "Unholy",
                 "koName": "부정",
+                highPrioritySkill: [48792,48707]
             }
         ]
     },
@@ -30,7 +33,6 @@ export const wowClassList = [
                 "id": 1,
                 "name": "Balance",
                 "koName": "조화",
-                "has": true
             },
             {
                 "id": 2,
@@ -46,6 +48,7 @@ export const wowClassList = [
                 "id": 4,
                 "name": "Restoration",
                 "koName": "회복",
+                highPrioritySkill: [22812,108238,391528]
             }
         ]
     },
@@ -80,16 +83,19 @@ export const wowClassList = [
                 "id": 1,
                 "name": "Arcane",
                 "koName": "비전",
+                highPrioritySkill: [55342,342245,235450]
             },
             {
                 "id": 2,
                 "name": "Fire",
                 "koName": "화염",
+                highPrioritySkill: [55342,342245,235313]
             },
             {
                 "id": 3,
                 "name": "Frost",
                 "koName": "냉기",
+                highPrioritySkill: [55342,342245,11426]
             }
         ]
     },
@@ -146,7 +152,7 @@ export const wowClassList = [
                 "id": 1,
                 "name": "Discipline",
                 "koName": "수양",
-                "has": true
+                highPrioritySkill: [451235,440725,428933,428930,19236,62618,34433]
             },
             {
                 "id": 2,
@@ -169,16 +175,19 @@ export const wowClassList = [
                 "id": 1,
                 "name": "Assassination",
                 "koName": "암살",
+                highPrioritySkill: [5277,31224,185311]
             },
             {
                 "id": 3,
                 "name": "Subtlety",
                 "koName": "잠행",
+                highPrioritySkill: [5277,31224,185311]
             },
             {
                 "id": 4,
                 "name": "Outlaw",
                 "koName": "무법",
+                highPrioritySkill: [5277,31224,185311]
             }
         ]
     },

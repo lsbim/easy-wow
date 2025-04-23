@@ -8,7 +8,7 @@ const TooltipCanvas = ({ x, y, visible, text, timestamp, offsetX, timelineHeight
 
     const textLength = text?.length
     const rectWidth = timestamp?.toString().length * 14 || 0;
-    const rectHeight = textLength > 1 ? 45 : 26;
+    const rectHeight = textLength > 1 ? 50 : 30;
 
     // 툴팁 위치 계산 (스테이지 경계 고려)
     const calculatePosition = () => {
@@ -51,7 +51,7 @@ const TooltipCanvas = ({ x, y, visible, text, timestamp, offsetX, timelineHeight
                 fontSize={12}
                 fill="white"
                 visible={visible}
-                lineHeight={0.8} // 줄 간격을 기본보다 좁게 설정
+                lineHeight={1} // 줄 간격을 기본보다 좁게 설정
                 align="center"         // 텍스트 가로 중앙 정렬
                 verticalAlign="middle" // 텍스트 세로 중앙 정렬
             />

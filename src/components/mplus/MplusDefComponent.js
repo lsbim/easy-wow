@@ -15,7 +15,8 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
         useFetch({ dungeonId, className, specName })
     const [selected, setSelected] = useState(0); // 선택한 pull 인덱스
     const [selectedSkill, setSelectedSkill] = useState(new Set()); // 타임라인에 표기할 플레이어가 사용한 스킬들
-    const [selectedBossSkill, setSelectedBossSkill] = useState(new Set()); // 타임라인에 표기할 보스가 사용한 스킬들
+    const [selectedTakenSkill, setSelectedTakenSkill] = useState(new Set()); // 플레이어가 받은 스킬들
+    const [selectedBossSkill, setSelectedBossSkill] = useState(new Set()); // 보스가 사용한 스킬들
     const [offsetX, setOffsetX, handlePointerDown] = useStagePointerDrag();
     const [isModalOpen, setIsModalOpen] = useState(-1);
     const [timelineScaleX, setTimelineScaleX] = useState(6); // 타임라인 시간(초)과 간격(픽셀)의 비율
@@ -49,38 +50,48 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
                 }
                 return newSet;
             })
+        } else if(type === 'taken'){
+            setSelectedTakenSkill((prev) => {
+                const newSet = new Set(prev);
+                if (newSet.has(i)) {
+                    newSet.delete(i);
+                } else {
+                    newSet.add(i);
+                }
+                return newSet;
+            })
         }
     }, [selectedSkill])
 
     const handleSelectBloodlust = useCallback(() => {
         const isSelectBlood = data?.takenBloodlusts?.every( // 전부 포함됐는지?
-            spell => selectedSkill?.has(spell.spellId)
+            spell => selectedTakenSkill?.has(spell.spellId)
         );
 
-        const newSelectedSkill = new Set(selectedSkill);
+        const newSelectedTakenSkill = new Set(selectedTakenSkill);
 
         if (isSelectBlood) {
             // 모두 포함되어 있으면, 해당 spellId들만 제거
             data?.takenBloodlusts?.forEach(spell => {
-                newSelectedSkill?.delete(spell.spellId);
+                newSelectedTakenSkill?.delete(spell.spellId);
             });
             // 블러드 대표(피의욕망) 지우기
-            if(newSelectedSkill?.has(2825)){
-                newSelectedSkill?.delete(2825);
+            if (newSelectedTakenSkill?.has(2825)) {
+                newSelectedTakenSkill?.delete(2825);
             }
         } else {
             // 하나라도 빠져 있으면, 모두 추가
             data?.takenBloodlusts?.forEach(spell => {
-                newSelectedSkill?.add(spell.spellId);
+                newSelectedTakenSkill?.add(spell.spellId);
             });
             // 블러드 대표 추가
-            if(!newSelectedSkill?.has(2825)){
-                newSelectedSkill?.add(2825);
+            if (!newSelectedTakenSkill?.has(2825)) {
+                newSelectedTakenSkill?.add(2825);
             }
         }
 
-        setSelectedSkill(newSelectedSkill);
-    }, [selectedSkill]); // data?.takenBloodlusts는 변경될 일 없는 객체라 넣지 않았다.
+        setSelectedTakenSkill(newSelectedTakenSkill);
+    }, [selectedTakenSkill]); // data?.takenBloodlusts는 변경될 일 없는 객체라 넣지 않았다.
 
     // 데이터 불러오기
     useEffect(() => {
@@ -92,7 +103,7 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
 
         setSelectedSkill(initSelectedSkill)
         setSelectedBossSkill(initSelectedBossSkill)
-        setTimelineHeight(initTimelineHeight) 
+        setTimelineHeight(initTimelineHeight)
 
     }, [data]);
 
@@ -135,13 +146,18 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
     const modalTimeline = [...modalPlayerCasts, ...modalPlayerTakenBuffs].map(skill => ({
         ...skill,
         skillName: skillMap[skill.abilityGameID] || ''
-    }));
+    })).filter(s => selectedSkill?.has(s.abilityGameID));
     modalTimeline?.sort((a, b) => a?.timestamp - b?.timestamp);
 
     // console.log(modalTimeline)
 
     // 0번(첫번째) 인덱스의 보스 데이터
-    const firstBoss = data?.rankings[0]?.fights?.pulls[selected]
+    const firstBoss = (() => {
+        for (let i = 0; i < data?.rankings?.length; i++) {
+            const bossData = data?.rankings[i]?.fights?.pulls[selected];
+            if (bossData != null) return bossData;
+        }
+    })();
     const combatTime = firstBoss?.combatTime // 전투시간
     firstBoss?.events?.enemyCasts?.sort((a, b) => a?.timestamp - b?.timestamp);
     const enemyCastsTimeline = convertToTimeline(firstBoss?.events?.enemyCasts); // beginCast와 cast를 duration으로 변환
@@ -195,6 +211,7 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
                 selectedBossSkill={selectedBossSkill}
                 handleSelectSkill={handleSelectSkill}
                 selectedSkill={selectedSkill}
+                selectedTakenSkill={selectedTakenSkill}
                 handleSelectBloodlust={handleSelectBloodlust}
             />
             <div className='flex relative'>
@@ -237,10 +254,11 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
                         combatTime={combatTime}
                         enemyCastsTimeline={enemyCastsTimeline}
                         firstBoss={firstBoss}
-                        selectedBossSkill={selectedBossSkill}
                         rankingData={data?.rankings}
                         selected={selected}
                         selectedSkill={selectedSkill}
+                        selectedBossSkill={selectedBossSkill}
+                        selectedTakenSkill={selectedTakenSkill}
                         className={className}
                         skillList={
                             new Array(

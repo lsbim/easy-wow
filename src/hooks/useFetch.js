@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { getMplusTimeline } from "../api/mplusTimelineAPI";
 import { bannedBossSkills } from "../global/variable/mplusVariable";
 import { convertToSrc } from "../global/function";
+import { wowClassList } from "../global/variable/wowVariable";
 
 export const useFetch = ({ dungeonId, className, specName }) => {
     const [data, setData] = useState(null);
@@ -21,7 +22,12 @@ export const useFetch = ({ dungeonId, className, specName }) => {
                 }
 
                 // API 호출
-                const response = await getMplusTimeline({ dungeonId, className, specName, signal: controller.signal });
+                // const response = await getMplusTimeline({ dungeonId, className, specName, signal: controller.signal });
+
+                const url = `/obj/${dungeonId}/${className}/${specName}.json`;
+                const response = await fetch(url, { signal: controller.signal });
+
+
                 // console.log('API Response', response)
                 if (response?.status === "UPDATING" && response?.data === null) {
                     if (data !== "UPDATING") { // 업데이팅 상태에 쓸데없는 리렌더링 방지
@@ -39,9 +45,10 @@ export const useFetch = ({ dungeonId, className, specName }) => {
                     return;
                 }
 
-                const loadedData = response?.data;
+                // const loadedData = response?.data;
+                const loadedData = await response?.json();
                 setData(loadedData);
-                // console.log("My DATA: ", loadedData);
+                console.log("My DATA: ", loadedData);
                 if (response?.data?.rankings?.length === 0) {
                     console.log("랭킹 데이터가 없습니다!");
                     setData(null);
@@ -51,14 +58,31 @@ export const useFetch = ({ dungeonId, className, specName }) => {
                 setInitTimelineHeight(27 + (loadedData?.rankings?.length + 1) * 28)
 
                 // 보스 이름 목록
-                const bossNames = loadedData?.rankings[0]?.fights?.pulls?.map(pull => pull?.name) || [];
+                // const bossNames = loadedData?.rankings[0]?.fights?.pulls?.map(pull => pull?.name) || [];
+                const bossNames = (() => {
+                    for (let i = 0; i < loadedData?.rankings?.length; i++) {
+                        const bossData = loadedData?.rankings[i]?.fights?.pulls?.map(pull => pull?.name);
+                        if (bossData != null) return bossData;
+                    }
+                })();
                 setBossList(bossNames);
 
                 // on/off 직업스킬/받은외생기
-                const initSelectedSkills = new Set([ // 대괄호로 감싸고 두 map()을 스프레드연산자로 결합해야 두 배열을 한 Set에 넣기가능
-                    ...(loadedData?.playerSkillInfo?.map(skill => skill?.spellId) || []), // 사용한 스킬
-                    // ...(loadedData?.takenBuffInfo?.map(skill => skill?.spellId) || []) // 받은 외생기
-                ]);
+                // 1) 플레이어 스킬 ID 전체
+                const skillIds = loadedData.playerSkillInfo.map(s => s.spellId);
+
+                // 2) 내 직업·전문화 객체에서 highPrioritySkill 꺼내기
+                const hpList = wowClassList
+                    .find(c => c.name === className)
+                    ?.specs.find(s => s.name === specName)?.highPrioritySkill;
+
+                // 3) 고우선 스킬이 있으면 그 중 intersect, 없으면 전체
+                const finalIds = Array.isArray(hpList) && hpList.length > 0
+                    ? skillIds.filter(id => hpList.includes(id))
+                    : skillIds;
+
+                // 4) Set으로 감싸기
+                const initSelectedSkills = new Set(finalIds);
                 setInitSelectedSkill(initSelectedSkills);
 
                 // on/off 보스스킬.
@@ -96,5 +120,5 @@ export const useFetch = ({ dungeonId, className, specName }) => {
         };
     }, [dungeonId, className, specName]);
 
-    return [ data, isLoading, bossList, initSelectedSkill, initSelectedBossSkill, initTimelineHeight ];
+    return [data, isLoading, bossList, initSelectedSkill, initSelectedBossSkill, initTimelineHeight];
 }

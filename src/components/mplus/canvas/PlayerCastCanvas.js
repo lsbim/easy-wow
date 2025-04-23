@@ -6,7 +6,8 @@ import ImageCanvas from "./ImageCanvas";
 import RectColorCanvas from "./RectColorCanvas";
 import HatchPatternRectCanvas from "./HatchPatternRectCanvas";
 
-const PlayerCastCanvas = ({ rankingData, handleMouseEnter, handleMouseLeave, selected, selectedSkill, className, skillList, timelineScaleX
+const PlayerCastCanvas = ({ rankingData, handleMouseEnter, handleMouseLeave, selected, selectedSkill, className, skillList
+    , timelineScaleX, selectedTakenSkill
 }) => {
 
     // console.log(selectedSkill)
@@ -85,7 +86,7 @@ const PlayerCastCanvas = ({ rankingData, handleMouseEnter, handleMouseLeave, sel
                             clipHeight={1000}
                         >
                             {/* 블러드 전용 빗금블럭 */}
-                            {selectedSkill?.has(2825) && bloodlust?.map((b, i) => (
+                            {selectedTakenSkill?.has(2825) && bloodlust?.map((b, i) => (
                                 <React.Fragment key={i + 'bloodlust'}>
                                     <HatchPatternRectCanvas
                                         x={timestampToPosition(b?.timestamp - pull?.startTime, timelineScaleX)}
@@ -107,9 +108,13 @@ const PlayerCastCanvas = ({ rankingData, handleMouseEnter, handleMouseLeave, sel
                             ))}
 
                             {/* 플레이어 주문 블럭 */}
-                            {mergedEvents?.filter(c => selectedSkill?.has(c?.abilityGameID))?.map((cast, playerCastIndex) => (
+                            {mergedEvents?.filter(c =>
+                                selectedSkill.has(c.abilityGameID) ||
+                                selectedTakenSkill.has(c.abilityGameID)
+                            )?.map((cast, playerCastIndex) => (
                                 <React.Fragment key={playerCastIndex + 'cast'}>
-                                    {cast?.duration >= 10 && //
+                                    {/* 받은 외생기만 색깔블럭(지속시간) 출력 */}
+                                    {cast?.duration >= 10 && selectedTakenSkill.has(cast?.abilityGameID) &&
                                         <RectColorCanvas
                                             x={timestampToPosition(cast?.timestamp - pull?.startTime, timelineScaleX)}
                                             y={TL_Y_PLAYER_RECT}
@@ -134,7 +139,10 @@ const PlayerCastCanvas = ({ rankingData, handleMouseEnter, handleMouseLeave, sel
                         <Group
                             clipWidth={pull?.combatTime / 1000 * timelineScaleX}
                             clipHeight={1000}>
-                            {mergedEvents?.filter(c => selectedSkill?.has(c?.abilityGameID))?.map((cast, playerCastIndex) => {
+                            {mergedEvents?.filter(c =>
+                                selectedSkill.has(c.abilityGameID) ||
+                                selectedTakenSkill.has(c.abilityGameID)
+                            )?.map((cast, playerCastIndex) => {
 
                                 const matchSpellName = skillList?.find(skill => skill?.spellId === cast?.abilityGameID)?.spellName;
 

@@ -8,7 +8,7 @@ import TooltipCanvas from "./common/TooltipCanvas";
 const TimelineStageCanvas = ({
     offsetX, setOffsetX, handlePointerDown, combatTime,
     enemyCastsTimeline, firstBoss, selectedBossSkill, rankingData, selected, className, selectedSkill, skillList,
-    timelineScaleX, setTimelineScaleX, timelineHeight
+    timelineScaleX, setTimelineScaleX, timelineHeight,selectedTakenSkill
 }) => {
 
     const [stageWidth, setStageWidth] = useState(window.innerWidth);
@@ -109,6 +109,7 @@ const TimelineStageCanvas = ({
                         handleMouseLeave={handleMouseLeave}
                         selected={selected}
                         selectedSkill={selectedSkill}
+                        selectedTakenSkill={selectedTakenSkill}
                         className={className}
                         skillList={skillList}
                         timelineScaleX={timelineScaleX}
