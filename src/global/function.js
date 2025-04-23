@@ -1,4 +1,5 @@
 import { TL_SPELL_WIDTH_PER_SEC } from "./variable/timelineConstants";
+import { bloodlustSpell } from "./variable/wowVariable";
 
 // 캐스트 타임테이블 duration으로 가공
 export function convertToTimeline(casts, pullStartTime) {
@@ -96,6 +97,21 @@ export function convertToTimeline(casts, pullStartTime) {
                 // arr 배열에 channeling 객체 추가
                 arr.push(cast);
                 checkedSet.add(matchingCastIndex); // 캐스팅 완료의 cast와 즉시시전 cast를 구별하기 위함
+            }
+
+            // 전투종료 40초 전에 시작한 블러드
+            if(bloodlustSpell.has(currentCast.abilityGameID) && matchingCastIndex === -1){
+                // channeling 객체에 필요한 데이터 추가
+                const cast = {
+                    timestamp: currentCast.timestamp,
+                    abilityGameID: currentCast.abilityGameID,
+                    duration: 39999, // 지속 시간 계산
+                    skillName: filteredCasts[i]?.skillName
+                };
+
+
+                // arr 배열에 channeling 객체 추가
+                arr.push(cast);
             }
 
         } else if (type === 'cast') {

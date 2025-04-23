@@ -23,11 +23,13 @@ const HatchPatternRectCanvas = ({ x, y, width, height, color }) => {
     return (
         <Rect
             x={x}
-            y={y}
+            y={y-0.5}
             width={width}
             height={height}
             fillPatternImage={patternCanvas}
             fillPatternRepeat="repeat"
+            stroke="black"
+            strokeWidth={1}
         />
     );
 }

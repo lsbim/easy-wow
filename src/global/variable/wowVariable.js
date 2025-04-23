@@ -320,4 +320,4 @@ export function getKoClassAndSpecName(className, specName) {
     return myName ? myName : className
 }
 
-export const bloodlustSpell = [80353,390386,32182,2825,466904,264667,444257];
+export const bloodlustSpell = new Set([80353,390386,32182,2825,466904,264667,444257]);
