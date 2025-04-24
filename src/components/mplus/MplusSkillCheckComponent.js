@@ -83,7 +83,7 @@ const MplusSkillCheckComponent = ({
                         href="#" data-wowhead={`spell=2825&domain=ko`}
                         className={`w-[30px] h-[30px] hover:bg-slate-200 cursor-pointer
                                 ${takenBloodlusts?.
-                                every(spell => selectedTakenSkill?.
+                                some(spell => selectedTakenSkill?.
                                     has(spell.spellId))
                                 ? 'border-[1px] border-gray-900 rounded-sm' : 'opacity-40'}`}
                         onClick={handleSelectBloodlust}

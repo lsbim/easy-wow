@@ -5,7 +5,7 @@ const MplusIndexPage = () => {
 
     return (
         <div className="min-h-screen flex-col flex">
-            <div>
+            <div className="">
                 <MplusIndexComponent />
             </div>
             <Footer />

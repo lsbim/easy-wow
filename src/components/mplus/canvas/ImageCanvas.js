@@ -6,7 +6,7 @@ import { useImageCache } from "../../../hooks/useImageCache";
 
 const ImageCanvas = ({ abilityGameID, timestamp, startTime, onMouseEnter, onMouseLeave, type, timelineScaleX }) => {
 
-    const src = convertToSrc(abilityGameID, type);
+    const src = convertToSrc(abilityGameID);
     const [image] = useImageCache(src);
 
     const y = TL_Y_PER_LIST + 4.5

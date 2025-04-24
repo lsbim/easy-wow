@@ -48,7 +48,7 @@ export const useFetch = ({ dungeonId, className, specName }) => {
                 // const loadedData = response?.data;
                 const loadedData = await response?.json();
                 setData(loadedData);
-                console.log("My DATA: ", loadedData);
+                // console.log("My DATA: ", loadedData);
                 if (response?.data?.rankings?.length === 0) {
                     console.log("랭킹 데이터가 없습니다!");
                     setData(null);
@@ -94,7 +94,7 @@ export const useFetch = ({ dungeonId, className, specName }) => {
                 // 이미지 프리로드 -> 네트워크 요청 감소
                 const preloadImage = (abil, type) => {
                     const img = new Image();
-                    img.src = type ? convertToSrc(abil, type) : abil;
+                    img.src = type ? convertToSrc(abil) : abil;
                 }
                 initSelectedSkills?.forEach(a => preloadImage(a, className));
                 initBossSkills?.forEach(a => preloadImage(a, 'mplus'));

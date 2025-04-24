@@ -4,7 +4,7 @@ import { convertToSrc } from "../../../global/function";
 
 const RectColorCanvas = ({ x, y, width, height, abilityGameID, type }) => {
 
-    const src = convertToSrc(abilityGameID, type);
+    const src = convertToSrc(abilityGameID);
 
     const { data: color } = useColor(src, 'hex', {
         crossOrigin: 'Anonymous'

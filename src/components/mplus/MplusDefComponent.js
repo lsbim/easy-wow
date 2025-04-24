@@ -8,6 +8,7 @@ import TimelineStageCanvas from './canvas/TimelineStageCanvas';
 import MplusMRTModalComponent from './common/MplusMRTModalComponent';
 import MplusPlayerComponent from './MplusPlayerComponent';
 import MplusSkillCheckComponent from './MplusSkillCheckComponent';
+import { bloodlustSpell } from '../../global/variable/wowVariable';
 
 const MplusDefComponent = ({ className, specName, dungeonId }) => {
 
@@ -50,7 +51,7 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
                 }
                 return newSet;
             })
-        } else if(type === 'taken'){
+        } else if (type === 'taken') {
             setSelectedTakenSkill((prev) => {
                 const newSet = new Set(prev);
                 if (newSet.has(i)) {
@@ -64,35 +65,31 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
     }, [selectedSkill])
 
     const handleSelectBloodlust = useCallback(() => {
-        const isSelectBlood = data?.takenBloodlusts?.every( // 전부 포함됐는지?
-            spell => selectedTakenSkill?.has(spell.spellId)
-        );
 
-        const newSelectedTakenSkill = new Set(selectedTakenSkill);
+        setSelectedTakenSkill(prev => {
+            const newSet = new Set(prev);
+            // true면 “모두 선택된 상태” → 해제
+            const allSelected = data?.takenBloodlusts?.some(spell =>
+                newSet.has(spell.spellId)
+            );
 
-        if (isSelectBlood) {
-            // 모두 포함되어 있으면, 해당 spellId들만 제거
-            data?.takenBloodlusts?.forEach(spell => {
-                newSelectedTakenSkill?.delete(spell.spellId);
-            });
-            // 블러드 대표(피의욕망) 지우기
-            if (newSelectedTakenSkill?.has(2825)) {
-                newSelectedTakenSkill?.delete(2825);
+            if (allSelected) {
+                data?.takenBloodlusts?.forEach(spell => newSet.delete(spell.spellId));
+                newSet.delete(2825);
+            } else {
+                data?.takenBloodlusts?.forEach(spell => newSet.add(spell.spellId));
+                newSet.add(2825);
             }
-        } else {
-            // 하나라도 빠져 있으면, 모두 추가
-            data?.takenBloodlusts?.forEach(spell => {
-                newSelectedTakenSkill?.add(spell.spellId);
-            });
-            // 블러드 대표 추가
-            if (!newSelectedTakenSkill?.has(2825)) {
-                newSelectedTakenSkill?.add(2825);
-            }
-        }
 
-        setSelectedTakenSkill(newSelectedTakenSkill);
-    }, [selectedTakenSkill]); // data?.takenBloodlusts는 변경될 일 없는 객체라 넣지 않았다.
+            console.log(newSet)
 
+            return newSet;
+        });
+
+    }, [selectedTakenSkill, data?.takenBloodlusts]); // data?.takenBloodlusts는 변경될 일 없는 객체라 넣지 않았다.
+
+    // console.log(selectedTakenSkill)
+    
     // 데이터 불러오기
     useEffect(() => {
 
@@ -100,6 +97,8 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
 
         // 보스정보 0번 인덱스로 초기화
         setSelected(0);
+        setOffsetX(0) // 위치 초기화
+        setTimelineScaleX(6) // 간격초기화
 
         setSelectedSkill(initSelectedSkill)
         setSelectedBossSkill(initSelectedBossSkill)

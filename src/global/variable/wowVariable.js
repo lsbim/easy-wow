@@ -43,6 +43,7 @@ export const wowClassList = [
                 "id": 3,
                 "name": "Guardian",
                 "koName": "수호",
+                highPrioritySkill: [22812,61336,102558,200851]
             },
             {
                 "id": 4,
@@ -254,6 +255,7 @@ export const wowClassList = [
                 "id": 3,
                 "name": "Protection",
                 "koName": "방어",
+                highPrioritySkill: [871,12975]
             }
         ]
     },
@@ -271,6 +273,7 @@ export const wowClassList = [
                 "id": 2,
                 "name": "Vengeance",
                 "koName": "복수",
+                highPrioritySkill: [187827,204021]
             }
         ]
     },

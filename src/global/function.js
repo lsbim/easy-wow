@@ -153,8 +153,6 @@ export const timestampToPosition = (timestamp, timelineScaleX) => {
     return result > 0 ? result : 0;
 };
 
-export const convertToSrc = (abil, type) => {
-    return type === 'mplus'
-        ? `${process.env.REACT_APP_IMAGES_IP}/images/mplus/boss/spell/${abil}.jpg`
-        : `${process.env.REACT_APP_IMAGES_IP}/images/ability/${abil}.jpg`;
+export const convertToSrc = (abil) => {
+    return `${process.env.REACT_APP_IMAGES_IP}/images/ability/${abil}.jpg`;
 }
