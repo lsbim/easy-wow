@@ -291,12 +291,12 @@ export const wowClassList = [
                 "id": 2,
                 "name": "Preservation",
                 "koName": "보존",
+                highPrioritySkill: [363534,363916,370564,374227,374348]
             },
             {
                 "id": 3,
                 "name": "Augmentation",
                 "koName": "증강",
-                "has": true
             }
         ]
     }

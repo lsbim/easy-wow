@@ -1,16 +1,10 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { getKoDungeonName, mplusDungeonList } from "../global/variable/mplusVariable";
 import { getKoClassAndSpecName } from "../global/variable/wowVariable";
 
 const HeaderNav = ({ spec, dungeonId, className, specName }) => {
 
-    const navigate = useNavigate();
-
-    const handleDungeonClick = (d) => {
-        if (dungeonId !== String(d)) {
-            navigate(`/mplus/${d}/${spec}`);
-        }
-    }
+    const url = window.location.origin;
 
     return (
         <div className="flex justify-between items-center py-2 mb-12 bg-slate-700 text-white overflow-x-hidden">
@@ -29,9 +23,9 @@ const HeaderNav = ({ spec, dungeonId, className, specName }) => {
             </div>
             <div className="flex mr-8 min-w-[400px]">
                 {mplusDungeonList.map(d => (
-                    <div
-                        key={d?.id}
-                        onClick={() => handleDungeonClick(d?.id)}
+                    <Link
+                        key={'headerDungeonId' + d?.id}
+                        to={`${url}/mplus/${d?.id}/${className}-${specName}`}
                         className="relative">
                         <img
                             src={`${process.env.REACT_APP_IMAGES_IP}/images/mplus/dungeon/${d?.id}.jpg`}
@@ -47,7 +41,7 @@ const HeaderNav = ({ spec, dungeonId, className, specName }) => {
                         {String(d?.id) === dungeonId && (
                             <div className="absolute bottom-0 left-0 right-0 h-2 bg-slate-700 border-t-4 border-white"></div>
                         )}
-                    </div>
+                    </Link>
                 ))}
             </div>
         </div>

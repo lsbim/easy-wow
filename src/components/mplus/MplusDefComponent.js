@@ -64,6 +64,8 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
         }
     }, [selectedSkill])
 
+    // console.log(selectedTakenSkill)
+
     const handleSelectBloodlust = useCallback(() => {
 
         setSelectedTakenSkill(prev => {

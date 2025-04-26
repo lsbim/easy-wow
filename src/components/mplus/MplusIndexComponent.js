@@ -1,25 +1,15 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { mplusDungeonList } from "../../global/variable/mplusVariable";
 import { wowClassList } from "../../global/variable/wowVariable";
 
 const MplusIndexComponent = () => {
 
-    const [selected, setSelected] = useState({ dungeonId: 0, spec: '' })
-    const navigate = useNavigate();
+    const [selectedDungeon, setSelectedDungeon] = useState(mplusDungeonList[0]?.id)
+    const url = window.location.origin;
 
     const handleDungeonClick = (dungeon) => {
-        setSelected((prevSelected) => ({
-            ...prevSelected,
-            dungeonId: dungeon,
-        }));
-    };
-
-    const handleSpecClick = (spec) => {
-        setSelected((prevSelected) => ({
-            ...prevSelected,
-            spec: spec,
-        }));
+        setSelectedDungeon(dungeon);
     };
 
     useEffect(() => {
@@ -43,11 +33,12 @@ const MplusIndexComponent = () => {
         })
     }, [])
 
+    // 현재 시즌 던전Id가 아닐 경우 초기화
     useEffect(() => {
-        if (selected?.dungeonId !== 0 && selected?.spec !== '') {
-            navigate(`/mplus/${selected?.dungeonId}/${selected?.spec}`);
+        if (!mplusDungeonList?.some(d => d.id === selectedDungeon)) {
+            setSelectedDungeon(mplusDungeonList[0]?.id)
         }
-    }, [selected])
+    }, [selectedDungeon])
 
     return (
         <div className="flex sm:justify-center mt-12">
@@ -61,7 +52,7 @@ const MplusIndexComponent = () => {
                 </div>
 
                 <div className="flex flex-wrap justify-center">
-                    {mplusDungeonList.map(d => (
+                    {mplusDungeonList?.map(d => (
                         <div
                             className="border-2 border-black mx-1 mb-2 w-[60px]"
                             key={d?.id}>
@@ -69,7 +60,7 @@ const MplusIndexComponent = () => {
                                 src={`${process.env.REACT_APP_IMAGES_IP}/images/mplus/dungeon/${d?.id}.jpg`}
                                 className={`w-full hover:brightness-125 hover:opacity-100 
                                     cursor-pointer
-                                ${selected?.dungeonId !== 0 && selected?.dungeonId === d?.id
+                                ${selectedDungeon !== 0 && selectedDungeon === d?.id
                                         ? '' : 'opacity-50'}`}
                                 alt={d?.koName}
                                 title={d?.koName}
@@ -98,30 +89,21 @@ const MplusIndexComponent = () => {
                                 {c?.specs?.
                                     // filter(s => s.has)?.
                                     map(s => (
-                                        <div
+                                        <Link
                                             className={`flex text-[13px] items-center mt-2 ml-2 font-bold cursor-pointer max-w-[70px]`}
                                             key={s?.name}
-                                            onClick={() => {
-                                                handleSpecClick(c?.name + '-' + s?.name)
-                                            }}
+                                            to={`${url}/mplus/${selectedDungeon}/${c?.name}-${s?.name}`}
                                         >
                                             <img
                                                 src={`${process.env.REACT_APP_IMAGES_IP}/images/player/spec/${c?.name}${s?.name}.jpg`}
-                                                className={`w-[30px] h-[30px] transition-none
-                                        ${s ?
-                                                        // s?.has ? 
-                                                        // 커서-포인터를 기본에 두니 !has도 계속 포인터로 나옴
-                                                        selected?.spec !== '' && selected?.spec === c?.name + '-' + s?.name
-                                                            ? 'border-2 border-black'
-                                                            : 'opacity-70'
-                                                        : 'grayscale opacity-50'}`}
+                                                className={`w-[30px] h-[30px] transition-none`}
                                                 alt={s?.koName}
                                                 title={s?.koName}
                                             />
                                             <span className="ml-2">
                                                 {s.koName}
                                             </span>
-                                        </div>
+                                        </Link>
                                     ))}
                             </div>
                         </div>
