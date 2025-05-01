@@ -154,5 +154,5 @@ export const timestampToPosition = (timestamp, timelineScaleX) => {
 };
 
 export const convertToSrc = (abil) => {
-    return `${process.env.REACT_APP_IMAGES_IP}/images/ability/${abil}.jpg`;
+    return `${process.env.PUBLIC_URL}/images/ability/${abil}.jpg`;
 }

@@ -187,7 +187,7 @@ const MplusDefComponent = ({ className, specName, dungeonId }) => {
                 {bossList?.map((boss, i) => (
                     <div key={boss} className='relative min-w-[100px]'>
                         <img
-                            src={`${process.env.REACT_APP_IMAGES_IP}/images/mplus/boss/face/${boss}.png`}
+                            src={`${process.env.PUBLIC_URL}/images/mplus/boss/face/${boss}.png`}
                             className={`w-[100px] h-[50px] cursor-pointer transition-all duration-200
                     ${selected === i ? 'shadow-md' : 'opacity-80'}
                     hover:opacity-100 hover:shadow-lg hover:scale-[1.02]`}

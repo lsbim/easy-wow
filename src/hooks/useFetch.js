@@ -98,7 +98,7 @@ export const useFetch = ({ dungeonId, className, specName }) => {
                 }
                 initSelectedSkills?.forEach(a => preloadImage(a, className));
                 initBossSkills?.forEach(a => preloadImage(a, 'mplus'));
-                bossNames?.forEach(b => preloadImage(`${process.env.REACT_APP_IMAGES_IP}/images/mplus/boss/face/${b}.png`));
+                bossNames?.forEach(b => preloadImage(`${process.env.PUBLIC_URL}/images/mplus/boss/face/${b}.png`));
 
 
                 if (response?.status !== 'UPDATING') {

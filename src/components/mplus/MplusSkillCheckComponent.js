@@ -13,7 +13,7 @@ const MplusSkillCheckComponent = ({
             <div className='flex items-center md:mr-3'>
                 <div className='w-[40px] h-[40px] mr-1 border-2 border-black'>
                     <img className='min-w-[36px]'
-                        src={`${process.env.REACT_APP_IMAGES_IP}/images/common/mark/tyrannical.jpg`}
+                        src={`${process.env.PUBLIC_URL}/images/common/mark/tyrannical.jpg`}
                     />
                 </div>
                 {bossSkillInfo
@@ -27,7 +27,7 @@ const MplusSkillCheckComponent = ({
                             onClick={() => handleSelectSkill(skill, 'boss')}
                         >
                             <img
-                                src={`${process.env.REACT_APP_IMAGES_IP}/images/ability/${skill}.jpg`}
+                                src={`${process.env.PUBLIC_URL}/images/ability/${skill}.jpg`}
                                 className="min-w-[28px]"
                             />
                         </a>
@@ -37,7 +37,7 @@ const MplusSkillCheckComponent = ({
             <div className='flex items-center md:mr-3'>
                 <div className='w-[40px] h-[40px] mr-1 border-2 border-black'>
                     <img
-                        src={`${process.env.REACT_APP_IMAGES_IP}/images/player/spec/${className}.jpg`}
+                        src={`${process.env.PUBLIC_URL}/images/player/spec/${className}.jpg`}
                         className="min-w-[36px]"
                     />
                 </div>
@@ -50,7 +50,7 @@ const MplusSkillCheckComponent = ({
                         onClick={() => handleSelectSkill(skill?.spellId, 'player')}
                     >
                         <img
-                            src={`${process.env.REACT_APP_IMAGES_IP}/images/ability/${skill?.spellId}.jpg`}
+                            src={`${process.env.PUBLIC_URL}/images/ability/${skill?.spellId}.jpg`}
                             className="min-w-[28px]"
                         />
                     </a>
@@ -60,7 +60,7 @@ const MplusSkillCheckComponent = ({
             <div className='flex items-center'>
                 <div className='w-[40px] h-[40px] mr-1 border-2 border-black'>
                     <img
-                        src={`${process.env.REACT_APP_IMAGES_IP}/images/ability/10060.jpg`}
+                        src={`${process.env.PUBLIC_URL}/images/ability/10060.jpg`}
                         className="min-w-[36px]"
                     />
                 </div>
@@ -73,7 +73,7 @@ const MplusSkillCheckComponent = ({
                         onClick={() => handleSelectSkill(skill?.spellId, 'taken')}
                     >
                         <img
-                            src={`${process.env.REACT_APP_IMAGES_IP}/images/ability/${skill?.spellId}.jpg`}
+                            src={`${process.env.PUBLIC_URL}/images/ability/${skill?.spellId}.jpg`}
                             className="min-w-[28px]"
                         />
                     </a>
@@ -89,7 +89,7 @@ const MplusSkillCheckComponent = ({
                         onClick={handleSelectBloodlust}
                     >
                         <img
-                            src={`${process.env.REACT_APP_IMAGES_IP}/images/ability/2825.jpg`}
+                            src={`${process.env.PUBLIC_URL}/images/ability/2825.jpg`}
                             className="min-w-[28px]"
                         />
                     </a>

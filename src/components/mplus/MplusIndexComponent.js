@@ -17,10 +17,10 @@ const MplusIndexComponent = () => {
             const img = new Image();
             switch (type) {
                 case "dungeon":
-                    img.src = `${process.env.REACT_APP_IMAGES_IP}/images/mplus/dungeon/${item}.jpg`
+                    img.src = `${process.env.PUBLIC_URL}/images/mplus/dungeon/${item}.jpg`
                     break;
                 case "class":
-                    img.src = `${process.env.REACT_APP_IMAGES_IP}/images/player/spec/${item}.jpg`
+                    img.src = `${process.env.PUBLIC_URL}/images/player/spec/${item}.jpg`
                     break;
             }
         }
@@ -57,7 +57,7 @@ const MplusIndexComponent = () => {
                             className="border-2 border-black mx-1 mb-2 w-[60px]"
                             key={d?.id}>
                             <img
-                                src={`${process.env.REACT_APP_IMAGES_IP}/images/mplus/dungeon/${d?.id}.jpg`}
+                                src={`${process.env.PUBLIC_URL}/images/mplus/dungeon/${d?.id}.jpg`}
                                 className={`w-full hover:brightness-125 hover:opacity-100 
                                     cursor-pointer
                                 ${selectedDungeon !== 0 && selectedDungeon === d?.id
@@ -78,7 +78,7 @@ const MplusIndexComponent = () => {
                         >
                             <div className={`bg-gray-800 flex items-center text-[14px] text-${c?.name} rounded-tl-xl shadow-lg`}>
                                 <img
-                                    src={`${process.env.REACT_APP_IMAGES_IP}/images/player/spec/${c?.name}.jpg`}
+                                    src={`${process.env.PUBLIC_URL}/images/player/spec/${c?.name}.jpg`}
                                     className={`w-[50px] h-[50px] opacity-85 rounded-tl-xl`}
                                     alt={c?.koName}
                                     title={c?.koName}
@@ -95,7 +95,7 @@ const MplusIndexComponent = () => {
                                             to={`${url}/mplus/${selectedDungeon}/${c?.name}-${s?.name}`}
                                         >
                                             <img
-                                                src={`${process.env.REACT_APP_IMAGES_IP}/images/player/spec/${c?.name}${s?.name}.jpg`}
+                                                src={`${process.env.PUBLIC_URL}/images/player/spec/${c?.name}${s?.name}.jpg`}
                                                 className={`w-[30px] h-[30px] transition-none`}
                                                 alt={s?.koName}
                                                 title={s?.koName}
@@ -115,7 +115,7 @@ const MplusIndexComponent = () => {
                         오류 및 건의사항 문의
                     </span>
                     <a className="w-[34px] h-[34px]" href="https://open.kakao.com/o/s94ri9kh" target="_blank" rel="noopener noreferrer">
-                        <img src={`${process.env.REACT_APP_IMAGES_IP}/images/kakao/kakao_btn_small.png`} />
+                        <img src={`${process.env.PUBLIC_URL}/images/kakao/kakao_btn_small.png`} />
                     </a>
                 </div>
             </div>
